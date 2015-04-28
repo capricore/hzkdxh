@@ -135,7 +135,7 @@ public class NewsController extends BaseController{
 	 * @throws Exception
 	 */
 	@RequestMapping("/list.do")
-	public ModelAndView newsList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	public ModelAndView list(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
 			int newstype = 0;
 			int subtype = 0;
@@ -165,5 +165,108 @@ public class NewsController extends BaseController{
 		}
 	}
 
+	/**
+	 * 返回快递行业协会首页
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/index.do")
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> hyList = new ArrayList<News>();
+			hyList = newsService.getNewsListByNewsType(3);//获取行业列表
+			if (hyList.size() > 8) {
+				hyList = hyList.subList(0, 8);
+			}
+			
+			List<News> xhList = new ArrayList<News>();
+			xhList = newsService.getNewsListByNewsType(1);//获取协会列表
+			if (xhList.size() > 8) {
+				xhList = xhList.subList(0, 8);
+			}
+			
+			List<News> zcList = new ArrayList<News>();
+			zcList = newsService.getNewsListByNewsType(2);//获取政策列表
+			if (zcList.size() > 8) {
+				zcList = zcList.subList(0, 8);
+			}
+			
+			List<News> fcList = new ArrayList<News>();
+			fcList = newsService.getNewsListByNewsType(4);//获取会员风采列表
+			if (fcList.size() > 8) {
+				fcList = fcList.subList(0, 8);
+			}
+		
+			Map map = new HashMap();
+			map.put("hyList", hyList);
+			map.put("xhList", xhList);
+			map.put("zcList", zcList);
+			map.put("fcList", fcList);
+			return new ModelAndView("index").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			return null;
+		}
+	}
 	
+	/**
+	 * 返回文章详情
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/newsDetail.do")
+	public ModelAndView newsDetail(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			String newsid = request.getParameter("newsid");
+			News news = newsService.getByNewsId(newsid);	
+			return new ModelAndView("newsDetail").addObject("news", news);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			return null;
+		}
+	}
+
+	/**
+	 * 返回文章列表
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/newsList.do")
+	public ModelAndView newsList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			int newstype = 0;
+			int subtype = 0;
+			String r_newstype = request.getParameter("newstype");											//新闻大类
+			String r_subtype = request.getParameter("subtype");												//新闻戏类
+			List<News> newsList = new ArrayList<News>();
+			if(StringUtils.isNumber(r_newstype)&&StringUtils.isNumber(r_subtype)){
+				newstype = Integer.valueOf(r_newstype);
+				subtype = Integer.valueOf(r_subtype);
+				newsList = newsService.getNewsListByNewsTypeAndSubType(newstype,subtype); 					//获取文章列表
+			}
+			else if(StringUtils.isNumber(r_newstype)){
+				newstype = Integer.valueOf(r_newstype);
+				newsList = newsService.getNewsListByNewsType(newstype);
+			}
+			String newstype_name = NewsType[newstype];
+			String subtype_name = SubType[newstype][subtype];
+			Map map = new HashMap();
+			map.put("newstype", newstype_name);
+			map.put("subtype", subtype_name);
+			map.put("newsList", newsList);
+			return new ModelAndView("newsList").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			return null;
+		}
+	}
 }

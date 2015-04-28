@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" 
-                                                  prefix="fn" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" class="g_html">
 
 <head>
-<title>浙江省快递行业协会</title>
+<title>杭州市快递行业协会</title>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -1350,34 +1348,34 @@
 																						class='formMiddleContent formMiddleContent314  '>
 																						<div>
 																							<div class='newsList ' id='newsList314'>
-																							<c:forEach items="${hyList}" var="item" varStatus="status">
-																								<c:set var="time" value="${item.crtime}"/>
-																								<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-																								<div topClassName='top1' topSwitch='on'
-																									newsId='100'
-																									newsName=''
-																									class='line g_item    '>
-																									<table id='lineBody100' class='lineBody'
-																										cellpadding='0' cellspacing='0'>
-																										<tbody>
-																											
+																								<c:forEach items="${hyList}" var="item"
+																									varStatus="status">
+																									<c:set var="time" value="${item.crtime}" />
+																									<c:set var="date" value="${fn:substring(time, 0, 10)}" />
+																									<div topClassName='top1' topSwitch='on'
+																										newsId='100' newsName=''
+																										class='line g_item    '>
+																										<table id='lineBody100' class='lineBody'
+																											cellpadding='0' cellspacing='0'>
+																											<tbody>
+
 																												<tr id='module314tr100'>
 																													<td class='contentLineIcon'></td>
 																													<td class='newsTitle' valign='top'>
 																														<div class=''></div> <a hidefocus='true'
-																														href="newsDetail.htm?newsid=${item.newsid} }" target=_blank
-																														title="${item.title}">${item.title}</a>
+																														href="news/newsDetail.do?newsid=${item.newsid}"
+																														target=_blank title="${item.title}">${item.title}</a>
 																													</td>
 																													<td class='newsCalendar' valign='top'><a
 																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334" target=_blank>${date}</a>
-																													</td>
+																														href="nd.jsp?id=31&_np=2_334"
+																														target=_blank>${date}</a></td>
 																												</tr>
-																											
-																										</tbody>
-																									</table>
-																								</div>
-																								<div class='separatorLine g_separator '></div>
+
+																											</tbody>
+																										</table>
+																									</div>
+																									<div class='separatorLine g_separator '></div>
 																								</c:forEach>
 
 																								<div class='separatorLine g_separator '
@@ -1459,34 +1457,36 @@
 																						class='formMiddleContent formMiddleContent314  '>
 																						<div>
 																							<div class='newsList ' id='newsList334'>
-																								<c:forEach items="${fcList}" var="item" varStatus="status">
-																								<c:set var="time" value="${item.crtime}"/>
-																								<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-																								<div topClassName='top1' topSwitch='on'
-																									newsId='100'
-																									newsName=''
-																									class='line g_item    '>
-																									<table id='lineBody100' class='lineBody'
-																										cellpadding='0' cellspacing='0'>
-																										<tbody>
-																											
+																								<c:forEach items="${fcList}" var="item"
+																									varStatus="status">
+																									<c:set var="time" value="${item.crtime}" />
+																									<c:set var="date"
+																										value="${fn:substring(time, 0, 10)}" />
+																									<div topClassName='top1' topSwitch='on'
+																										newsId='100' newsName=''
+																										class='line g_item    '>
+																										<table id='lineBody100' class='lineBody'
+																											cellpadding='0' cellspacing='0'>
+																											<tbody>
+
 																												<tr id='module314tr100'>
 																													<td class='contentLineIcon'></td>
 																													<td class='newsTitle' valign='top'>
 																														<div class=''></div> <a hidefocus='true'
-																														href="newsDetail.htm?newsid=${item.newsid} }" target=_blank
-																														title="${item.title}">${item.title}</a>
+																														href="news/newsDetail.do?newsid=${item.newsid}"
+																														target=_blank title="${item.title}">${item.title}</a>
 																													</td>
 																													<td class='newsCalendar' valign='top'><a
 																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334" target=_blank><% %>${date}</a>
-																													</td>
+																														href="nd.jsp?id=31&_np=2_334"
+																														target=_blank>
+																															<% %>${date}</a></td>
 																												</tr>
-																											
-																										</tbody>
-																									</table>
-																								</div>
-																								<div class='separatorLine g_separator '></div>
+
+																											</tbody>
+																										</table>
+																									</div>
+																									<div class='separatorLine g_separator '></div>
 																								</c:forEach>
 																								<div class='separatorLine g_separator '
 																									style='border-color: transparent'></div>
@@ -1571,34 +1571,35 @@
 																						class='formMiddleContent formMiddleContent314  '>
 																						<div>
 																							<div class='newsList ' id='newsList332'>
-																								<c:forEach items="${xhList}" var="item" varStatus="status">
-																								<c:set var="time" value="${item.crtime}"/>
-																								<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-																								<div topClassName='top1' topSwitch='on'
-																									newsId='100'
-																									newsName=''
-																									class='line g_item    '>
-																									<table id='lineBody100' class='lineBody'
-																										cellpadding='0' cellspacing='0'>
-																										<tbody>
-																											
+																								<c:forEach items="${xhList}" var="item"
+																									varStatus="status">
+																									<c:set var="time" value="${item.crtime}" />
+																									<c:set var="date"
+																										value="${fn:substring(time, 0, 10)}" />
+																									<div topClassName='top1' topSwitch='on'
+																										newsId='100' newsName=''
+																										class='line g_item    '>
+																										<table id='lineBody100' class='lineBody'
+																											cellpadding='0' cellspacing='0'>
+																											<tbody>
+
 																												<tr id='module314tr100'>
 																													<td class='contentLineIcon'></td>
 																													<td class='newsTitle' valign='top'>
 																														<div class=''></div> <a hidefocus='true'
-																														href="newsDetail.htm?newsid=${item.newsid} }" target=_blank
-																														title="${item.title}">${item.title}</a>
+																														href="news/newsDetail.do?newsid=${item.newsid}"
+																														target=_blank title="${item.title}">${item.title}</a>
 																													</td>
 																													<td class='newsCalendar' valign='top'><a
 																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334" target=_blank>${date}</a>
-																													</td>
+																														href="nd.jsp?id=31&_np=2_334"
+																														target=_blank>${date}</a></td>
 																												</tr>
-																											
-																										</tbody>
-																									</table>
-																								</div>
-																								<div class='separatorLine g_separator '></div>
+
+																											</tbody>
+																										</table>
+																									</div>
+																									<div class='separatorLine g_separator '></div>
 																								</c:forEach>
 																								<div class='separatorLine g_separator '
 																									style='border-color: transparent'></div>
@@ -1679,34 +1680,35 @@
 																						class='formMiddleContent formMiddleContent314  '>
 																						<div>
 																							<div class='newsList ' id='newsList333'>
-																								<c:forEach items="${zcList}" var="item" varStatus="status">
-																								<c:set var="time" value="${item.crtime}"/>
-																								<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-																								<div topClassName='top1' topSwitch='on'
-																									newsId='100'
-																									newsName=''
-																									class='line g_item    '>
-																									<table id='lineBody100' class='lineBody'
-																										cellpadding='0' cellspacing='0'>
-																										<tbody>
-																											
+																								<c:forEach items="${zcList}" var="item"
+																									varStatus="status">
+																									<c:set var="time" value="${item.crtime}" />
+																									<c:set var="date"
+																										value="${fn:substring(time, 0, 10)}" />
+																									<div topClassName='top1' topSwitch='on'
+																										newsId='100' newsName=''
+																										class='line g_item    '>
+																										<table id='lineBody100' class='lineBody'
+																											cellpadding='0' cellspacing='0'>
+																											<tbody>
+
 																												<tr id='module314tr100'>
 																													<td class='contentLineIcon'></td>
 																													<td class='newsTitle' valign='top'>
 																														<div class=''></div> <a hidefocus='true'
-																														href="newsDetail.htm?newsid=${item.newsid} }" target=_blank
-																														title="${item.title}">${item.title}</a>
+																														href="news/newsDetail.do?newsid=${item.newsid}"
+																														target=_blank title="${item.title}">${item.title}</a>
 																													</td>
 																													<td class='newsCalendar' valign='top'><a
 																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334" target=_blank>${date}</a>
-																													</td>
+																														href="nd.jsp?id=31&_np=2_334"
+																														target=_blank>${date}</a></td>
 																												</tr>
-																											
-																										</tbody>
-																									</table>
-																								</div>
-																								<div class='separatorLine g_separator '></div>
+
+																											</tbody>
+																										</table>
+																									</div>
+																									<div class='separatorLine g_separator '></div>
 																								</c:forEach>
 																								<div class='separatorLine g_separator '
 																									style='border-color: transparent'></div>

@@ -34,6 +34,6 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	</filter>
 
 	<welcome-file-list>
-		<welcome-file>news/getList.do</welcome-file>
+		<welcome-file>news/index.do</welcome-file>
 	</welcome-file-list>
 </web-app>
