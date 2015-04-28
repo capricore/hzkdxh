@@ -19,67 +19,67 @@
 									<div id='navCenter' class='navCenter' style='width: 630px;'>
 										<div class='itemPrev'></div>
 										<div class='itemContainer'>
-											<table class='item itemCol2 itemIndex1' cellpadding='0' cellspacing='0' colId='2' id='nav2' onclick='document.location.href="index.htm"' _jump='document.location.href="index.htm"'>
+											<table class='item itemCol2 itemIndex1' cellpadding='0' cellspacing='0' colId='2' id='nav2' onclick='document.location.href="/hzkdxh"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='index.htm'
+														style='outline: none;' href='/hzkdxh'
 														onclick='return false;'><span class='itemName0'>首页</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol101 itemIndex2' cellpadding='0' cellspacing='0' colId='101' id='nav101' onclick='document.location.href="newsDetail.htm"' _jump='document.location.href="newsDetail.htm"'>
+											<table class='item itemCol101 itemIndex2' cellpadding='0' cellspacing='0' colId='101' id='nav101' onclick='document.location.href="/hzkdxh/news/newsList.do?newstype=1"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='newsDetail.htm'
+														style='outline: none;' href='/hzkdxh/news/newsList.do?newstype=1'
 														onclick='return false;'><span class='itemName0'>关于协会</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol102 itemIndex3' cellpadding='0' cellspacing='0' colId='102' id='nav102' onclick='document.location.href="newsList.htm"' _jump='document.location.href="newsList.htm"'>
+											<table class='item itemCol102 itemIndex3' cellpadding='0' cellspacing='0' colId='102' id='nav102' onclick='document.location.href="/hzkdxh/news/newsList.do?newstype=2"'>
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='newsList.htm'
+														style='outline: none;' href='/hzkdxh/news/newsList.do?newstype=2'
 														onclick='return false;'><span class='itemName0'>协会动态</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol103 itemIndex4' cellpadding='0' cellspacing='0' colId='103' id='nav103' onclick='document.location.href="newsList.htm"' _jump='document.location.href="newsList.htm"'>
+											<table class='item itemCol103 itemIndex4' cellpadding='0' cellspacing='0' colId='103' id='nav103' onclick='document.location.href="/hzkdxh/news/newsList.do?newstype=2"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='newsList.htm'
+														style='outline: none;' href='/hzkdxh/news/newsList.do?newstype=2'
 														onclick='return false;'><span class='itemName0'>政策法规</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol131 itemIndex5' cellpadding='0' cellspacing='0' colId='131' id='nav131' onclick='document.location.href="newsList.htm"' _jump='document.location.href="newsList.htm"'>
+											<table class='item itemCol131 itemIndex5' cellpadding='0' cellspacing='0' colId='131' id='nav131' onclick='document.location.href="/hzkdxh/news/newsList.do?newstype=3"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='newsList.htm'
+														style='outline: none;' href='/hzkdxh/news/newsList.do?newstype=3'
 														onclick='return false;'><span class='itemName0'>行业公告</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol123 itemIndex6' cellpadding='0' cellspacing='0' colId='123' id='nav123' onclick='document.location.href="newsList.htm"' _jump='document.location.href="newsList.htm"'>
+											<table class='item itemCol123 itemIndex6' cellpadding='0' cellspacing='0' colId='123' id='nav123' onclick='document.location.href="/hzkdxh/news/newsList.do?newstype=4"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'
-														style='outline: none;' href='newsList.htm'
+														style='outline: none;' href='/hzkdxh/news/newsList.do?newstype=4'
 														onclick='return false;'><span class='itemName0'>会员风采</span></a></td>
 													<td class='itemRight'></td>
 												</tr>
 											</table>
 											<div class='itemSep'></div>
-											<table class='item itemCol18 itemIndex7' cellpadding='0' cellspacing='0' colId='18' id='nav18' onclick='document.location.href="login.htm"' _jump='document.location.href="login.htm"'>
+											<table class='item itemCol18 itemIndex7' cellpadding='0' cellspacing='0' colId='18' id='nav18' onclick='document.location.href="login.htm"' >
 												<tr>
 													<td class='itemLeft'></td>
 													<td class='itemCenter'><a hidefocus='true'

@@ -2,482 +2,31 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" class="g_html">
-
 <head>
 <title>杭州市快递行业协会</title>
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta name="renderer" content="webkit">
-
-<link type="text/css" href="css/base.min.css" rel="stylesheet" />
-<link type="text/css" href="css/23004.min.css" rel="stylesheet"
-	id="templateFrame" class="templateFrameClass" />
-
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-
-
-<style id='stylemodule'>
-#module408 {
-	height: 75px;
-}
-
-#module408 .formMiddleContent408 {
-	padding: 0px;
-}
-
-#module408 .formMiddleContent408 {
-	margin-left: 10px;
-}
-
-#module408 .formMiddleContent408 {
-	margin-right: 10px;
-}
-
-#module408 .formMiddleContent408 {
-	margin-top: 5px;
-}
-
-#module408 .formMiddleContent408 {
-	margin-bottom: 5px;
-}
-
-#module331 {
-	border: none;
-}
-
-#module331 {
-	padding: 0px;
-}
-
-#module331 .formMiddle331 {
-	border: none;
-}
-
-#module331 .formMiddle331 {
-	padding: 0px;
-}
-
-#module331 .formMiddle331 .formMiddleCenter331 {
-	border: none;
-}
-
-#module331 .formMiddle331 .formMiddleCenter331 {
-	padding: 0px;
-}
-
-#module331 .formTop331 {
-	display: none;
-}
-
-#module331 .formBottom331 {
-	display: none;
-}
-
-#module331 .formMiddle331 .formMiddleLeft331 {
-	display: none;
-}
-
-#module331 .formMiddle331 .formMiddleRight331 {
-	display: none;
-}
-
-#module331 .formBanner331 {
-	display: none;
-}
-
-#module331 .formMiddleContent331 {
-	padding: 0px;
-}
-
-#module331 .formMiddleContent331 {
-	margin-left: 0px;
-}
-
-#module331 .formMiddleContent331 {
-	margin-right: 0px;
-}
-
-#module331 .formMiddleContent331 {
-	margin-top: 0px;
-}
-
-#module331 .formMiddleContent331 {
-	margin-bottom: 0px;
-}
-
-#module331 {
-	background: none;
-}
-
-#module331 .formMiddle331 {
-	background: none;
-}
-
-#module331 .formMiddle331 .formMiddleCenter331 {
-	background: none;
-}
-
-#module331 .formMiddleContent331 {
-	background: none;
-}
-
-#module425 {
-	padding: 0px;
-}
-
-#module425 {
-	margin-left: 10px;
-}
-
-#module425 {
-	margin-right: 10px;
-}
-
-#module425 {
-	margin-top: 10px;
-}
-
-#module425 {
-	margin-bottom: 10px;
-}
-
-#module425 {
-	border: none;
-}
-
-#module425 {
-	padding: 0px;
-}
-
-#module425 .formMiddle425 {
-	border: none;
-}
-
-#module425 .formMiddle425 {
-	padding: 0px;
-}
-
-#module425 .formMiddle425 .formMiddleCenter425 {
-	border: none;
-}
-
-#module425 .formMiddle425 .formMiddleCenter425 {
-	padding: 0px;
-}
-
-#module425 .formTop425 {
-	display: none;
-}
-
-#module425 .formBottom425 {
-	display: none;
-}
-
-#module425 .formMiddle425 .formMiddleLeft425 {
-	display: none;
-}
-
-#module425 .formMiddle425 .formMiddleRight425 {
-	display: none;
-}
-
-#module425 .formBanner425 {
-	display: none;
-}
-
-#module425 .formMiddleContent425 {
-	padding: 0px;
-}
-
-#module425 .formMiddleContent425 {
-	margin-left: 0px;
-}
-
-#module425 .formMiddleContent425 {
-	margin-right: 0px;
-}
-
-#module425 .formMiddleContent425 {
-	margin-top: 0px;
-}
-
-#module425 .formMiddleContent425 {
-	margin-bottom: 0px;
-}
-
-#module425 {
-	background: none;
-}
-
-#module425 .formMiddle425 {
-	background: none;
-}
-
-#module425 .formMiddle425 .formMiddleCenter425 {
-	background: none;
-}
-
-#module425 .formMiddleContent425 {
-	background: none;
-}
-
-#module393 {
-	height: 219px;
-}
-
-#module314 {
-	height: 302px;
-}
-
-#module314 .formMiddleContent314 {
-	padding: 0px;
-}
-
-#module314 .formMiddleContent314 {
-	margin-left: 15px;
-}
-
-#module314 .formMiddleContent314 {
-	margin-right: 15px;
-}
-
-#module314 .formMiddleContent314 {
-	margin-top: 5px;
-}
-
-#module314 .formMiddleContent314 {
-	margin-bottom: 5px;
-}
-
-#module314 .top_with_line_icon {
-	padding-left: 25px;
-}
-
-#module334 {
-	height: 302px;
-}
-
-#module334 .formMiddleContent334 {
-	padding: 0px;
-}
-
-#module334 .formMiddleContent334 {
-	margin-left: 15px;
-}
-
-#module334 .formMiddleContent334 {
-	margin-right: 15px;
-}
-
-#module334 .formMiddleContent334 {
-	margin-top: 5px;
-}
-
-#module334 .formMiddleContent334 {
-	margin-bottom: 5px;
-}
-
-#module334 .top_with_line_icon {
-	padding-left: 25px;
-}
-
-#module332 {
-	height: 302px;
-}
-
-#module332 .formMiddleContent332 {
-	padding: 0px;
-}
-
-#module332 .formMiddleContent332 {
-	margin-left: 15px;
-}
-
-#module332 .formMiddleContent332 {
-	margin-right: 15px;
-}
-
-#module332 .formMiddleContent332 {
-	margin-top: 5px;
-}
-
-#module332 .formMiddleContent332 {
-	margin-bottom: 5px;
-}
-
-#module332 .top_with_line_icon {
-	padding-left: 25px;
-}
-
-#module333 {
-	height: 302px;
-}
-
-#module333 .formMiddleContent333 {
-	padding: 0px;
-}
-
-#module333 .formMiddleContent333 {
-	margin-left: 15px;
-}
-
-#module333 .formMiddleContent333 {
-	margin-right: 15px;
-}
-
-#module333 .formMiddleContent333 {
-	margin-top: 5px;
-}
-
-#module333 .formMiddleContent333 {
-	margin-bottom: 5px;
-}
-
-#module333 .top_with_line_icon {
-	padding-left: 25px;
-}
-
-#module36 {
-	height: 20px;
-}
-
-#module36 {
-	border: none;
-}
-
-#module36 {
-	padding: 0px;
-}
-
-#module36 .formMiddle36 {
-	border: none;
-}
-
-#module36 .formMiddle36 {
-	padding: 0px;
-}
-
-#module36 .formMiddle36 .formMiddleCenter36 {
-	border: none;
-}
-
-#module36 .formMiddle36 .formMiddleCenter36 {
-	padding: 0px;
-}
-
-#module36 .formTop36 {
-	display: none;
-}
-
-#module36 .formBottom36 {
-	display: none;
-}
-
-#module36 .formMiddle36 .formMiddleLeft36 {
-	display: none;
-}
-
-#module36 .formMiddle36 .formMiddleRight36 {
-	display: none;
-}
-
-#module36 .formBanner36 {
-	display: none;
-}
-
-#module36 .formMiddleContent36 {
-	padding: 0px;
-}
-
-#module36 .formMiddleContent36 {
-	margin-left: 0px;
-}
-
-#module36 .formMiddleContent36 {
-	margin-right: 0px;
-}
-
-#module36 .formMiddleContent36 {
-	margin-top: 0px;
-}
-
-#module36 .formMiddleContent36 {
-	margin-bottom: 0px;
-}
-
-#module36 {
-	background: none;
-}
-
-#module36 .formMiddle36 {
-	background: none;
-}
-
-#module36 .formMiddle36 .formMiddleCenter36 {
-	background: none;
-}
-
-#module36 .formMiddleContent36 {
-	background: none;
-}
-</style>
-<style id='styleHeaderTop' type='text/css'>
-</style>
-<style id='stylefooter' type='text/css'>
-</style>
-<style id='styleWebSite' type='text/css'>
-</style>
-<style id='stylenav' type='text/css'>
-#nav {
-	top: 34px;
-}
-
-#nav {
-	left: 295px;
-}
-
-#nav .item {
-	width: 70px;
-}
-
-#nav .item a {
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-}
-</style>
-
-
+<link type="text/css" href="/hzkdxh/css/base.min.css" rel="stylesheet" />
+<link type="text/css" href="/hzkdxh/css/23004.min.css" rel="stylesheet" id="templateFrame" class="templateFrameClass" />
+<link type="text/css" href="/hzkdxh/css/module.css" rel="stylesheet" id="stylemodule"  class="templateFrameClass"/>
+<link type="text/css" href="/hzkdxh/css/stylenav.css" rel="stylesheet" id="stylenav"  class="templateFrameClass"/>
 </head>
 
 <body class="g_body g_locale2052 ">
-
 	<div id="g_main" class='g_main g_col2 ' style=''>
 		<div id="web" class="g_web ">
 			<table class="webTopTable" cellpadding="0" cellspacing="0">
 				<tr>
 					<td align="center">
 						<div id="webTop" class="webTop">
-
-							<div id="corpTitle" class="corpTitle corpTitle2"
-								fontPatternTitle="true" style="top: 34px; left: 12px;"
-								_linkType="0">
+							<div id="corpTitle" class="corpTitle corpTitle2" fontPatternTitle="true" style="top: 34px; left: 12px;" _linkType="0">
 								<div id="primaryTitle"
 									style="font-size: 28px; font-weight: normal; pointer-events: none;">杭州市快递行业协会</div>
 								<div id="subTitle" style=""></div>
 							</div>
-
-
-
-
-
 							<div id='logo' class='logo logo2' style='top: 7px; left: -71px;'>
 								<a id='logoLink' hidefocus='true' class='link-p'
 									link='javascript:;' onclick='return false;'><img
@@ -485,12 +34,10 @@
 									style='float: left;'
 									src='http://0.ss.faidns.com/image/default/logo.png?v=201406181704' /></a>
 							</div>
-
 						</div>
 					</td>
 				</tr>
 			</table>
-
 			<table class="absTopTable" cellpadding="0" cellspacing="0">
 				<tr>
 					<td align="center">
@@ -531,178 +78,11 @@
 								</table>
 								<div class='clearfloat clearfloat36'></div>
 							</div>
-
-
 						</div>
 					</td>
 				</tr>
 			</table>
-			<table class="webNavTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="webNav" class="webNav webNavDefault">
-							<div id='nav' class='nav nav2'>
-								<div class='navMainContent'>
-									<table class='navTop' cellpadding='0' cellspacing='0'>
-										<tr>
-											<td class='navTopLeft'></td>
-											<td class='navTopCenter'></td>
-											<td class='navTopRight'></td>
-										</tr>
-									</table>
-									<table class='navContent' cellpadding='0' cellspacing='0'>
-										<tr>
-											<td class='navLeft'></td>
-											<td class='navCenterContent' id='navCenterContent'
-												valign='top' align='left'>
-												<div id='navCenter' class='navCenter' style='width: 630px;'>
-													<div class='itemPrev'></div>
-													<div class='itemContainer'>
-														<table class='item itemCol2 itemIndex1' cellpadding='0'
-															cellspacing='0' colId='2' id='nav2'
-															onclick='document.location.href="/"'
-															_jump='document.location.href="/"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='/' onclick='return false;'><span
-																		class='itemName0'>首页</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol101 itemIndex2' cellpadding='0'
-															cellspacing='0' colId='101' id='nav101'
-															onclick='document.location.href="newsDetail.htm"'
-															_jump='document.location.href="newsDetail.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='newsDetail.htm'
-																	onclick='return false;'><span class='itemName0'>关于协会</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol102 itemIndex3' cellpadding='0'
-															cellspacing='0' colId='102' id='nav102'
-															onclick='document.location.href="newsList.htm"'
-															_jump='document.location.href="newsList.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='newsList.htm'
-																	onclick='return false;'><span class='itemName0'>协会动态</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol103 itemIndex4' cellpadding='0'
-															cellspacing='0' colId='103' id='nav103'
-															onclick='document.location.href="newsList.htm"'
-															_jump='document.location.href="newsList.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='newsList.htm'
-																	onclick='return false;'><span class='itemName0'>政策法规</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol131 itemIndex5' cellpadding='0'
-															cellspacing='0' colId='131' id='nav131'
-															onclick='document.location.href="newsList.htm"'
-															_jump='document.location.href="newsList.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='newsList.htm'
-																	onclick='return false;'><span class='itemName0'>行业公告</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol123 itemIndex6' cellpadding='0'
-															cellspacing='0' colId='123' id='nav123'
-															onclick='document.location.href="newsList.htm"'
-															_jump='document.location.href="newsList.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='newsList.htm'
-																	onclick='return false;'><span class='itemName0'>会员风采</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol18 itemIndex7' cellpadding='0'
-															cellspacing='0' colId='18' id='nav18'
-															onclick='document.location.href="login.htm"'
-															_jump='document.location.href="login.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='login.htm'
-																	onclick='return false;'><span class='itemName0'>会员登录</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol5 itemIndex8' cellpadding='0'
-															cellspacing='0' colId='5' id='nav5'
-															onclick='document.location.href="joinUs.htm"'
-															_jump='document.location.href="joinUs.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='joinUs.htm'
-																	onclick='return false;'><span class='itemName0'>加入我们</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-														<div class='itemSep'></div>
-														<table class='item itemCol6 itemIndex9' cellpadding='0'
-															cellspacing='0' colId='6' id='nav6'
-															onclick='document.location.href="contactUS.htm"'
-															_jump='document.location.href="contactUS.htm"'>
-															<tr>
-																<td class='itemLeft'></td>
-																<td class='itemCenter'><a hidefocus='true'
-																	style='outline: none;' href='contactUS.htm'
-																	onclick='return false;'><span class='itemName0'>联系我们</span></a></td>
-																<td class='itemRight'></td>
-															</tr>
-														</table>
-													</div>
-													<div class='itemNext'></div>
-												</div>
-											</td>
-											<td class='navRight'></td>
-										</tr>
-									</table>
-									<table class='navBottom' cellpadding='0' cellspacing='0'>
-										<tr>
-											<td class='navBottomLeft'></td>
-											<td class='navBottomCenter'></td>
-											<td class='navBottomRight'></td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<a href='newsDetail.htm' style='display: none;'>协会章程</a><a
-								href='newsDetail.htm' style='display: none;'>协会制度</a><a
-								href='newsDetail.htm' style='display: none;'>协会成员</a><a
-								href='newsDetail.htm' style='display: none;'>协会简介</a><a
-								href='newsList.htm' style='display: none;'>行业法律法规</a><a
-								href='newsList.htm' style='display: none;'>部门规章</a><a
-								href='newsList.htm' style='display: none;'>规范性文件</a><a
-								href='newsList.htm' style='display: none;'>地方性法规</a><a
-								href='newsList.htm' style='display: none;'>行业其他要求</a>
-						</div>
-					</td>
-				</tr>
-			</table>
+			<%@ include file="/include/navtop.jsp"%>
 			<table class="webHeaderTable" cellpadding="0" cellspacing="0"
 				id="webHeaderTable">
 				<tr>
@@ -721,7 +101,6 @@
 					</td>
 				</tr>
 			</table>
-
 			<table class="webBannerTable" cellpadding="0" cellspacing="0">
 				<tr>
 					<td align="center">
@@ -737,24 +116,6 @@
 					</td>
 				</tr>
 			</table>
-
-			<table class="absMiddleTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="absForms" class="forms sideForms absForms"></div>
-					</td>
-				</tr>
-			</table>
-
-			<div id="fullmeasureTopForms"
-				class="fullmeasureContainer forms sideForms fullmeasureForms fullmeasureTopForms"
-				style='display: none'>
-
-				<wbr />
-			</div>
-
-
-
 			<table id="webContainerTable" class="webContainerTable"
 				cellpadding="0" cellspacing="0">
 				<tr>
@@ -768,33 +129,19 @@
 										<td class="right"></td>
 									</tr>
 								</table>
-
 								<table class="containerMiddle" cellpadding='0' cellspacing='0'>
 									<tr valign='top'>
-										<td id="containerMiddleLeft" class="containerMiddleLeft">
-
-
-
-
-										</td>
-
+										<td id="containerMiddleLeft" class="containerMiddleLeft"></td>
 										<td class="containerMiddleCenter">
-											<div id="containerMiddleCenterTop"
-												class="containerMiddleCenterTop"></div>
-
+											<div id="containerMiddleCenterTop" class="containerMiddleCenterTop"></div>
 											<div id="containerForms" class="containerForms">
-												<div id="topForms" class="column forms mainForms topForms"
-													style='display: none'></div>
-
-												<table class="containerFormsMiddle" cellpadding='0'
-													cellspacing='0'>
+												<div id="topForms" class="column forms mainForms topForms" style='display: none'></div>
+												<table class="containerFormsMiddle" cellpadding='0' cellspacing='0'>
 													<tr>
-														<td valign="top" id="containerFormsLeft"
-															class="containerFormsLeft">
+														<td valign="top" id="containerFormsLeft" class="containerFormsLeft">
 															<div class="containerFormsLeftTop"></div>
 															<div id="leftForms"
 																class="column forms sideForms leftForms">
-
 																<div id='module408' _indexClass='formIndex1'
 																	class='form  formIndex1 formStyle62' title='' style=''
 																	_side='0' _inTab='0' _inMulMCol='0' _inFullmeasure='0'
@@ -1621,7 +968,6 @@
 																		</table>
 																		<div class='clearfloat clearfloat332'></div>
 																	</div>
-
 																	<div id='module333' _indexClass='formIndex2'
 																		class='form form333 formIndex2 formStyle7' title=''
 																		style='' _side='0' _inTab='0' _inMulMCol='0'
@@ -1730,8 +1076,6 @@
 																		</table>
 																		<div class='clearfloat clearfloat333'></div>
 																	</div>
-
-
 																</div>
 															</div>
 															<div id="centerBottomForms"
@@ -2241,11 +1585,6 @@
 				<tr>
 					<td align="center" valign="top">
 						<div id="webFooter" class="webFooter">
-
-
-
-
-
 							<div id="footer" class="footer">
 								<table class="footerTop" cellpadding="0" cellspacing="0">
 									<tr valign="top">
@@ -2348,10 +1687,6 @@
 														</ul>
 													</div>
 												</div>
-
-
-
-
 											</div>
 										</td>
 										<td class="middleRight"></td>
@@ -2396,16 +1731,6 @@
 
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-	<div id="bgMusic" class="bgMusic"></div>
 	<script type="text/javascript" src="js/jquery-core.min.js"></script>
 	<script type="text/javascript" src="js/jquery-mousewheel.min.js"></script>
 	<script type="text/javascript" src="js/fai.min.js"></script>
