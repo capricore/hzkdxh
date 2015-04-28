@@ -1,0 +1,334 @@
+@charset "utf-8";
+	body {
+	background: #f3f3f3;
+	font-family: "微软雅黑","宋体";
+	font-size: 12px
+}
+a {
+	font-family: "微软雅黑","宋体";
+	color: #878;
+	text-decoration: none
+}
+.webHeaderTable {
+	height: 100px;
+	background: url(http://0.ss.faidns.com/image/template/23004/head.jpg?v=201501261926) repeat-x;
+	width: 100%
+}
+.webHeader {
+	height: 100%;
+	width: 960px;
+	margin: 0 auto
+}
+.webBannerTable {
+	width: 100%
+}
+.banner {
+	width: 100%;
+	height: 310px;
+	background: url(http://0.ss.faidns.com/image/template/banners/230004.jpg?v=201501261926) 50% 0 no-repeat;
+	margin-top: 7px
+}
+.webFooterTable {
+	background: url(http://0.ss.faidns.com/image/template/23004/foot.jpg?v=201501261926) #0070b7 top repeat-x
+}
+.corpTitle {
+	top: 35px;
+	color: #fff
+}
+.localer {
+	color: #fff;
+	top: 5px
+}
+.localer a {
+	color: #fff
+}
+.favorite {
+	color: #fff
+}
+.favorite a {
+	color: #fff
+}
+.date {
+	color: #fff
+}
+.nav {
+	width: 650px;
+	height: 41px;
+	top: auto;
+	bottom: 20px;
+	left: 300px
+}
+.nav .navMainContent {
+	width: 650px
+}
+.nav .navLeft {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/nav_left.png?v=201501261926) no-repeat;
+	*background: url(http://0.ss.faidns.com/image/template/23004/nav_left.gif?v=201501261926) no-repeat;
+	width: 4px;
+	height: 41px
+}
+.nav .navCenterContent {
+	background: url(http://0.ss.faidns.com/image/template/23004/nav_middle.gif?v=201501261926) repeat-x
+}
+.nav .navRight {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/nav_right.png?v=201501261926) no-repeat;
+	*background: url(http://0.ss.faidns.com/image/template/23004/nav_right.gif?v=201501261926) no-repeat;
+	width: 4px;
+	height: 41px
+}
+.nav .itemPrev {
+	top: 4px
+}
+.nav .itemNext {
+	top: 4px
+}
+.nav .item {
+	height: 41px;
+	line-height: 41px
+}
+.nav .item .itemLeft {
+	display: table-cell;
+	*display: block
+}
+.nav .item .itemCenter a {
+	color: #2172a6;
+	font-size: 14px;
+	text-decoration: none
+}
+.nav .itemHover .itemCenter {
+	background: url(http://0.ss.faidns.com/image/template/23004/nav_hover.gif?v=201501261926) repeat-x;
+	line-height: 41px;
+	height: 41px;
+	height: 41px
+}
+.nav .itemHover .itemCenter a {
+	color: #fff
+}
+.nav .itemSelected .itemCenter {
+	background: url(http://0.ss.faidns.com/image/template/23004/nav_hover.gif?v=201501261926) repeat-x;
+	height: 41px;
+	line-height: 41px
+}
+.nav .itemSelected .itemCenter a {
+	color: #fff
+}
+.navSubMenu .item {
+	background: #eef1ff;
+	line-height: 30px
+}
+.navSubMenu .item a {
+	color: #000
+}
+.navSubMenu .itemHover {
+	background: #0075bf;
+	color: #fff
+}
+.navSubMenu .itemHover a {
+	color: #fff
+}
+.footer {
+	color: #fff
+}
+.footer a {
+	color: #fff
+}
+.footer a: hover {
+	color: #63b7ed
+}
+.footerItemSpacing .footerVerticalLine {
+	background-color: #fff
+}
+.forms .formMiddle .g_border {
+	border-color: #dbedf8
+}
+.forms .formMiddle .g_borderHover {
+	border-color: #0071b9
+}
+.forms .formMiddle .g_borderSelected {
+	border-color: #0071b9
+}
+.forms .formMiddle .g_separator {
+	border-color: #eee;
+	display: block
+}
+.forms .formMiddle .g_selected {
+	background: #0071b9;
+	color: #fff
+}
+.forms .formMiddle .g_selected a {
+	color: #fff
+}
+.forms .formMiddle .g_block {
+	background: #0071b9;
+	color: #fff
+}
+.forms .formMiddle .g_block a {
+	color: #fff
+}
+.forms .formMiddle .g_hover {
+	background-color: #fffcd5;
+	color: #333
+}
+.forms .formMiddle .g_hover a {
+	color: #0074bd
+}
+.forms .g_close {
+	background: url(http://0.ss.faidns.com/image/imgClose.gif?v=201501051800) 0 -0px no-repeat
+}
+.forms .g_close: hover {
+	background: url(http://0.ss.faidns.com/image/imgClose.gif?v=201501051800) -37px -0px no-repeat
+}
+.forms .formMiddle .g_imgPrev {
+	background: url(http://0.ss.faidns.com/image/imgPrevNext.gif?v=201412231047) -36px -1740px
+}
+.forms .formMiddle .g_imgNext {
+	background: url(http://0.ss.faidns.com/image/imgPrevNext.gif?v=201412231047) 0 -1740px
+}
+.forms .formMiddle .g_mallBuy {
+	background: url(http://0.ss.faidns.com/image/buyB3.png?v=201310281734) no-repeat 0 -66px
+}
+.forms .formMiddle .g_mallBuy span {
+	background: url(http://0.ss.faidns.com/image/buyB3.png?v=201310281734) 0 -94px repeat-x
+}
+.forms .formMiddle .g_mallBuyBig {
+	background: url(http://0.ss.faidns.com/image/buyB2.png?v=201503170954) no-repeat 0 -96px
+}
+.forms .formMiddle .g_mallBuyBig span {
+	background: url(http://0.ss.faidns.com/image/buyB2.png?v=201503170954) 0 -144px repeat-x
+}
+.forms .formMiddle .g_stress {
+	color: #cc0e00
+}
+.forms .formMiddle .g_stress a {
+	color: #cc0e00
+}
+.forms .formMiddle .g_minor {
+	color: #989
+}
+.forms .formMiddle .g_minor a {
+	color: #989
+}
+.sideForms .formBanner {
+	height: 38px;
+	line-height: 38px
+}
+.sideForms .formBanner .left {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/sideform_left.png?v=201501261926) no-repeat;
+	_background: url(http://0.ss.faidns.com/image/template/23004/sideform_left.gif?v=201501261926) no-repeat;
+	width: 4px
+}
+.sideForms .formBanner .center {
+	background: url(http://0.ss.faidns.com/image/template/23004/sideform_middle.gif?v=201501261926) repeat-x
+}
+.sideForms .formBanner .right {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/sideform_right.png?v=201501261926) no-repeat;
+	_background: url(http://0.ss.faidns.com/image/template/23004/sideform_right.gif?v=201501261926) no-repeat;
+	width: 4px
+}
+.sideForms .formBannerTitle {
+	color: #fff
+}
+.sideForms .formBannerTitle .titleText {
+	font-size: 14px
+}
+.sideForms .formBannerMore a {
+	display: inline-block;
+	width: 44px;
+	height: 16px;
+	background: url(http://0.ss.faidns.com/image/template/23004/more.gif?v=201501261926) no-repeat
+}
+.sideForms .formBannerMore a span {
+	display: none
+}
+.sideForms .formMiddle {
+	background: #fff;
+	color: #5e5e5e
+}
+.mainForms .form {
+	background-color: #fff
+}
+.mainForms .formBanner {
+	height: 43px;
+	line-height: 43px
+}
+.mainForms .formBanner .left {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/mainform_left.png?v=201501261926) no-repeat 50%;
+	width: 3px
+}
+.mainForms .formBanner .center {
+	background: url(http://0.ss.faidns.com/image/template/23004/mainform_middle.png?v=201501261926) repeat-x
+}
+.mainForms .formBanner .right {
+	display: table-cell;
+	*display: block;
+	background: url(http://0.ss.faidns.com/image/template/23004/mainform_right.png?v=201501261926) no-repeat;
+	width: 5px
+}
+.mainForms .formBannerTitle .titleText {
+	font-size: 14px;
+	line-height: 39px
+}
+.mainForms .formBannerMore a {
+	display: inline-block;
+	width: 44px;
+	height: 19px;
+	background: url(http://0.ss.faidns.com/image/template/23004/more2.gif?v=201501261926) no-repeat
+}
+.mainForms .formBannerMore a span {
+	display: none
+}
+.mainForms .formMiddle .formMiddleCenter {
+	background: #fff
+}
+.leftForms .formIndex1 .formBottom {
+	*display: block
+}
+.g_sB_rt {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) no-repeat 0 0
+}
+.g_sB_rc {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) repeat-y -60px 0;
+	color: #fff
+}
+.g_sB_rb {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) no-repeat -120px 0
+}
+.g_sB_lt {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) no-repeat -180px 0
+}
+.g_sB_lc {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) repeat-y -240px 0;
+	color: #fff
+}
+.g_sB_lb {
+	background: url(http://0.ss.faidns.com/image/site/float/floata_blue4.png) no-repeat -300px 0
+}
+.siteBackToTop_small_box {
+	background-position: 0 -120px
+}
+.visitorCounterBg {
+	background: url(http://0.ss.faidns.com/image/site/visitorCounter/blue1.gif) no-repeat
+}
+.formTabButton .formTabMiddleHover {
+	color: #006eb5;
+	font-weight: bold
+}
+.formTabContent .formMiddleCenter a {
+	color: #878
+}
+.productFilter .productFilterFold {
+	padding-left: 15px
+}
+.productFilter .productFilterUnfold {
+	padding-left: 15px
+}
