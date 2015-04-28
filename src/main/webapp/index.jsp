@@ -675,7 +675,7 @@
 																							style=''>
 																							<span
 																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='newsList.htm'><span>更多&#x3e;&#x3e;</span></a>
+																								<a hidefocus='true' href='news/newsList.do?newstype=3'><span>更多&#x3e;&#x3e;</span></a>
 																							</span>
 																						</div>
 																						&nbsp;
@@ -685,7 +685,7 @@
 																			</tr>
 																		</table>
 																		<table class='formMiddle formMiddle314'
-																			style='height: 302px;' cellpadding='0'
+																			style='height: 259px;' cellpadding='0'
 																			cellspacing='0'>
 																			<tr>
 																				<td class='formMiddleLeft formMiddleLeft314'></td>
@@ -735,17 +735,16 @@
 																				<td class='formMiddleRight formMiddleRight314'></td>
 																			</tr>
 																		</table>
-																		<table class='formBottom formBottom314'
+																		<table class='formBottom formBottom332'
 																			cellpadding='0' cellspacing='0'>
 																			<tr>
-																				<td class='left left314'></td>
-																				<td class='center center314'></td>
-																				<td class='right right314'></td>
+																				<td class='left left332'></td>
+																				<td class='center center332'></td>
+																				<td class='right right332'></td>
 																			</tr>
 																		</table>
-																		<div class='clearfloat clearfloat314'></div>
+																		<div class='clearfloat clearfloat332'></div>
 																	</div>
-
 																	<div id='module334' _indexClass='formIndex2'
 																		class='form form334 formIndex2 formStyle7' title=''
 																		style='' _side='0' _inTab='0' _inMulMCol='0'
@@ -784,7 +783,7 @@
 																							style=''>
 																							<span
 																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='newsList.htm'><span>更多&#x3e;&#x3e;</span></a>
+																								<a hidefocus='true' href='news/newsList.do?newstype=4'><span>更多&#x3e;&#x3e;</span></a>
 																							</span>
 																						</div>
 																						&nbsp;
@@ -793,15 +792,15 @@
 																				<td class='right right334'></td>
 																			</tr>
 																		</table>
-																		<table class='formMiddle formMiddle314'
-																			style='height: 302px;' cellpadding='0'
+																		<table class='formMiddle formMiddle334'
+																			style='height: 259px;' cellpadding='0'
 																			cellspacing='0'>
 																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft314'></td>
-																				<td class='formMiddleCenter formMiddleCenter314'
+																				<td class='formMiddleLeft formMiddleLeft334'></td>
+																				<td class='formMiddleCenter formMiddleCenter334'
 																					valign='top'>
 																					<div
-																						class='formMiddleContent formMiddleContent314  '>
+																						class='formMiddleContent formMiddleContent334  '>
 																						<div>
 																							<div class='newsList ' id='newsList334'>
 																								<c:forEach items="${fcList}" var="item"
@@ -826,8 +825,7 @@
 																													<td class='newsCalendar' valign='top'><a
 																														hidefocus='true'
 																														href="nd.jsp?id=31&_np=2_334"
-																														target=_blank>
-																															<% %>${date}</a></td>
+																														target=_blank>${date}</a></td>
 																												</tr>
 
 																											</tbody>
@@ -898,7 +896,7 @@
 																							style=''>
 																							<span
 																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='newsList.htm'><span>更多&#x3e;&#x3e;</span></a>
+																								<a hidefocus='true' href='news/newsList.do?newstype=1'><span>更多&#x3e;&#x3e;</span></a>
 																							</span>
 																						</div>
 																						&nbsp;
@@ -907,15 +905,15 @@
 																				<td class='right right332'></td>
 																			</tr>
 																		</table>
-																		<table class='formMiddle formMiddle314'
-																			style='height: 302px;' cellpadding='0'
+																		<table class='formMiddle formMiddle332'
+																			style='height: 259px;' cellpadding='0'
 																			cellspacing='0'>
 																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft314'></td>
-																				<td class='formMiddleCenter formMiddleCenter314'
+																				<td class='formMiddleLeft formMiddleLeft332'></td>
+																				<td class='formMiddleCenter formMiddleCenter332'
 																					valign='top'>
 																					<div
-																						class='formMiddleContent formMiddleContent314  '>
+																						class='formMiddleContent formMiddleContent332  '>
 																						<div>
 																							<div class='newsList ' id='newsList332'>
 																								<c:forEach items="${xhList}" var="item"
@@ -1006,7 +1004,7 @@
 																							style=''>
 																							<span
 																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='newsList.htm'><span>更多&#x3e;&#x3e;</span></a>
+																								<a hidefocus='true' href='news/newsList.do?newstype=2'><span>更多&#x3e;&#x3e;</span></a>
 																							</span>
 																						</div>
 																						&nbsp;
@@ -1015,15 +1013,15 @@
 																				<td class='right right333'></td>
 																			</tr>
 																		</table>
-																		<table class='formMiddle formMiddle314'
-																			style='height: 302px;' cellpadding='0'
+																		<table class='formMiddle formMiddle333'
+																			style='height: 259px;' cellpadding='0'
 																			cellspacing='0'>
 																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft314'></td>
-																				<td class='formMiddleCenter formMiddleCenter314'
+																				<td class='formMiddleLeft formMiddleLeft333'></td>
+																				<td class='formMiddleCenter formMiddleCenter333'
 																					valign='top'>
 																					<div
-																						class='formMiddleContent formMiddleContent314  '>
+																						class='formMiddleContent formMiddleContent333  '>
 																						<div>
 																							<div class='newsList ' id='newsList333'>
 																								<c:forEach items="${zcList}" var="item"

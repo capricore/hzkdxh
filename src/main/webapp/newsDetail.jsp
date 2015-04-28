@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="g_html">
 <head>
@@ -105,9 +107,11 @@
 																			<td class='formMiddleCenter formMiddleCenter12' valign='top'>
 																				<div class='formMiddleContent formMiddleContent12  '>
 																					<div class='newsDetail'>
+																						<c:set var="time" value="${news.crtime}" />
+																						<c:set var="date" value="${fn:substring(time, 0, 10)}" />
 																						<div class='title'>${news.title}</div>
 																						<div class='sourceInfo'>
-																							<span class='sourceInfoContent'>${news.crtime}</span>
+																							<span class='sourceInfoContent'>${date}</span>
 																						</div>
 																						<div class='g_border line'></div>
 																						<div class='textImg3'></div>
