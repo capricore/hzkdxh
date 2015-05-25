@@ -1,0 +1,260 @@
+div#MainPromotionBanner{
+	width:294px;
+	height:194px;
+	background:#fff;
+	padding:0; margin:0;
+}
+#MainPromotionBanner #SlidePlayer {
+	position:relative;
+	margin: 0 auto;
+}
+#MainPromotionBanner .Slides{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	height: 194px;
+	overflow: hidden;
+}
+#MainPromotionBanner .Slides li {
+	float: left;
+	width: 294px;
+	height: 194px;
+	padding:0; margin:0;
+
+}
+
+#MainPromotionBanner .Slides img{
+	border:0;
+	display: block;
+	width: 294px;
+	height: 194px;
+}
+
+#MainPromotionBanner .SlideTriggers{
+	margin: 0;
+	padding: 0;
+	list-style: none; 
+	position: absolute; 
+	top: 165px; 
+	right: 0px;
+	z-index: 10;
+	height: 25px;	
+}
+#MainPromotionBanner .SlideTriggers li{
+	float: left;
+	display: inline;
+	color: #74a8ed;
+	text-align: center;
+	line-height:16px;
+	width: 16px;
+	height: 16px;
+	font-family: Arial;
+	font-size: .9em;
+	cursor: pointer;
+	overflow: hidden; 
+	margin:3px 6px;
+	background:#eee url("slide_trigger.gif") no-repeat center center;
+}
+#MainPromotionBanner .SlideTriggers li.Current{ 
+	color:#fff; 
+	background: #bbb url("slide_trigger_c.gif") no-repeat center center;
+	border:0; 
+	font-weight:bold;
+	font-size: 1.4em;
+	line-height: 21px;
+	height: 21px;
+	width: 21px;
+	margin:0 6px; 
+}
+
+/*  ͼƬ�ֻ�12345 */
+
+#imgTitle {
+	FILTER: ALPHA(opacity=70); LEFT: 0px; OVERFLOW: hidden; POSITION: relative; TEXT-ALIGN: left
+}
+#imgTitle_up {
+	LEFT: 0px; HEIGHT: 1px; TEXT-ALIGN: left
+}
+#imgTitle_down {
+	LEFT: 0px; TEXT-ALIGN: right
+}
+.imgClass {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; BORDER-LEFT: #fff 1px solid; BORDER-BOTTOM: #fff 1px solid
+}
+#txtFrom {
+	VERTICAL-ALIGN: middle; PADDING-TOP: 2px; TEXT-ALIGN: center
+}
+.button {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; BACKGROUND: #7b7b63; PADDING-BOTTOM: 2px; MARGIN: 0px; FONT: bold 9px sans-serif; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+A.button {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button:link {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button:visited {
+	COLOR: #ffffff; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: #000000; TEXT-DECORATION: none
+}
+A.button:hover {
+	BACKGROUND: #fff; COLOR: #fff; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+.buttonDiv {
+	BACKGROUND: #000000; FLOAT: left; VERTICAL-ALIGN: middle; WIDTH: 21px; HEIGHT: 1px; TEXT-ALIGN: center
+}
+.trans {
+	FILTER: progid:DXImageTransform.Microsoft.Alpha(startX=0, startY=0, finishX=100, finishY=100,style=1,opacity=0,finishOpacity=40); WIDTH: 90px; BACKGROUND-COLOR: #000
+}
+
+
+ #outer a {
+            color: #333333;
+            background: none;
+            text-decoration: none;
+            font: 12px 宋体;
+        }
+
+       #outer img {
+            border: none;
+            margin: 0px;
+        }
+
+        #outer {
+            border: 1px solid #CCCCCC;
+            height: 110px;
+            width: 694px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #demo {
+            overflow: hidden;
+            width: 694px;
+            height: 110px;
+            float: left;
+            position: absolute;
+            z-index: 0;
+        }
+
+       #outer .listname {
+            height: 110px;
+            display: block;
+            line-height: 27px;
+            text-align: center;
+            padding: 0 3px;
+        }
+
+       #outer .listimage {
+            width: 150px;
+            height: 110px;
+        }
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px
+}
+.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11 {
+	float: left
+}
+.col-lg-10 {
+	width: 83.33333333333334%
+}
+
+}.form-horizontal .control-label,.form-horizontal .radio,.form-horizontal .checkbox,.form-horizontal .radio-inline,.form-horizontal .checkbox-inline {
+	padding-top: 7px;
+	margin-top: 0;
+	margin-bottom: 0
+}
+.form-horizontal .form-group {
+	margin-right: -15px;
+	margin-left: -15px
+}
+.form-horizontal .form-group: before,.form-horizontal .form-group: after {
+	display: table;
+	content: " "
+}
+.form-horizontal .form-group: after {
+	clear: both
+}
+.form-horizontal .form-group: before,.form-horizontal .form-group: after {
+	display: table;
+	content: " "
+}
+.form-horizontal .form-group: after {
+	clear: both
+}
+@media(min-width: 768px) {
+	.form-horizontal .control-label {
+	text-align: right
+}
+@media(min-width: 768px) {
+	.navbar-form .form-group {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle
+}
+}@media(max-width: 767px) {
+	.navbar-form .form-group {
+	margin-bottom: 5px
+}
+.form-group {
+	margin-bottom: 15px
+}
+@media(min-width: 768px) {
+	.form-inline .form-group {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle
+}
+.label {
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em
+}
+.radio label,.checkbox label {
+	display: inline;
+	margin-bottom: 0;
+	font-weight: normal;
+	cursor: pointer
+}
+.has-warning .help-block,.has-warning .control-label {
+	color: #c09853
+}
+.has-error .help-block,.has-error .control-label {
+	color: #b94a48
+}
+.has-success .help-block,.has-success .control-label {
+	color: #468847
+}
+select[multiple],select[size] {
+	height: auto
+}
+select optgroup {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit
+}
+select.input-sm {
+	height: 30px;
+	line-height: 30px
+}
+select.input-lg {
+	height: 45px;
+	line-height: 45px
+}
+select.input-group-lg>.form-control,select.input-group-lg>.input-group-addon,select.input-group-lg>.input-group-btn>.btn {
+	height: 45px;
+	line-height: 45px
+}
+select.input-group-sm>.form-control,select.input-group-sm>.input-group-addon,select.input-group-sm>.input-group-btn>.btn {
+	height: 30px;
+	line-height: 30px
+}

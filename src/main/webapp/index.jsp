@@ -1,2303 +1,843 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" class="g_html">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>杭州市快递行业协会</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta name="renderer" content="webkit">
-<link type="text/css" href="/hzkdxh/css/base.min.css" rel="stylesheet" />
-<link type="text/css" href="/hzkdxh/css/23004.min.css" rel="stylesheet" id="templateFrame" class="templateFrameClass" />
-<link type="text/css" href="/hzkdxh/css/module.css" rel="stylesheet" id="stylemodule"  class="templateFrameClass"/>
-<link type="text/css" href="/hzkdxh/css/stylenav.css" rel="stylesheet" id="stylenav"  class="templateFrameClass"/>
+<title>浙江省快递行业协会</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="浙江省快递行业协会" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/system.css" type="text/css" />
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
+<link rel="stylesheet" href="css/css.css" type="text/css" />
+<link href="css/xslider.css" rel="stylesheet" />
+
+<script type="text/javascript" src="javascript/style.js"></script>
+<script src="javascript/yu.js" type="text/javascript"></script>
+<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="javascript/jquery.Xslider.js"></script>
+
+<style type="text/css">
+<!--
+.ProImg {
+	overflow: hidden;
+	height: 60px;
+	width: 880px;
+	margin: 5px auto;
+	float: left;
+	-->
+	#
+	a1
+	a{
+	display
+	:
+	block;
+}
+</style>
+
+<script type="text/javascript">
+	//表单验证 
+	function query() {
+		var query = document.form1.querystring; //在这里我认为： name 代表的name 为 txtUser 的文本框 
+		if (query.value.length == 0) {
+			alert("请输入搜索内容");
+			query.focus();
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	function login() {
+		var username = document.form2.username;
+		var psw = document.form2.userpass;
+		if (username.value.length == 0) {
+			alert("请输入用户名");
+			username.focus();
+			return false;
+		}
+		if (psw.value.length == 0) {
+			alert("请输入密码");
+			psw.focus();
+			return false;
+		}
+	}
+
+	function contact() {
+		var id = document.form3.id;
+		var ms = document.form3.message;
+		if (id.value.length == 0) {
+			alert("请输入联系方式");
+			id.focus();
+			return false;
+		}
+		if (ms.value.length == 0) {
+			alert("请输入留言");
+			ms.focus();
+			return false;
+		}
+	}
+</script>
+
+
 </head>
+<body id="Homepage" class="">
 
-<body class="g_body g_locale2052 ">
-	<div id="g_main" class='g_main g_col2 ' style=''>
-		<div id="web" class="g_web ">
-			<table class="webTopTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="webTop" class="webTop">
-							<div id="corpTitle" class="corpTitle corpTitle2" fontPatternTitle="true" style="top: 34px; left: 12px;" _linkType="0">
-								<div id="primaryTitle"
-									style="font-size: 28px; font-weight: normal; pointer-events: none;">杭州市快递行业协会</div>
-								<div id="subTitle" style=""></div>
-							</div>
-							<div id='logo' class='logo logo2' style='top: 7px; left: -71px;'>
-								<a id='logoLink' hidefocus='true' class='link-p'
-									link='javascript:;' onclick='return false;'><img
-									id='logoImg' title='杭州市快递行业协会' alt='杭州市快递行业协会'
-									style='float: left;'
-									src='http://0.ss.faidns.com/image/default/logo.png?v=201406181704' /></a>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<table class="absTopTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="absTopForms" class="forms sideForms absForms">
-							<div style="position: absolute;"></div>
-							<!-- for ie6 -->
-							<div id='module36' _indexClass='formIndex1'
-								class='form  formIndex1 formStyle66' title=''
-								style='position: absolute; top: 6px; left: 804px; width: 150px;'
-								_side='0' _inTab='0' _inMulMCol='0' _inFullmeasure='0'
-								_autoHeight='0' _global='true' _independent='false'>
-								<table class='formTop formTop36' cellpadding='0' cellspacing='0'>
-									<tr>
-										<td class='left'></td>
-										<td class='center'></td>
-										<td class='right'></td>
-									</tr>
-								</table>
-								<table class='formMiddle formMiddle36' style='height: 20px;'
-									cellpadding='0' cellspacing='0'>
-									<tr>
-										<td class='formMiddleLeft formMiddleLeft36'></td>
-										<td class='formMiddleCenter formMiddleCenter36' valign='top'>
-											<div class='formMiddleContent formMiddleContent36  '>
-												<div id='module36Date' class='date g_specialClass'>&nbsp;</div>
-											</div>
-										</td>
-										<td class='formMiddleRight formMiddleRight36'></td>
-									</tr>
-								</table>
-								<table class='formBottom formBottom36' cellpadding='0'
-									cellspacing='0'>
-									<tr>
-										<td class='left left36'></td>
-										<td class='center center36'></td>
-										<td class='right right36'></td>
-									</tr>
-								</table>
-								<div class='clearfloat clearfloat36'></div>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<%@ include file="/include/navtop.jsp"%>
-			<table class="webHeaderTable" cellpadding="0" cellspacing="0"
-				id="webHeaderTable">
-				<tr>
-					<td align="center" class="webHeaderTd">
-						<div id="webHeader" class="webHeader">
-							<table class='headerTable' cellpadding='0' cellspacing='0'>
-								<tr>
-									<td class='headerCusLeft'></td>
-									<td class='headerCusMiddle' align='center' valign='top'>
-										<div class='headerNav'></div>
-									</td>
-									<td class='headerCusRight'></td>
-								</tr>
-							</table>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<table class="webBannerTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="webBanner" class="webBanner">
-							<table class="bannerTable" cellpadding="0" cellspacing="0">
-								<tr>
-									<td class="bannerLeft"></td>
-									<td class="bannerCenter" align='center' valign='top'></td>
-									<td class="bannerRight"></td>
-								</tr>
-							</table>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<table id="webContainerTable" class="webContainerTable"
-				cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="webContainer" class="webContainer">
-							<div id="container" class="container">
-								<table class="containerTop" cellpadding='0' cellspacing='0'>
-									<tr valign='top'>
-										<td class="left"></td>
-										<td class="center"></td>
-										<td class="right"></td>
-									</tr>
-								</table>
-								<table class="containerMiddle" cellpadding='0' cellspacing='0'>
-									<tr valign='top'>
-										<td id="containerMiddleLeft" class="containerMiddleLeft"></td>
-										<td class="containerMiddleCenter">
-											<div id="containerMiddleCenterTop" class="containerMiddleCenterTop"></div>
-											<div id="containerForms" class="containerForms">
-												<div id="topForms" class="column forms mainForms topForms" style='display: none'></div>
-												<table class="containerFormsMiddle" cellpadding='0' cellspacing='0'>
-													<tr>
-														<td valign="top" id="containerFormsLeft" class="containerFormsLeft">
-															<div class="containerFormsLeftTop"></div>
-															<div id="leftForms"
-																class="column forms sideForms leftForms">
-																<div id='module408' _indexClass='formIndex1'
-																	class='form  formIndex1 formStyle62' title='' style=''
-																	_side='0' _inTab='0' _inMulMCol='0' _inFullmeasure='0'
-																	_autoHeight='0' _global='true' _independent='false'>
-																	<table class='formTop formTop408' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner408' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left408'></td>
-																			<td class='center center408' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle408'>
-																					<tr>
-																						<td class='titleLeft titleLeft408' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter408'
-																							valign='top'>
-																							<div class='titleText titleText408'>
-																								<span> 全站搜索</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight408' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right408'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle408'
-																		style='height: 75px;' cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft408'></td>
-																			<td class='formMiddleCenter formMiddleCenter408'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent408  '>
-																					<div class='searchBox'>
-																						<div class='searchBoxContainer'>
-																							<input class='g_itext' placeholder='' value=''
-																								_nSL='[]' maxlength='100' /><a
-																								class='g_btn searchBoxBtn' href='javascript:;'
-																								onclick='Site.searchInSite(408);return false;'><span>搜索</span></a>
-																						</div>
-																					</div>
-																					<div class='recommandKeyBox'>
-																						<div class='linkKeys'>
-																							<a class='recommandKey' href='javascript:;'
-																								onclick='Site.searchInSiteByKey(408,"");return false;'><span></span></a>
-																						</div>
-																					</div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight408'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom408' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left408'></td>
-																			<td class='center center408'></td>
-																			<td class='right right408'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat408'></div>
-																</div>
+	<!-- Header Start -->
 
-																<div id='module426' _indexClass='formIndex2'
-																	class='form form426 formIndex2 formStyle1' title=''
-																	style='' _side='0' _inTab='0' _inMulMCol='0'
-																	_inFullmeasure='0' _autoHeight='1' _global='true'
-																	_independent='false'>
-																	<table class='formTop formTop426' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner426' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left426'></td>
-																			<td class='center center426' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle426'>
-																					<tr>
-																						<td class='titleLeft titleLeft426' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter426'
-																							valign='top'>
-																							<div class='titleText titleText426'>
-																								<span> 联系我们</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight426' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																				<div class='formBannerOther formBannerOther426'>
-																					<div class='formBannerMore formBannerMore426'
-																						style=''>
-																						<span
-																							style='_display: inline-block; _position: relative;'>
-																							<a hidefocus='true' href='contactUS.htm'><span>更多&#x3e;&#x3e;</span></a>
-																						</span>
-																					</div>
-																					&nbsp;
-																				</div>
-																			</td>
-																			<td class='right right426'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle426' style=''
-																		cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft426'></td>
-																			<td class='formMiddleCenter formMiddleCenter426'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent426  '>
-																					<div class='richContent richContent0'>
-																						<p>联系电话： 13000</p>
-																						<p>邮箱： hzkd@org</p>
-																						<p>地址： 杭州市西湖区</p>
-																					</div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight426'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom426' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left426'></td>
-																			<td class='center center426'></td>
-																			<td class='right right426'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat426'></div>
-																</div>
-
-																<div id='module435' _indexClass='formIndex3'
-																	class='form  formIndex3 formStyle51' title='' style=''
-																	_side='0' _inTab='0' _inMulMCol='0' _inFullmeasure='0'
-																	_autoHeight='1' _global='false' _independent='false'>
-																	<table class='formTop formTop435' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner435' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left435'></td>
-																			<td class='center center435' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle435'>
-																					<tr>
-																						<td class='titleLeft titleLeft435' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter435'
-																							valign='top'>
-																							<div class='titleText titleText435'>
-																								<span> 会员登录</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight435' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right435'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle435' style=''
-																		cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft435'></td>
-																			<td class='formMiddleCenter formMiddleCenter435'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent435  '>
-																					<div
-																						class='J_memberLoginPanel memberLoginPanel member'>
-																						<div class='memberLoginItemList'>
-																							<div
-																								class='J_memberLoginItem memberLoginItem itemSpace'>
-																								<input id='memberAcct'
-																									class='generateInput memberAcctInput'
-																									type='text' placeholder='帐号' value='' />
-																							</div>
-																							<div
-																								class='J_memberLoginItem memberLoginItem itemSpace'>
-																								<input id='memberPwd'
-																									class='generateInput memberPwdInput'
-																									type='password' placeholder='密码'
-																									onkeydown='if (Fai.isEnterKey(event)){Site.memberLogin1(435);}' />
-																							</div>
-																							<div
-																								class='memberLoginItem memberLoginItem_Button'>
-																								<div
-																									class='J_loginButton loginButton loginButton1'>
-																									<div class='left'></div>
-																									<div class='middle'>登录</div>
-																									<div class='right'></div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class='memberMsg'></div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight435'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom435' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left435'></td>
-																			<td class='center center435'></td>
-																			<td class='right right435'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat435'></div>
-																</div>
-
-																<div id='module410' _indexClass='formIndex4'
-																	class='form form410 formIndex4 formStyle75' title=''
-																	style='' _side='0' _inTab='0' _inMulMCol='0'
-																	_inFullmeasure='0' _autoHeight='1' _global='false'
-																	_independent='false'>
-																	<table class='formTop formTop410' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner410' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left410'></td>
-																			<td class='center center410' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle410'>
-																					<tr>
-																						<td class='titleLeft titleLeft410' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter410'
-																							valign='top'>
-																							<div class='titleText titleText410'>
-																								<span> 留言提交</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight410' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right410'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle410' style=''
-																		cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft410'></td>
-																			<td class='formMiddleCenter formMiddleCenter410'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent410  '>
-																					<div id='msgSubmit410' class='msgSubmit msgBoard'>
-																						<div id='msgSAdd' class='msgSAdd'>
-																							<div class='g_tip msgSTips'></div>
-																							<div class='msgAddTitle'>发表您的留言：</div>
-																							<div class='msgAddItem msgTitle'>
-																								<div
-																									style='height: 23px; line-height: 23px; width: 210px; float: left; margin-bottom: 4px;'>
-																									<table cellpadding='0' cellspacing='0'>
-																										<tr>
-																											<td width='60px'><div
-																													class='msgSubmit_overToPoint'>姓名：</div></td>
-																											<td><input
-																												class='g_itext msgSubmit_ipt msgSubmit_isMust'
-																												id='reqName' name='姓名' type='text' size='14'
-																												maxlength='50' value=''><font
-																												style='color: red; margin-left: 5px'>*</font></td>
-																										</tr>
-																									</table>
-																								</div>
-																								<div
-																									style='height: 23px; line-height: 23px; width: 210px; float: left; margin-bottom: 4px;'>
-																									<table cellpadding='0' cellspacing='0'>
-																										<tr>
-																											<td width='60px'><div
-																													class='msgSubmit_overToPoint'>电子邮件：</div></td>
-																											<td><input class='g_itext msgSubmit_ipt'
-																												id='reqEmail' name='电子邮件' type='text'
-																												size='14' maxlength='50'></td>
-																										</tr>
-																									</table>
-																								</div>
-																								<div
-																									style='height: 23px; line-height: 23px; width: 210px; float: left; margin-bottom: 4px;'>
-																									<table cellpadding='0' cellspacing='0'>
-																										<tr>
-																											<td width='60px'><div
-																													class='msgSubmit_overToPoint'>联系电话：</div></td>
-																											<td><input class='g_itext msgSubmit_ipt'
-																												id='reqPhone' name='联系电话' type='text'
-																												size='14' maxlength='50'></td>
-																										</tr>
-																									</table>
-																								</div>
-																							</div>
-																							<div class='msgAddText'>
-																								<div style='margin-bottom: 4px;'>
-																									<table width='100%' cellpadding='0'
-																										cellspacing='0'>
-																										<tr>
-																											<td width='60px'><div
-																													class='msgSubmit_overToPoint'>内容：</div></td>
-																											<td><div>
-																													<textarea class='g_textarea'
-																														id='reqContent' rows='3' cols='50'
-																														style='width: 87%;' maxlength='1000'></textarea>
-																												</div></td>
-																										</tr>
-																									</table>
-																								</div>
-																								<div class='msgAddButton'>
-																									<table width='100%' cellpadding='0'
-																										cellspacing='0'>
-																										<tr>
-																											<td width='60px'><div
-																													class='msgSubmit_overToPoint'>&nbsp;</div></td>
-																											<td><div style=''>
-																													<input class='g_ibutton'
-																														extClass='g_ibutton' type='button'
-																														onclick='Site.msgSubmitAddMsg(false, 410)'
-																														value='提交留言'>
-																												</div></td>
-																										</tr>
-																									</table>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight410'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom410' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left410'></td>
-																			<td class='center center410'></td>
-																			<td class='right right410'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat410'></div>
-																</div>
-
-																<div id='module429' _indexClass='formIndex5'
-																	class='form form429 formIndex5 formStyle33' title=''
-																	style='' _side='0' _inTab='0' _inMulMCol='0'
-																	_inFullmeasure='0' _autoHeight='1' _global='true'
-																	_independent='false'>
-																	<table class='formTop formTop429' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner429' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left429'></td>
-																			<td class='center center429' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle429'>
-																					<tr>
-																						<td class='titleLeft titleLeft429' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter429'
-																							valign='top'>
-																							<div class='titleText titleText429'>
-																								<span> 相关链接</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight429' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right429'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle429' style=''
-																		cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft429'></td>
-																			<td class='formMiddleCenter formMiddleCenter429'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent429  '>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://www.spb.gov.cn/'
-																							target='_blank'>中国邮政管理局</a>
-																					</div>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://www.cea.org.cn/'
-																							target='_blank'>中国快递协会</a>
-																					</div>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://zj.spb.gov.cn/'
-																							target='_blank'>浙江省邮政管理局</a>
-																					</div>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://www.zjkd.org/'
-																							target='_blank'>浙江省快递行业协会</a>
-																					</div>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://www.sxkdw.com/'
-																							target='_blank'>绍兴市快递行业协会</a>
-																					</div>
-																					<div class='link-v-container'>
-																						<a hidefocus='true'
-																							style='text-decoration: none; font-family: SimSun; color: #000;'
-																							class='link-h' href='http://www.kdxh.net.cn/'
-																							target='_blank'>温州市快递行业协会</a>
-																					</div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight429'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom429' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left429'></td>
-																			<td class='center center429'></td>
-																			<td class='right right429'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat429'></div>
-																</div>
-
-
-															</div>
-															<div class="containerFormsLeftBottom"></div>
-														</td>
-
-														<td valign="top" id="containerFormsCenter"
-															class="containerFormsCenter">
-															<div class='bannerTop'></div>
-															<div id='banner' class='banner extBanner'
-																style='background: url(http://0.ss.faidns.com/image/template/banners/1751.jpg?v=) 50% 50% no-repeat; height: 310px'
-																normalheight='310' defaultwidth='740'>
-																<div class='banner defaultBannerMain'
-																	style='background: url(http://0.ss.faidns.com/image/template/banners/1751.jpg?v=) 50% 50% no-repeat; height: 310px'></div>
-																<div class='defaultBannerEdge defaultBannerEdgeRight'></div>
-																<div class='defaultBannerEdge defaultBannerEdgeLeft'></div>
-															</div>
-
-															<div id="centerTopForms"
-																class="column forms mainForms centerTopForms"
-																style='display: none'></div>
-															<div class="containerFormsCenterMiddle">
-																<div id="middleLeftForms"
-																	class="column forms mainForms middleLeftForms">
-																	<div id='module314' _indexClass='formIndex1'
-																		class='form form314 formIndex1 formStyle7' title=''
-																		style='' _side='0' _inTab='0' _inMulMCol='0'
-																		_inFullmeasure='0' _autoHeight='0' _global='false'
-																		_independent='false'>
-																		<table class='formTop formTop314' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='left'></td>
-																				<td class='center'></td>
-																				<td class='right'></td>
-																			</tr>
-																		</table>
-																		<table class='formBanner formBanner314'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left314'></td>
-																				<td class='center center314' valign='top'>
-																					<table cellpadding='0' cellspacing='0'
-																						class='formBannerTitle formBannerTitle314'>
-																						<tr>
-																							<td class='titleLeft titleLeft314' valign='top'>
-																							</td>
-																							<td class='titleCenter titleCenter314'
-																								valign='top'>
-																								<div class='titleText titleText314'>
-																									<span> 行业公告</span>
-																								</div>
-																							</td>
-																							<td class='titleRight titleRight314' valign='top'>
-																							</td>
-																						</tr>
-																					</table>
-																					<div class='formBannerOther formBannerOther314'>
-																						<div class='formBannerMore formBannerMore314'
-																							style=''>
-																							<span
-																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='news/newsList.do?newstype=3'><span>更多&#x3e;&#x3e;</span></a>
-																							</span>
-																						</div>
-																						&nbsp;
-																					</div>
-																				</td>
-																				<td class='right right314'></td>
-																			</tr>
-																		</table>
-																		<table class='formMiddle formMiddle314'
-																			style='height: 259px;' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft314'></td>
-																				<td class='formMiddleCenter formMiddleCenter314'
-																					valign='top'>
-																					<div
-																						class='formMiddleContent formMiddleContent314  '>
-																						<div>
-																							<div class='newsList ' id='newsList314'>
-																								<c:forEach items="${hyList}" var="item"
-																									varStatus="status">
-																									<c:set var="time" value="${item.crtime}" />
-																									<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-																									<div topClassName='top1' topSwitch='on'
-																										newsId='100' newsName=''
-																										class='line g_item    '>
-																										<table id='lineBody100' class='lineBody'
-																											cellpadding='0' cellspacing='0'>
-																											<tbody>
-
-																												<tr id='module314tr100'>
-																													<td class='contentLineIcon'></td>
-																													<td class='newsTitle' valign='top'>
-																														<div class=''></div> <a hidefocus='true'
-																														href="news/newsDetail.do?newsid=${item.newsid}"
-																														target=_blank title="${item.title}">${item.title}</a>
-																													</td>
-																													<td class='newsCalendar' valign='top'><a
-																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334"
-																														target=_blank>${date}</a></td>
-																												</tr>
-
-																											</tbody>
-																										</table>
-																									</div>
-																									<div class='separatorLine g_separator '></div>
-																								</c:forEach>
-
-																								<div class='separatorLine g_separator '
-																									style='border-color: transparent'></div>
-																								<div class='clearfloat'></div>
-																							</div>
-																						</div>
-																					</div>
-																				</td>
-																				<td class='formMiddleRight formMiddleRight314'></td>
-																			</tr>
-																		</table>
-																		<table class='formBottom formBottom332'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left332'></td>
-																				<td class='center center332'></td>
-																				<td class='right right332'></td>
-																			</tr>
-																		</table>
-																		<div class='clearfloat clearfloat332'></div>
-																	</div>
-																	<div id='module334' _indexClass='formIndex2'
-																		class='form form334 formIndex2 formStyle7' title=''
-																		style='' _side='0' _inTab='0' _inMulMCol='0'
-																		_inFullmeasure='0' _autoHeight='1' _global='false'
-																		_independent='false'>
-																		<table class='formTop formTop334' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='left'></td>
-																				<td class='center'></td>
-																				<td class='right'></td>
-																			</tr>
-																		</table>
-																		<table class='formBanner formBanner334'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left334'></td>
-																				<td class='center center334' valign='top'>
-																					<table cellpadding='0' cellspacing='0'
-																						class='formBannerTitle formBannerTitle334'>
-																						<tr>
-																							<td class='titleLeft titleLeft334' valign='top'>
-																							</td>
-																							<td class='titleCenter titleCenter334'
-																								valign='top'>
-																								<div class='titleText titleText334'>
-																									<span> 会员风采</span>
-																								</div>
-																							</td>
-																							<td class='titleRight titleRight334' valign='top'>
-																							</td>
-																						</tr>
-																					</table>
-																					<div class='formBannerOther formBannerOther334'>
-																						<div class='formBannerMore formBannerMore334'
-																							style=''>
-																							<span
-																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='news/newsList.do?newstype=4'><span>更多&#x3e;&#x3e;</span></a>
-																							</span>
-																						</div>
-																						&nbsp;
-																					</div>
-																				</td>
-																				<td class='right right334'></td>
-																			</tr>
-																		</table>
-																		<table class='formMiddle formMiddle334'
-																			style='height: 259px;' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft334'></td>
-																				<td class='formMiddleCenter formMiddleCenter334'
-																					valign='top'>
-																					<div
-																						class='formMiddleContent formMiddleContent334  '>
-																						<div>
-																							<div class='newsList ' id='newsList334'>
-																								<c:forEach items="${fcList}" var="item"
-																									varStatus="status">
-																									<c:set var="time" value="${item.crtime}" />
-																									<c:set var="date"
-																										value="${fn:substring(time, 0, 10)}" />
-																									<div topClassName='top1' topSwitch='on'
-																										newsId='100' newsName=''
-																										class='line g_item    '>
-																										<table id='lineBody100' class='lineBody'
-																											cellpadding='0' cellspacing='0'>
-																											<tbody>
-
-																												<tr id='module314tr100'>
-																													<td class='contentLineIcon'></td>
-																													<td class='newsTitle' valign='top'>
-																														<div class=''></div> <a hidefocus='true'
-																														href="news/newsDetail.do?newsid=${item.newsid}"
-																														target=_blank title="${item.title}">${item.title}</a>
-																													</td>
-																													<td class='newsCalendar' valign='top'><a
-																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334"
-																														target=_blank>${date}</a></td>
-																												</tr>
-
-																											</tbody>
-																										</table>
-																									</div>
-																									<div class='separatorLine g_separator '></div>
-																								</c:forEach>
-																								<div class='separatorLine g_separator '
-																									style='border-color: transparent'></div>
-																								<div class='clearfloat'></div>
-																							</div>
-																						</div>
-																					</div>
-																				</td>
-																				<td class='formMiddleRight formMiddleRight334'></td>
-																			</tr>
-																		</table>
-																		<table class='formBottom formBottom334'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left334'></td>
-																				<td class='center center334'></td>
-																				<td class='right right334'></td>
-																			</tr>
-																		</table>
-																		<div class='clearfloat clearfloat334'></div>
-																	</div>
-
-
-																</div>
-																<div id="middleRightForms"
-																	class="column forms mainForms middleRightForms">
-																	<div id='module332' _indexClass='formIndex1'
-																		class='form form332 formIndex1 formStyle7' title=''
-																		style='' _side='0' _inTab='0' _inMulMCol='0'
-																		_inFullmeasure='0' _autoHeight='1' _global='false'
-																		_independent='false'>
-																		<table class='formTop formTop332' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='left'></td>
-																				<td class='center'></td>
-																				<td class='right'></td>
-																			</tr>
-																		</table>
-																		<table class='formBanner formBanner332'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left332'></td>
-																				<td class='center center332' valign='top'>
-																					<table cellpadding='0' cellspacing='0'
-																						class='formBannerTitle formBannerTitle332'>
-																						<tr>
-																							<td class='titleLeft titleLeft332' valign='top'>
-																							</td>
-																							<td class='titleCenter titleCenter332'
-																								valign='top'>
-																								<div class='titleText titleText332'>
-																									<span> 协会动态</span>
-																								</div>
-																							</td>
-																							<td class='titleRight titleRight332' valign='top'>
-																							</td>
-																						</tr>
-																					</table>
-																					<div class='formBannerOther formBannerOther332'>
-																						<div class='formBannerMore formBannerMore332'
-																							style=''>
-																							<span
-																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='news/newsList.do?newstype=1'><span>更多&#x3e;&#x3e;</span></a>
-																							</span>
-																						</div>
-																						&nbsp;
-																					</div>
-																				</td>
-																				<td class='right right332'></td>
-																			</tr>
-																		</table>
-																		<table class='formMiddle formMiddle332'
-																			style='height: 259px;' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft332'></td>
-																				<td class='formMiddleCenter formMiddleCenter332'
-																					valign='top'>
-																					<div
-																						class='formMiddleContent formMiddleContent332  '>
-																						<div>
-																							<div class='newsList ' id='newsList332'>
-																								<c:forEach items="${xhList}" var="item"
-																									varStatus="status">
-																									<c:set var="time" value="${item.crtime}" />
-																									<c:set var="date"
-																										value="${fn:substring(time, 0, 10)}" />
-																									<div topClassName='top1' topSwitch='on'
-																										newsId='100' newsName=''
-																										class='line g_item    '>
-																										<table id='lineBody100' class='lineBody'
-																											cellpadding='0' cellspacing='0'>
-																											<tbody>
-
-																												<tr id='module314tr100'>
-																													<td class='contentLineIcon'></td>
-																													<td class='newsTitle' valign='top'>
-																														<div class=''></div> <a hidefocus='true'
-																														href="news/newsDetail.do?newsid=${item.newsid}"
-																														target=_blank title="${item.title}">${item.title}</a>
-																													</td>
-																													<td class='newsCalendar' valign='top'><a
-																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334"
-																														target=_blank>${date}</a></td>
-																												</tr>
-
-																											</tbody>
-																										</table>
-																									</div>
-																									<div class='separatorLine g_separator '></div>
-																								</c:forEach>
-																								<div class='separatorLine g_separator '
-																									style='border-color: transparent'></div>
-																								<div class='clearfloat'></div>
-																							</div>
-																						</div>
-																					</div>
-																				</td>
-																				<td class='formMiddleRight formMiddleRight332'></td>
-																			</tr>
-																		</table>
-																		<table class='formBottom formBottom332'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left332'></td>
-																				<td class='center center332'></td>
-																				<td class='right right332'></td>
-																			</tr>
-																		</table>
-																		<div class='clearfloat clearfloat332'></div>
-																	</div>
-																	<div id='module333' _indexClass='formIndex2'
-																		class='form form333 formIndex2 formStyle7' title=''
-																		style='' _side='0' _inTab='0' _inMulMCol='0'
-																		_inFullmeasure='0' _autoHeight='1' _global='false'
-																		_independent='false'>
-																		<table class='formTop formTop333' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='left'></td>
-																				<td class='center'></td>
-																				<td class='right'></td>
-																			</tr>
-																		</table>
-																		<table class='formBanner formBanner333'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left333'></td>
-																				<td class='center center333' valign='top'>
-																					<table cellpadding='0' cellspacing='0'
-																						class='formBannerTitle formBannerTitle333'>
-																						<tr>
-																							<td class='titleLeft titleLeft333' valign='top'>
-																							</td>
-																							<td class='titleCenter titleCenter333'
-																								valign='top'>
-																								<div class='titleText titleText333'>
-																									<span> 政策法规</span>
-																								</div>
-																							</td>
-																							<td class='titleRight titleRight333' valign='top'>
-																							</td>
-																						</tr>
-																					</table>
-																					<div class='formBannerOther formBannerOther333'>
-																						<div class='formBannerMore formBannerMore333'
-																							style=''>
-																							<span
-																								style='_display: inline-block; _position: relative;'>
-																								<a hidefocus='true' href='news/newsList.do?newstype=2'><span>更多&#x3e;&#x3e;</span></a>
-																							</span>
-																						</div>
-																						&nbsp;
-																					</div>
-																				</td>
-																				<td class='right right333'></td>
-																			</tr>
-																		</table>
-																		<table class='formMiddle formMiddle333'
-																			style='height: 259px;' cellpadding='0'
-																			cellspacing='0'>
-																			<tr>
-																				<td class='formMiddleLeft formMiddleLeft333'></td>
-																				<td class='formMiddleCenter formMiddleCenter333'
-																					valign='top'>
-																					<div
-																						class='formMiddleContent formMiddleContent333  '>
-																						<div>
-																							<div class='newsList ' id='newsList333'>
-																								<c:forEach items="${zcList}" var="item"
-																									varStatus="status">
-																									<c:set var="time" value="${item.crtime}" />
-																									<c:set var="date"
-																										value="${fn:substring(time, 0, 10)}" />
-																									<div topClassName='top1' topSwitch='on'
-																										newsId='100' newsName=''
-																										class='line g_item    '>
-																										<table id='lineBody100' class='lineBody'
-																											cellpadding='0' cellspacing='0'>
-																											<tbody>
-
-																												<tr id='module314tr100'>
-																													<td class='contentLineIcon'></td>
-																													<td class='newsTitle' valign='top'>
-																														<div class=''></div> <a hidefocus='true'
-																														href="news/newsDetail.do?newsid=${item.newsid}"
-																														target=_blank title="${item.title}">${item.title}</a>
-																													</td>
-																													<td class='newsCalendar' valign='top'><a
-																														hidefocus='true'
-																														href="nd.jsp?id=31&_np=2_334"
-																														target=_blank>${date}</a></td>
-																												</tr>
-
-																											</tbody>
-																										</table>
-																									</div>
-																									<div class='separatorLine g_separator '></div>
-																								</c:forEach>
-																								<div class='separatorLine g_separator '
-																									style='border-color: transparent'></div>
-																								<div class='clearfloat'></div>
-																							</div>
-																						</div>
-																					</div>
-																				</td>
-																				<td class='formMiddleRight formMiddleRight333'></td>
-																			</tr>
-																		</table>
-																		<table class='formBottom formBottom333'
-																			cellpadding='0' cellspacing='0'>
-																			<tr>
-																				<td class='left left333'></td>
-																				<td class='center center333'></td>
-																				<td class='right right333'></td>
-																			</tr>
-																		</table>
-																		<div class='clearfloat clearfloat333'></div>
-																	</div>
-																</div>
-															</div>
-															<div id="centerBottomForms"
-																class="column forms mainForms centerBottomForms">
-																<div id='module393' _indexClass='formIndex1'
-																	class='form form393 formIndex1 formStyle3' title=''
-																	style='' _side='0' _inTab='0' _inMulMCol='0'
-																	_inFullmeasure='0' _autoHeight='0' _global='false'
-																	_independent='false'>
-																	<table class='formTop formTop393' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner393' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left393'></td>
-																			<td class='center center393' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle393'>
-																					<tr>
-																						<td class='titleLeft titleLeft393' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter393'
-																							valign='top'>
-																							<div class='titleText titleText393'>
-																								<span> 活动图片</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight393' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right393'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle393'
-																		style='height: 219px;' cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft393'></td>
-																			<td class='formMiddleCenter formMiddleCenter393'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent393  '>
-																					<div class='productMarqueeForms' newMarqueeToward=0>
-																						<div class='demo'>
-																							<div class='demo0' id='demo0393'>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='6' productName='东莞（韶关）工业园'
-																									class='productMarqueeForm ' faiWidth='160'
-																									faiHeight='138'>
-																									<div id='m393marqueeProduct6' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=6&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAg-9fsjwUowM-C8AEwxAI4mQI!160x160.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='东莞（韶关）工业园' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='东莞（韶关）工业园'
-																											href='pd.jsp?id=6&_pp=2_393' target='_blank'>东莞（韶关）工业园</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='7' productName='东莞生态园'
-																									class='productMarqueeForm ' faiWidth='140'
-																									faiHeight='120'>
-																									<div id='m393marqueeProduct7' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=7&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAgkNjsjwUoqcbIsQYwjAE4eA.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='东莞生态园' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='东莞生态园'
-																											href='pd.jsp?id=7&_pp=2_393' target='_blank'>东莞生态园</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='8' productName='惠州大亚湾石化工业区'
-																									class='productMarqueeForm ' faiWidth='160'
-																									faiHeight='137'>
-																									<div id='m393marqueeProduct8' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=8&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAgndjsjwUorqf32gUwzAE4rwE!160x160.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='惠州大亚湾石化工业区' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='惠州大亚湾石化工业区'
-																											href='pd.jsp?id=8&_pp=2_393' target='_blank'>惠州大亚湾石化工业区</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='9' productName='江高产业转移园区'
-																									class='productMarqueeForm ' faiWidth='160'
-																									faiHeight='137'>
-																									<div id='m393marqueeProduct9' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=9&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAgptjsjwUoiP76DjD9ATjaAQ!160x160.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='江高产业转移园区' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='江高产业转移园区'
-																											href='pd.jsp?id=9&_pp=2_393' target='_blank'>江高产业转移园区</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='10' productName='茂名石化工业区'
-																									class='productMarqueeForm ' faiWidth='140'
-																									faiHeight='120'>
-																									<div id='m393marqueeProduct10' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=10&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAgstjsjwUonrOSrgMwjAE4eA.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='茂名石化工业区' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='茂名石化工业区'
-																											href='pd.jsp?id=10&_pp=2_393' target='_blank'>茂名石化工业区</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='11' productName='台山工业新城'
-																									class='productMarqueeForm ' faiWidth='140'
-																									faiHeight='120'>
-																									<div id='m393marqueeProduct11' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=11&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAgydjsjwUo_L2ijgQwjAE4eA.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='台山工业新城' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='台山工业新城'
-																											href='pd.jsp?id=11&_pp=2_393' target='_blank'>台山工业新城</a>
-																									</div>
-																								</div>
-																								<div topClassName='top1' topSwitch='on'
-																									productId='12' productName='珠海航空产业园'
-																									class='productMarqueeForm ' faiWidth='140'
-																									faiHeight='120'>
-																									<div id='m393marqueeProduct12' class='imgDiv'
-																										style='width: 140px; height: 120px;'>
-																										<table cellpadding='0' cellspacing='0'>
-																											<tr>
-																												<td valign='middle' align='center'><a
-																													hidefocus='true'
-																													href='pd.jsp?id=12&_pp=2_393'
-																													target='_blank'> <img
-																														src='http://1761673.s21i-1.faidns.com/2/ABUIABACGAAg0djsjwUosouDjQcwjAE4eA.jpg'
-																														style='width: 140px; height: 120px;'
-																														alt='珠海航空产业园' title='' />
-																												</a></td>
-																											</tr>
-																										</table>
-																									</div>
-																									<div
-																										class='propDiv productName propWordWrapDiv'
-																										style='text-align: center'>
-																										<a hidefocus='true' title='珠海航空产业园'
-																											href='pd.jsp?id=12&_pp=2_393' target='_blank'>珠海航空产业园</a>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight393'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom393' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left393'></td>
-																			<td class='center center393'></td>
-																			<td class='right right393'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat393'></div>
-																</div>
-
-																<div id='module434' _indexClass='formIndex2'
-																	class='form form434 formIndex2 formStyle33' title=''
-																	style='' _side='0' _inTab='0' _inMulMCol='0'
-																	_inFullmeasure='0' _autoHeight='1' _global='false'
-																	_independent='false'>
-																	<table class='formTop formTop434' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left'></td>
-																			<td class='center'></td>
-																			<td class='right'></td>
-																		</tr>
-																	</table>
-																	<table class='formBanner formBanner434' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left434'></td>
-																			<td class='center center434' valign='top'>
-																				<table cellpadding='0' cellspacing='0'
-																					class='formBannerTitle formBannerTitle434'>
-																					<tr>
-																						<td class='titleLeft titleLeft434' valign='top'>
-																						</td>
-																						<td class='titleCenter titleCenter434'
-																							valign='top'>
-																							<div class='titleText titleText434'>
-																								<span> 快递链接</span>
-																							</div>
-																						</td>
-																						<td class='titleRight titleRight434' valign='top'>
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																			<td class='right right434'></td>
-																		</tr>
-																	</table>
-																	<table class='formMiddle formMiddle434' style=''
-																		cellpadding='0' cellspacing='0'>
-																		<tr>
-																			<td class='formMiddleLeft formMiddleLeft434'></td>
-																			<td class='formMiddleCenter formMiddleCenter434'
-																				valign='top'>
-																				<div
-																					class='formMiddleContent formMiddleContent434  '>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.zjs.com.cn/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/zjs_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.deppon.com/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/dbwl_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.ems.com.cn/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/ems_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.qfkd.com.cn/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/qfkd_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p'
-																									href='http://www.sf-express.com/cn/sc/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/sf_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p'
-																									href='http://www.chinapost.com.cn'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/yzgn_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p'
-																									href='http://www.yto.net.cn/gw/index/index.html'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/yt_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.yundaex.com/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/yd_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.ttkdex.com/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/tt_logo.gif' title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																					<div class='link-p-container'>
-																						<table cellpadding='0' cellspacing='0'>
-																							<tr>
-																								<td align='center' valign='bottom'
-																									style='height: 36px;'><a hidefocus='true'
-																									class='link-p' href='http://www.sto.cn/'
-																									target='_blank'><img
-																										style='width: 111px; height: 36px;'
-																										src='logo/st_logo.gif'
-																										data-original='http://5685869.s21i-5.faidns.com/3/ABUIABADGAAg8_HHqQUogsCOTzCUATgw.gif'
-																										title='' alt='' /></a></td>
-																							</tr>
-																						</table>
-																					</div>
-																				</div>
-																			</td>
-																			<td class='formMiddleRight formMiddleRight434'></td>
-																		</tr>
-																	</table>
-																	<table class='formBottom formBottom434' cellpadding='0'
-																		cellspacing='0'>
-																		<tr>
-																			<td class='left left434'></td>
-																			<td class='center center434'></td>
-																			<td class='right right434'></td>
-																		</tr>
-																	</table>
-																	<div class='clearfloat clearfloat434'></div>
-																</div>
-
-
-															</div>
-														</td>
-
-														<td valign="top" id="containerFormsRight"
-															class="containerFormsRight" style='display: none'>
-															<div class="containerFormsRightTop"></div>
-															<div id="rightForms"
-																class="column forms sideForms rightForms"></div>
-															<div class="containerFormsRightBottom"></div>
-														</td>
-													</tr>
-												</table>
-
-												<div id="bottomForms"
-													class="column forms mainForms bottomForms"
-													style='display: none'></div>
-
-												<div id="containerPlaceholder" class="containerPlaceholder"
-													style='height: 82px;'></div>
-
-											</div>
-
-											<div id="containerMiddleCenterBottom"
-												class="containerMiddleCenterBottom"></div>
-
-										</td>
-
-										<td id="containerMiddleRight" class="containerMiddleRight"></td>
-									</tr>
-								</table>
-
-								<table class="containerBottom" cellpadding='0' cellspacing='0'>
-									<tr valign='top'>
-										<td class="left"></td>
-										<td class="center"></td>
-										<td class="right"></td>
-									</tr>
-								</table>
-							</div>
-
-						</div>
-					</td>
-				</tr>
-			</table>
-
-			<div id="fullmeasureBottomForms"
-				class="fullmeasureContainer forms sideForms fullmeasureForms fullmeasureBottomForms"
-				style='display: none'>
-
-				<wbr />
-			</div>
-
-			<table class="absBottomTable" cellpadding="0" cellspacing="0">
-				<tr>
-					<td align="center">
-						<div id="absBottomForms" class="forms sideForms absForms">
-							<div style="position: absolute;"></div>
-							<!-- for ie6 -->
-
-						</div>
-					</td>
-				</tr>
-			</table>
-
-			<table id="webFooterTable" class="webFooterTable" cellpadding="0"
-				cellspacing="0">
-				<tr>
-					<td align="center" valign="top">
-						<div id="webFooter" class="webFooter">
-							<div id="footer" class="footer">
-								<table class="footerTop" cellpadding="0" cellspacing="0">
-									<tr valign="top">
-										<td class="topLeft"></td>
-										<td class="topCenter"></td>
-										<td class="topRight"></td>
-									</tr>
-								</table>
-								<table class="footerMiddle" cellpadding="0" cellspacing="0">
-									<tr valign="top">
-										<td class="middleLeft"></td>
-										<td class="middleCenter" align="center">
-											<div class="footerContent">
-												<div id='footerNav' class='footerNav  footerPattern1'
-													cusheight='0'>
-													<div class='footerItemListBox'>
-														<ul class='footerItemListContainer'>
-															<li class='footerItemSection'>
-																<table class='footerItemContainer'>
-																	<tr>
-																		<td class='footerItemContainer-firstTd'>
-																			<div class='footerItemPic'>
-																				<a href='javascript:;' class='footerItemNormalPic '
-																					id='footerItemPic2'> </a>
-																			</div>
-																		</td>
-																		<td class='footerItemContainer-secondTd'>
-																			<div class='footerItemContent'>
-																				<div class='footerItemTop'>
-																					<a class='footerItemTopLink' href='index.htm'
-																						child='0'>首页</a>
-
-																				</div>
-																				<div class="footerItemMiddle">
-																					<div class="footSplitline"></div>
-																				</div>
-																			</div>
-																		</td>
-																	</tr>
-																</table>
-															</li>
-															<li class='footerItemSpacing'>
-																<div class='footerVerticalLine'></div>
-															</li>
-															<li class='footerItemSection'>
-																<table class='footerItemContainer'>
-																	<tr>
-																		<td class='footerItemContainer-firstTd'>
-																			<div class='footerItemPic'>
-																				<a href='javascript:;' class='footerItemNormalPic '
-																					id='footerItemPic5'> </a>
-																			</div>
-																		</td>
-																		<td class='footerItemContainer-secondTd'>
-																			<div class='footerItemContent'>
-																				<div class='footerItemTop'>
-																					<a class='footerItemTopLink' href='joinUs.htm'
-																						child='0'>加入我们</a>
-
-
-																				</div>
-																				<div class="footerItemMiddle">
-																					<div class="footSplitline"></div>
-																				</div>
-																			</div>
-																		</td>
-																	</tr>
-																</table>
-															</li>
-															<li class='footerItemSpacing'>
-																<div class='footerVerticalLine'></div>
-															</li>
-															<li class='footerItemSection'>
-																<table class='footerItemContainer'>
-																	<tr>
-																		<td class='footerItemContainer-firstTd'>
-																			<div class='footerItemPic'>
-																				<a href='javascript:;' class='footerItemNormalPic '
-																					id='footerItemPic6'> </a>
-																			</div>
-																		</td>
-																		<td class='footerItemContainer-secondTd'>
-																			<div class='footerItemContent'>
-																				<div class='footerItemTop'>
-																					<a class='footerItemTopLink' href='contactUS.htm'
-																						child='0'>联系我们</a>
-
-																				</div>
-																				<div class="footerItemMiddle">
-																					<div class="footSplitline"></div>
-																				</div>
-																			</div>
-																		</td>
-																	</tr>
-																</table>
-															</li>
-															<li class='footerItemSpacing footerItemSpacing_end'>
-																<div class='footerVerticalLine'></div>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td class="middleRight"></td>
-									</tr>
-								</table>
-								<table class="footerBottom" cellpadding='0' cellspacing='0'>
-									<tr valign='top'>
-										<td class="bottomLeft"></td>
-										<td class="bottomCenter"></td>
-										<td class="bottomRight"></td>
-									</tr>
-								</table>
-
-							</div>
-
-						</div>
-					</td>
-				</tr>
-			</table>
-
-			<div class="clearfloat"></div>
-		</div>
-	</div>
-
-	<div class="floatLeftTop">
-		<div id="floatLeftTopForms" class="forms sideForms floatForms">
-
-		</div>
-	</div>
-	<div class="floatRightTop">
-		<div id="floatRightTopForms" class="forms sideForms floatForms">
-
-		</div>
-	</div>
-	<div class="floatLeftBottom">
-		<div id="floatLeftBottomForms" class="forms sideForms floatForms">
-
-		</div>
-	</div>
-	<div class="floatRightBottom">
-		<div id="floatRightBottomForms" class="forms sideForms floatForms">
-
-		</div>
-	</div>
-	<script type="text/javascript" src="js/jquery-core.min.js"></script>
-	<script type="text/javascript" src="js/jquery-mousewheel.min.js"></script>
-	<script type="text/javascript" src="js/fai.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-core.min.js"></script>
-	<script type="text/javascript" src="js/site.min.js"></script>
-	<script type="text/javascript" src="js/2052.min.js"></script>
-	<script type="text/javascript" src="js/ZeroClipboard.min.js"></script>
-
+	<meta name="keywords" content="浙江,快递,浙江快递,快递协会,行业协会,浙江快递行业协会" />
 
 	<script type="text/javascript">
-		var _faiAjax = function() {
-			//for regexp
-			var r = /\?/;
-			var _o = {
-				type : "get",
-				url : "",
-				data : "",
-				error : function() {
-				},
-				success : function() {
-				}
-			};
-			var _sendRequest = function(o) {
-				var xmlhttp = null;
-				//init option code
-				o.type = o.type || _o.type;
-				o.url = o.url || _o.url;
-				o.data = o.data || _o.data;
-				o.error = o.error || _o.error;
-				o.success = o.success || _o.success;
-				if (window.XMLHttpRequest) {
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp = new XMLHttpRequest();
-				} else {
-					// code for IE6, IE5
-					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				//the instructions param takes the form of an eval statement
-				if (o.type != "post") {
-					o.url += (this.r.test(o.url) ? "&" : "?") + o.data;
-					xmlhttp.open("GET", o.url, true);
-					xmlhttp.onreadystatechange = function() {
-						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-							o.success(xmlhttp.responseText);
-						} else if (o.error) {
-							o.error();
-						}
-					}
-					xmlhttp.send();
-				} else {
-					xmlhttp.open("POST", o.url, true);
-					//Send the proper header information along with the request
-					xmlhttp.setRequestHeader("Content-type",
-							"application/x-www-form-urlencoded; charset=UTF-8");
-					xmlhttp.onreadystatechange = function() {
-						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-							o.success(xmlhttp.responseText);
-						} else {
-							o.error();
-						}
-					}
-					xmlhttp.send(o.data);
-				}
-			}
-			return {
-				ajax : function(option) {
-					try {
-						//此次调用的错误不让抛出给window。防止函数重入
-						_sendRequest(option);
-					} catch (e) {
-						//alert(e);
-					}
-				}
-			};
-		}();
-		var _jsErrCahche = [];
-		window.onerror = function(sMsg, sUrl, sLine) {
-			if (typeof Site == 'undefined') {
-				alert('您的网页未加载完成，请尝试按“CTRL+功能键F5”重新加载。');
-			}
-			if (sLine < 1 || typeof sMsg != 'string' || sMsg.length < 1) {
-				return;
-			}
-
-			var log = "Error:" + sMsg + ";Line:" + sLine + ";Url:" + sUrl;
-			var alertLog = "Error:" + sMsg + "\n" + "Line:" + sLine + "\n"
-					+ "Url:" + sUrl + "\n";
-			var encodeUrl = function(url) {
-				return typeof url === "undefined" ? ""
-						: encodeURIComponent(url);
-			};
-
-			var ajax = true;
-			var obj = {
-				'm' : sMsg,
-				'u' : sUrl,
-				'l' : sLine
-			};
-			for (var i = 0; i < _jsErrCahche.length; i++) {
-				if (_jsErrCahche[i].m == obj.m && _jsErrCahche[i].u == obj.u
-						&& _jsErrCahche[i].l == obj.l) {
-					ajax = false;
-					break;
-				}
-			}
-
-			if (false) {
-				alert(alertLog);
-			}
-		};
-		Fai.top = window;
-		var bgmCloseToOpen = false;
-		var _devMode = false;
-		var _colOtherStyleData = {
-			"independentList" : [],
-			"y" : 82,
-			"h" : 0,
-			"layout4Width" : 0,
-			"layout5Width" : 0
-		}; // 当前页面的数据    
-		var _templateOtherStyleData = {
-			"h" : 630,
-			"independentList" : [],
-			"y" : 0,
-			"layout4Width" : 0,
-			"layout5Width" : 0
-		}; // 全局的数据   
-		$(function() {
-			if (false) {
-				Fai.ing("", true);
-			}
-			//topBarMember 
-
-			// 管理态下, QQ/微博登陆 禁止登陆
-			if (_manageMode) {
-				$('#memberBar .l_Btn').click(function() {
-					Fai.ing('您目前处于网站管理状态，请先点击网站右上方的“退出”后再登录会员。', true);
-				});
-				//绑定放大镜遮罩效果事件
-				Site.bindEventToOverLayer();
-			}
-
-			var faiscoAd = $.cookie('faiscoAd', {
-				path : '/'
-			});
-
-			if (true && faiscoAd !== "false") {
-				$(".siteAdvertisement_box").show();
-			}
-
-			// 绑定退出事件
-			$(window).bind("beforeunload", function(e) {
-
-				if (bgmCloseToOpen) {
-					Site.bgmFlushContinue();
-				}
-
-			});
-
-			Site.initTemplateLayout(7, true, false);
-
-			// spider统计
-
-			//前端性能数据上报
-			Site.report();
-			//保留旧用户的初始化版式区域4 和区域5 中，区域4的padding-right空间
-			Site.colLayout45Width();
-
-			Site.initCorpTitleJump();
-			Site.initModuleDate.init(36, 1);
-			Site.initModuleSiteSearch('408');
-
-			Site.initModuleMemberLogin(435, 2, true, false);
-
-			Site
-					.initBanner(
-							{
-								"_open" : true,
-								"data" : [
-										{
-											"title" : "",
-											"desc" : "",
-											"imgWidth" : 740,
-											"imgHeight" : 310,
-											"src" : "http://0.ss.faidns.com/image/template/banners/1751.jpg?v=",
-											"edgeLeft" : "",
-											"edgeRight" : ""
-										},
-										{
-											"title" : "",
-											"desc" : "",
-											"imgWidth" : 740,
-											"imgHeight" : 310,
-											"src" : "http://0.ss.faidns.com/image/template/banners/1745.jpg?v=",
-											"edgeLeft" : "",
-											"edgeRight" : ""
-										},
-										{
-											"title" : "",
-											"desc" : "",
-											"imgWidth" : 740,
-											"imgHeight" : 310,
-											"src" : "http://0.ss.faidns.com/image/template/banners/1752.jpg?v=",
-											"edgeLeft" : "",
-											"edgeRight" : ""
-										} ],
-								"width" : 740,
-								"height" : 310,
-								"playTime" : 4000,
-								"animateTime" : 1500,
-								"from" : "banner",
-								"btnType" : 2,
-								"wideScreen" : false
-							}, {
-								"_open" : true,
-								"type" : 34,
-								"position" : 0,
-								"positionTop" : 0,
-								"positionLeft" : 0,
-								"text1" : "自定义文字1",
-								"text2" : "自定义文字2",
-								"style1" : "宋体",
-								"style2" : "宋体",
-								"color1" : "#000",
-								"color2" : "#FFFFFF",
-								"size1" : "50",
-								"size2" : "30"
-							}, 4);
-			Site.loadNewsList(314);
-
-			Site.loadNewsList(334);
-
-			Site.loadNewsList(332);
-
-			Site.loadNewsList(333);
-
-			Fai.top.Product393 = {};
-			Fai.top.Product393.ieOpt = {
-				"effType" : 1,
-				"borderType" : false,
-				"borderColor" : "#000",
-				"borderWidth" : 1,
-				"borderStyle" : 1,
-				"style" : 3
-			};
-			Fai.top.Product393.tgOpt = {
-				"mallShowBuy" : false,
-				"productSelect" : true,
-				"targetParent" : "productMarqueeForm",
-				"target" : "imgDiv",
-				"propNameShow" : true,
-				"productNameShow" : true,
-				"productTextCenter" : true,
-				"productNameWordWrap" : true
-			};
-			Fai.top.Product393.callbackArgs = [ {
-				"m393marqueeProduct6" : "[]",
-				"productName" : "东莞（韶关）工业园",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct7" : "[]",
-				"productName" : "东莞生态园",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct8" : "[]",
-				"productName" : "惠州大亚湾石化工业区",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct9" : "[]",
-				"productName" : "江高产业转移园区",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct10" : "[]",
-				"productName" : "茂名石化工业区",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct11" : "[]",
-				"productName" : "台山工业新城",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			}, {
-				"m393marqueeProduct12" : "[]",
-				"productName" : "珠海航空产业园",
-				"productBuyBtnText" : "购买",
-				"productBuyBtnClick" : ""
-			} ];
-			Site.loadProductMarquee(393, true, true, 0);
-			Fai.top.changeMarquee393 = function() {
-				Fai.stopInterval('marquee393');
-				Site.loadProductMarquee(393, true, true, 0);
-			};
-
-			Site.initPage(); // 这个要放在最后，因为模块组初始化时会把一些模块隐藏，导致没有高度，所以要放最后执行
-
-			setTimeout("afterModuleLoaded()", 0);
-
-			if (_manageMode) {
-
-				Site.initManagePage();
-
-			}
-
-			if (!_oem && _manageMode) {
-				Site.siteGuideInit();
-				if (false) {
-					$.cookie('_loadedRegStatIframe', true, {
-						expires : 2
-					});
-				}
-			}
-
-		});
-
-		function afterModuleLoaded() {
-			Site.initPage2();
-
-			Site.mallCartInit(_colId);
-		} // afterModuleLoaded end
-
-		var _portalHost = 'www.faisco.cn';
-
-		var _lcid = 2052;
-		var _userHostName = 'www.lpff1218.icoc.cc';
-		var _siteDomain = 'http://www.lpff1218.icoc.cc';
-		var _signupDays = 6;
-		var _cid = 5685869;
-		var _resRoot = 'http://0.ss.faidns.com';
-		var _colId = 2;
-		var _extId = 0;
-		var _fromColId = -1;
-		var _designAuth = false;
-		var _manageMode = false;
-		var _oem = false;
-		var _siteAuth = 0;
-		var _adm = false;
-		var _siteVer = 10;
-		var _manageStatus = false;
-		var nav2SubMenu = [];
-		var nav101SubMenu = [ {
-			"hidden" : false,
-			"colId" : 128,
-			"href" : "newsDetail.htm",
-			"target" : "",
-			"colName" : "协会章程",
-			"html" : "<span class='itemName0'>协会章程<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 127,
-			"href" : "newsDetail.htm",
-			"target" : "",
-			"colName" : "协会制度",
-			"html" : "<span class='itemName0'>协会制度<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 126,
-			"href" : "newsDetail.htm",
-			"target" : "",
-			"colName" : "协会成员",
-			"html" : "<span class='itemName0'>协会成员<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 130,
-			"href" : "newsDetail.htm",
-			"target" : "",
-			"colName" : "协会简介",
-			"html" : "<span class='itemName0'>协会简介<\/span>"
-		} ];
-		var nav102SubMenu = [];
-		var nav103SubMenu = [ {
-			"hidden" : false,
-			"colId" : 129,
-			"href" : "newsList.htm",
-			"target" : "",
-			"colName" : "行业法律法规",
-			"html" : "<span class='itemName0'>行业法律法规<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 9,
-			"href" : "newsList.htm",
-			"target" : "",
-			"colName" : "部门规章",
-			"html" : "<span class='itemName0'>部门规章<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 13,
-			"href" : "newsList.htm",
-			"target" : "",
-			"colName" : "规范性文件",
-			"html" : "<span class='itemName0'>规范性文件<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 17,
-			"href" : "newsList.htm",
-			"target" : "",
-			"colName" : "地方性法规",
-			"html" : "<span class='itemName0'>地方性法规<\/span>"
-		}, {
-			"hidden" : false,
-			"colId" : 12,
-			"href" : "newsList.htm",
-			"target" : "",
-			"colName" : "行业其他要求",
-			"html" : "<span class='itemName0'>行业其他要求<\/span>"
-		} ];
-		var nav131SubMenu = [];
-		var nav123SubMenu = [];
-		var nav18SubMenu = [];
-		var nav5SubMenu = [];
-		var nav6SubMenu = [];
-
-		var _customBackgroundData = {
-			"styleDefault" : true,
-			"s" : true,
-			"h" : false,
-			"r" : 3,
-			"o" : "",
-			"sw" : -1,
-			"e" : 0,
-			"wbh" : -1,
-			"wbw" : -1,
-			"clw" : -1,
-			"crw" : -1,
-			"id" : "",
-			"p" : "",
-			"bBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			},
-			"cBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			},
-			"cmBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			}
-		}; //自定义的数据
-		var _templateBackgroundData = {
-			"id" : "",
-			"bBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			},
-			"cBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			},
-			"cmBg" : {
-				"y" : 0,
-				"r" : 3,
-				"f" : "",
-				"p" : "",
-				"c" : "#000"
-			},
-			"s" : true,
-			"h" : false,
-			"r" : 3,
-			"o" : "",
-			"sw" : -1,
-			"e" : 0,
-			"wbh" : -1,
-			"wbw" : -1,
-			"clw" : -1,
-			"crw" : -1,
-			"p" : ""
-		};// 模版的数据
-		var _useTemplateBanner = true; // 是否使用全局模版
-		var _templateBannerData = {
-			"ce" : {
-				"c1" : "#000",
-				"c2" : "#FFFFFF"
-			},
-			"pl" : 0,
-			"n" : [
-					{
-						"t" : 0,
-						"i" : "1751",
-						"e" : 0,
-						"u" : "",
-						"el" : "",
-						"er" : "",
-						"p" : "http://0.ss.faidns.com/image/template/banners/1751.jpg?v=",
-						"w" : 740,
-						"h" : 310
-					},
-					{
-						"t" : 0,
-						"i" : "1745",
-						"e" : 0,
-						"u" : "",
-						"el" : "",
-						"er" : "",
-						"p" : "http://0.ss.faidns.com/image/template/banners/1745.jpg?v=",
-						"w" : 740,
-						"h" : 310
-					},
-					{
-						"t" : 0,
-						"i" : "1752",
-						"e" : 0,
-						"u" : "",
-						"el" : "",
-						"er" : "",
-						"p" : "http://0.ss.faidns.com/image/template/banners/1752.jpg?v=",
-						"w" : 740,
-						"h" : 310
-					} ],
-			"s" : 4,
-			"o" : true,
-			"t" : 34,
-			"bt" : 2,
-			"i" : 4000,
-			"a" : 1500,
-			"h" : false,
-			"p" : 0,
-			"pt" : 0,
-			"l" : [],
-			"f" : {},
-			"c" : 3,
-			"ws" : false
-		}; // 模版的数据
-		var _pageBannerData = {
-			"s" : 0,
-			"i" : 4000,
-			"a" : 1500,
-			"h" : false,
-			"o" : false,
-			"t" : 1,
-			"p" : 0,
-			"pt" : 0,
-			"pl" : 0,
-			"bt" : 1,
-			"l" : [],
-			"f" : {},
-			"ce" : {},
-			"n" : [],
-			"c" : 3,
-			"ws" : false
-		}; // 当前页面的自定义数据（页面独立样式设置）
-		var _bannerData = _templateBannerData;
-
-		var _aid = 5685869;
-		var _templateLayout = 7;
-		var _webBannerHeight = -1;
-		var _siteDemo = false;
+		function displaySubMenu(li) {
+			var subMenu = li.getElementsByTagName("ul")[0];
+			subMenu.style.display = "block";
+		}
+		function hideSubMenu(li) {
+			var subMenu = li.getElementsByTagName("ul")[0];
+			subMenu.style.display = "none";
+		}
 	</script>
 
+	<div id="Header">
+		<h1 style="padding-bottom: 2px">
+			<a href="index.jsp" title="营业管理人门户"></a>
+		</h1>
+		<ul id="navigation">
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="index.html"><span>首页</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>关于协会</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>协会动态</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a><span>政策法规</span></a>
+				<ul>
+					<li><a href="#">行业法律法规</a></li>
+					<li><a href="#">部门规章</a></li>
+					<li><a href="#">规范性文件</a></li>
+					<li><a href="#">地方性法规</a></li>
+					<li><a href="#">其他行业要求</a></li>
+				</ul></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>行业公告</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>行业资讯</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>行业统计</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="list.html"><span>会员风采</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a
+				href="downloadZone.html"><span>下载专区</span></a></li>
+			<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a><span>会员中心</span></a>
+				<ul>
+					<li><a href="downlist.html">下载中心</a></li>
+					<li><a href="message.html">短信发送</a></li>
+					<li><a href="messageList.html">短信查看</a></li>
+					<li><a href="blackList.html">诚信建设</a></li>
+				</ul></li>
+		</ul>
+	</div>
+	<!-- Header End -->
+	<div id="Content">
+		<div class="M_Col2">
+
+			<div class="M_Col2Left">
+				<div class="caption_right_170_h3">
+					<h3>
+						重要公告<a href="morepage.jsp?colname=zygg">&gt;&gt; 更多</a>
+					</h3>
+				</div>
+				<div class="content_right_170">
+					<div id="listmarquee">
+						<div id="b1">
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2417">关于詹永枢同志任职的通知</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2138">高级快递业务员职业技能鉴定培训教...</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2023">关于缴纳2015年会费的通知</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2022">关于批准入会的通知</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2021">关于浙江省快递行业协会新增副会长...</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2020">关于变更浙江省快递行业协会副会长...</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+
+							<div class="listpro">
+								<a href="documentDetail.jsp?docid=2019">关于加入浙江省快递行业协会会员的...</a>
+								<!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+							</div>
+						</div>
+						<div id="b2"></div>
+					</div>
+					<script language="javascript">
+						var speed = 80
+
+						b2.innerHTML = b1.innerHTML
+						function Marquee() {
+							if (b2.offsetHeight - listmarquee.scrollTop <= 0)
+								listmarquee.scrollTop = listmarquee.scrollTop
+										- b1.offsetHeight
+							else {
+								listmarquee.scrollTop++
+							}
+						}
+						var MyMar = setInterval(Marquee, speed)
+						listmarquee.onmouseover = function() {
+							clearInterval(MyMar)
+						}
+						listmarquee.onmouseout = function() {
+							MyMar = setInterval(Marquee, speed)
+						}
+					</script>
+
+				</div>
+
+				<!-- 站内搜索开始 -->
+				<div class="caption_right_170_h3">
+					<h3>站内搜索</h3>
+				</div>
+				<div class="content_right_170">
+					<form method="get" name="form1" action="morepage.jsp"
+						class="search" onsubmit="return query()">
+						<input type="text" name="querystring" value="" />
+						<button type="submit" class="btn">搜索</button>
+					</form>
+				</div>
+
+				<!-- 站内搜索结束 -->
+				<div
+					style="border: 1px solid #ccc; margin-bottom: 10px; padding-top: 8px;">
+
+
+					<!-- 天气预报开始 -->
+					<iframe name="weather_inc"
+						src="http://i.tianqi.com/index.php?c=code&id=7"
+						style="padding-left: 5px; padding-bottom: 5px" width="240"
+						height="90" frameborder="0" marginwidth="0" marginheight="0"
+						scrolling="no"></iframe>
+
+					<!-- 天气预报结束 -->
+				</div>
+
+				<div class="caption_right_170_h3">
+					<h3>理事会成员</h3>
+				</div>
+				<div class="content_right_170">
+					<div id="contact"
+						style="overflow: hidden; height: 200px; text-aling: center;">
+						<div id="c1">
+							<p>
+								会长单位：<br /> 浙江省邮政速递物流有限公司杭州分公司
+							</p>
+							<p>
+								副会长单位：<br /> 浙江顺丰速运有限公司<br /> 浙江申通快递有限公司<br /> 浙江圆通速递有限公司<br />
+								浙江中通速递有限公司<br /> 浙江浙韵速递有限公司<br /> 浙江天天快递有限公司<br />
+								浙江百世网络科技有限公司<br /> 浙江红楼国通快递有限公司<br /> 浙江德邦货运代理有限公司
+							</p>
+							<p>
+								理事单位：<br /> 杭州萧申快递有限公司<br /> 杭州圆通秋涛速递有限公司<br /> 富阳市圆通快递有限公司
+							</p>
+							<p>
+								监事单位：<br /> 富阳市盛彤快件服务有限公司
+							</p>
+						</div>
+						<div id="c2"></div>
+					</div>
+					<script type="text/javascript">
+						boxmove("contact", "c1", "c2", 1);
+					</script>
+				</div>
+
+				<!-- 登录开始 -->
+				<div class="caption_right_170_h3">
+					<h3>会员登录</h3>
+				</div>
+				<div class="content_right_170">
+					<div class="QuickLinksRight">
+						<form action="login.jsp" method="get" name="form2"
+							onsubmit="return login()">
+							<ul style="list-style-type: none;">
+								<li><label for="">用户</label> <input type="text"
+									name="username" value="" /> <a href="downloadZone.html">会员申请</a></li>
+								<li><label for="">密码</label> <input type="password"
+									name="userpass" value="" /> <input class="buttonLogin"
+									type="submit" name="submit" value="登录" /></li>
+							</ul>
+						</form>
+					</div>
+
+				</div>
+
+				<!-- 登录结束 -->
+
+				<div class="caption_right_170_h3">
+					<h3>联系我们</h3>
+				</div>
+				<div class="content_right_170">
+					<div id="contact">
+						联系人：沈斌 胡晏平<br />电话：0571-87893019 0571-87893027<br />传真：0571-87893038
+						0571-87893030<br />地址：杭州市天目山路142号1002室</font>
+					</div>
+				</div>
+
+				<div class="caption_right_170_h3">
+					<h3>留言提交</h3>
+				</div>
+				<div class="content_right_170">
+					<div class="QuickLinksRight">
+						<form name="form3" action="mes.jsp" method="get"
+							onsubmit="return contact()">
+							<ul style="list-style-type: none;">
+
+								<li><textarea name="message" style="width: 200px"></textarea></li>
+								<li><label for="">联系方式</label> <input style="width: 148px"
+									name="id" value="" /></li>
+								<li><input class="buttonLogin" type="submit" name="submit"
+									value="提交" /></li>
+							</ul>
+						</form>
+					</div>
+				</div>
+
+				<!-- =========== 12305========= -->
+				<div class="tel12305">
+					<img alt="" border="0" src="images/12305.gif" />
+				</div>
+
+
+				<!-- =========== 浙江省《快递服务》标准达标企业========= -->
+				<div class="caption_right_170_h3">
+					<h3>浙江省《快递服务》标准达标企业</h3>
+				</div>
+				<div class="content_right_170">
+					<div id="a"
+						style="overflow: hidden; height: 300px; text-aling: center;">
+						<div id="a1">
+							<a href="http://www.ems.com.cn/" target="_black"><img
+								src="images/f-1.gif" alt="邮政EMS"></a> <a
+								href="http://www.sf-express.com/" target="_black"><img
+								src="images/f-2.gif" alt="顺丰速运"></a> <a
+								href="http://www.sto.cn/" target="_black"><img
+								src="images/f-3.gif" alt="申通快递"></a> <a
+								href="http://www.ttkdex.com/" target="_black"><img
+								src="images/f-4.gif" alt="天天快递"></a> <a
+								href="http://www.fedex.com/cn/" target="_black"><img
+								src="images/f-5.gif" alt="联邦快递"></a> <a
+								href="http://www.cn.dhl.com" target="_black"><img
+								src="images/f-6.gif" alt="中外运敦豪"></a> <a
+								href="http://www.apex100.com/" target="_black"><img
+								src="images/f-7.gif" alt="全一快递"></a> <a
+								href="http://www.ups.com/content/cn/zh/index.jsx"
+								target="_black"><img src="images/f-8.gif" alt="UPS"></a> <a
+								href="http://www.zto.cn/" target="_black"><img
+								src="images/f-9.gif" alt="中通快递"></a> <a
+								href="http://www.yto.net.cn/" target="_black"><img
+								src="images/f-10.gif" alt="圆通快递"></a> <a
+								href="http://www.yundaex.com/www/index.html" target="_black"><img
+								src="images/f-11.gif" alt="韵达快递"></a> <a
+								href="http://www.sinoair.com/" target="_black"><img
+								src="images/f-12.gif" alt="中外运空运"></a> <a
+								href="http://www.tnt.com.cn/index.asp" target="_black"><img
+								src="images/f-13.gif" alt="TNT"></a> <a
+								href="http://www.cae.com.cn" target="_black"><img
+								src="images/f-16.gif" alt="民航快递"></a> <a
+								href="http://www.gto365.com/" target="_black"><img
+								src="images/f-17.jpg" alt="国通快递"></a> <a
+								href="http://www.zjs.com.cn/" target="_black"><img
+								src="images/f-18.gif" alt="宅急送"></a> <a
+								href="http://www.uc56.com/" target="_black"><img
+								src="images/f-15.gif" alt="优速快递" height="40"></a> <a
+								href="http://www.800bestex.com/" target="_black"><img
+								src="images/f-14.gif" alt="百世汇通"></a>
+						</div>
+						<div id="a2"></div>
+					</div>
+					<script type="text/javascript">
+						boxmove("a", "a1", "a2", 1);
+					</script>
+				</div>
+				<!-- =====协会网站链接==== -->
+
+				<div class=caption_right_170_h3>
+					<h3>行业链接</h3>
+				</div>
+				<div class=content_right_170>
+					<select name="select" onChange="MM_jumpMenu(this)"
+						style="margin-left: 20px; margin-bottom: 8px;">
+						<option selected="selected">------快递行业协会网站------</option>
+						<option value="http://www.gdea.org/index.asp">广东省快递行业协会</option>
+						<option value="http://www.fjkdxh.com/">福建省快递行业协会</option>
+						<option value="http://www.sdkdw.com">山东省快递行业协会</option>
+						<option value="http://www.shkdxh.com/">上海市快递协会</option>
+
+					</select>
+				</div>
+				<!-- <a href="zazhi/200902.exe" target="_blank"><img alt="" border="0" src="images/zjkdzazhi.jpg" /></a> -->
+
+			</div>
+
+			<div class="M_Col2Right">
+				<!-- 协会动态  -->
+				<div class="TabADS">
+					<ul>
+						<li class="TasADSOn"><span>协会动态</span></li>
+					</ul>
+					<a href="morepage.jsp?colname=xhdt">&gt;&gt; 更多</a>
+				</div>
+				<div class="TabADSCon">
+					<div style="display: block;" id="tabadcontent_10">
+						<div id="center_02">
+							<!-- 图片轮换开始 -->
+							<div class="ttimg">
+								<div id="slider3" class="slider">
+									<div class="conbox">
+										<div>
+											<a href="#" title="李克强总理看望慰问快递一线员工"><img width="262"
+												height="182" src="images/scroll1.JPG"></a>
+										</div>
+										<div>
+											<a href="#" title="陈继松会长在第二届第一次会员代表大会讲话"><img width="262"
+												height="182" src="images/scroll2.jpg"></a>
+										</div>
+										<div>
+											<a href="#" title="浙江省快递行业协会第二届第一次会员代表大会"><img
+												width="262" height="182" src="images/scroll3.jpg"></a>
+										</div>
+										<div>
+											<a href="#" title="第二届第一次理事会选举"><img width="262"
+												height="182" src="images/scroll4.jpg"></a>
+										</div>
+										<div>
+											<a href="#" title="杨传堂部长视察京交会快递展区"><img width="262"
+												height="182" src="images/scroll5.JPG"></a>
+										</div>
+										<div>
+											<a href="#" title="国家邮政局赵晓光副局长在温州调研指导"><img width="262"
+												height="182" src="images/scroll6.JPG"></a>
+										</div>
+									</div>
+									<div class="switcher"></div>
+									<div class="showtitle">
+										<a class="atitle" href="javascript:"></a>
+									</div>
+								</div>
+							</div>
+							<!-- 图片轮换结束 -->
+							<ul class="ulli">
+
+								<li><a href="documentDetail.jsp?docid=2875" target="_blank">全国人大常委会决定修改五部法律
+										邮政法调整三...</a> <em> 2015-05-05 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2874" target="_blank">浙江申通举办2015年春季趣味运动会</a>
+									<em> 2015-05-05 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2873" target="_blank">杨世忠秘书长前往“湖州织里中国童装城”调研</a>
+									<em> 2015-04-30 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2854" target="_blank">浙江省快递行业协会第二届三次理事会在杭州召开</a>
+									<em> 2015-04-28 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2837" target="_blank">《浙江省跨境电子商务发展三年行动计划》发布
+										...</a> <em> 2015-04-28 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2835" target="_blank">国家邮政局公布2015年一季度邮政行业运行情...</a>
+									<em> 2015-04-27 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2834" target="_blank">浙江省成立寄递渠道安全管理领导小组</a>
+									<em> 2015-04-08 </em></li>
+
+								<li><a href="documentDetail.jsp?docid=2822" target="_blank">湖州局搭建政银企三方合作平台破解快递企业“融...</a>
+									<em> 2015-04-03 </em></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div style="margin-bottom: 8px;">
+					<a href="http://www.chinapost.gov.cn/" target="_block"><img
+						alt="" border="0" src="images/ad20091012.jpg" /></a>
+				</div>
+
+				<!-- 内容左边开始 -->
+				<div class="MainLeft">
+					<!-- =========TAB块========== -->
+
+					<!-- =========== 热点聚焦 ============== -->
+					<div class="caption_left_470">
+						政策法规 <a href="morepage.jsp?colname=rdjj">&gt;&gt; 更多</a>
+					</div>
+					<div class="content_left_470">
+						<ul class="ulli">
+
+							<li><a href="documentDetail.jsp?docid=2845" target="_blank">马军胜局长做客人民日报两会e客厅...</a>
+								<em> 2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2844" target="_blank">国务院正式批准设立中国（杭州）跨...</a>
+								<em> 2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2843" target="_blank">李克强：很愿意为网购、快递和带动...</a>
+								<em> 2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2842" target="_blank">习总书记寄语邮政：农村市场广阔，...</a>
+								<em> 2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2826" target="_blank">浙江省政府多项措施支持行业发展</a>
+								<em> 2015-04-03</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2825" target="_blank">“中国快递量世界第一”引热议</a>
+								<em> 2015-04-03</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2824" target="_blank">李克强：发展物流快递，把新兴消费...</a>
+								<em> 2015-04-03</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2823" target="_blank">中国快递发展指数首次发布发展规模...</a>
+								<em> 2015-04-03</em></li>
+
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="MainRight">
+					<!-- ===================行业资讯====================== -->
+					<div class="caption_right_298_h3">
+						<h3>
+							行业公告<a href="morepage.jsp?colname=hyzx">&gt;&gt; 更多</a>
+						</h3>
+						<ul class="ulli">
+							<c:forEach items="${hyList}" var="item" varStatus="status">
+								<c:set var="time" value="${item.crtime}" />
+								<c:set var="date" value="${fn:substring(time, 0, 10)}" />
+									<li><a href="news/newsDetail.do?newsid=${item.newsid}" target="_blank" title="${item.title}">${item.title}</a><em>${date}</em></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+
+
+
+				<div class="MainLeft">
+					<!-- =========== 政策法规 ============== -->
+					<div class="caption_left_470">
+						行业资讯 <a href="morepage.jsp?colname=zcfg">&gt;&gt; 更多</a>
+					</div>
+					<div class="content_left_470">
+						<ul class="ulli">
+							<li><a href="documentDetail.jsp?docid=2876" target="_blank">全国人大常委会决定修改五部法律
+									...</a> <em>2015-05-05</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2849" target="_blank">交通运输部
+									农业部 供销合作总社...</a> <em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2848" target="_blank">邮政业标委会审查通过《邮政业安全...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2847" target="_blank">国务院印发《关于加快发展服务贸易...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2846" target="_blank">邮政业标委会审查通过《邮政业信息...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2839" target="_blank">北京市政府将快递服务设施用地纳入...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2838" target="_blank">《浙江省跨境电子商务发展三年行动...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2813" target="_blank">国家邮政局审议并原则通过《邮政业...</a>
+								<em>2015-03-27</em></li>
+
+						</ul>
+					</div>
+					<!-- =========== 行业统计 ============== -->
+					<div class="caption_left_470">
+						行业统计 <a href="morepage.jsp?colname=hytj">&gt;&gt; 更多</a>
+					</div>
+					<div class="content_left_470">
+						<ul class="ulli">
+							<li><a href="documentDetail.jsp?docid=2840" target="_blank">国家邮政局关于2015年3月邮政...</a>
+								<em> 2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2836" target="_blank">国家邮政局公布2015年一季度邮...</a>
+								<em> 2015-04-27</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2803" target="_blank">2014年浙江省邮政行业经济运行...</a>
+								<em> 2015-01-29</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2801" target="_blank">国家邮政局关于2014年12月邮...</a>
+								<em> 2015-01-29</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2795" target="_blank">国家邮政局公布2014年邮政行业...</a>
+								<em> 2015-01-15</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2753" target="_blank">2014年9月浙江省邮政行业经济...</a>
+								<em> 2014-10-22</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2752" target="_blank">国家邮政局公布2014年9月份邮...</a>
+								<em> 2014-10-22</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2696" target="_blank">国家邮政局关于2014年上半年重...</a>
+								<em> 2014-07-24</em></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="MainRight">
+					<!-- =========== 会员风采========= -->
+					<div class="caption_right_298_h3">
+						<h3>
+							会员风采<a href="morepage.jsp?colname=hyfc">&gt;&gt; 更多</a>
+						</h3>
+						<ul class="ulli">
+							<li><a href="documentDetail.jsp?docid=2877" target="_blank">浙江申通举办2015年春季趣味运...</a>
+								<em>2015-05-05</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2871" target="_blank">中国邮政集团公司开通包裹“自提”...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2870" target="_blank">中通国际正式上线
+									七大快递公司“...</a> <em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2869" target="_blank">FedEx联邦快递特早快递业务扩...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2868" target="_blank">百世汇通称2015年打造“五朵金...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2867" target="_blank">顺丰开通中蒙快递服务
+									可送至乌兰...</a> <em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2866" target="_blank">韵达快递跨境电商平台“优递爱”正...</a>
+								<em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2865" target="_blank">申通快递推进偏远地区快递网络建设...</a>
+								<em>2015-04-28</em></li>
+
+						</ul>
+					</div>
+					<!-- =========== 社会广角========= -->
+					<div class="caption_right_298_h3">
+						<h3>
+							社会广角<a href="morepage.jsp?colname=shgj">&gt;&gt; 更多</a>
+						</h3>
+						<ul class="ulli">
+							<li><a href="documentDetail.jsp?docid=2853" target="_blank">浙江各市局扎实开展“诚信传递你我...</a><em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2852" target="_blank">宁波电子商务孵化基地正式开园</a><em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2851" target="_blank">国家邮政局：2015年快递投诉满...</a><em>2015-04-28</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2688" target="_blank">杭州两快递员勇救落水儿童
+									申通...</a><em>2014-07-24</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2685" target="_blank">温州邮政全力支撑国际小包发展</a><em>2014-07-24</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2682" target="_blank">浙江嘉兴深入推进“规范提升年”活...</a><em>2014-07-24</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2681" target="_blank">浙江湖州推动快递业纳入市财政扶持...</a><em>2014-07-24</em></li>
+
+							<li><a href="documentDetail.jsp?docid=2680" target="_blank">广东省局进一步部署邮政行业诚信体...</a><em>2014-07-24</em></li>
+
+
+						</ul>
+					</div>
+				</div>
+
+				<!-- ==========中间滚动图片============== -->
+				<div class="zhuantibaogao">
+					<!-- 广告条 -->
+					<!-- <div>
+								<img alt="" border="0" src="images/adbutton.jpg" />
+							</div> -->
+					<!-- 中间滚动图片 -->
+
+					<div id="outer"
+						style="width: 690px; height: 105px; overflow: hidden">
+						<div id="demo">
+							<table width="565px" border="0" cellpadding="0" bgcolor="#FFFFFF">
+								<tr>
+									<td id="demo1" valign="top">
+										<table border="0" align="center" cellpadding="0"
+											cellspacing="0">
+											<tr valign="top">
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-1.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-2.jpg" class="listimage" />
+														</a>
+													</div>
+
+												</td>
+
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-3.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-4.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-5.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-6.jpg" class="listimage" />
+														</a>
+													</div>
+
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-7.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+												<td align="center" style="border: 1px solid #FFFFFF;">
+
+													<div>
+														<a href="#nogo" class="listname"> <img
+															src="images/gd-8.jpg" class="listimage" />
+														</a>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+
+									<td id="demo2" valign="top"></td>
+								</tr>
+							</table>
+						</div>
+						<script type="text/javascript" language="javascript">
+							window.onload = function() {
+								function getElement(id) {
+									return document.getElementById(id);
+								}
+								var speed = 30;//滚动速度
+								var demo = getElement("demo");
+								var demo2 = getElement("demo2");
+								var demo1 = getElement("demo1");
+								demo2.innerHTML = demo1.innerHTML//复制demo1中的图片到demo2中
+
+								function Marqueeleft() {//向左滚动
+									if (demo2.offsetWidth - demo.scrollLeft <= 0)
+										demo.scrollLeft -= demo1.offsetWidth
+									else
+										demo.scrollLeft++
+								}
+
+								function Marqueeright() {//向右滚动
+									if (demo2.offsetWidth - demo.scrollLeft >= 565)
+										demo.scrollLeft += demo1.offsetWidth
+									else
+										demo.scrollLeft--
+								}
+
+								var MyMar = setInterval(Marqueeleft, speed)//自动开始滚动
+								Direction = 'Left';//设定初始方向为向左滚
+								demo.onmouseover = function() {
+									clearInterval(MyMar)
+								}
+								demo.onmouseout = function() {
+									if (Direction == 'Left') {
+										MyMar = setInterval(Marqueeleft, speed)
+									} else if (Direction == 'Right') {
+										MyMar = setInterval(Marqueeright, speed)
+									}
+								};
+							}
+						</script>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- =========== 浙江省《快递服务》标准达标企业 ========= -->
+		<div class="friendLink">
+			<strong></strong> <a href="http://www.chinapost.gov.cn/"
+				target="_block"><img alt="中华人民共和国国家邮政局" border="0"
+				src="images/yq-1.jpg" style="margin-bottom: 5px; margin-top: 2px;" /></a>
+			<a href="http://zj.spb.gov.cn/" target="_block"><img
+				alt="浙江省邮政管理局" border="0" src="images/yq-2.jpg"
+				style="margin-bottom: 5px; margin-top: 2px;" /></a> <a
+				href="http://www.cea.org.cn/" target="_block"><img alt="中国快递协会"
+				border="0" src="images/yq-7.jpg" style="margin-bottom: 5px;" /></a> <a
+				href="http://www.moc.gov.cn/" target="_block"><img
+				alt="中华人民共和国交通运输部" border="0" src="images/yq-4.jpg"
+				style="margin-bottom: 5px;" /></a> <a href="http://mjzz.zjmz.gov.cn/"
+				target="_block"><img alt="浙江省民间管理局" border="0"
+				src="images/yq-5.jpg" style="margin-bottom: 5px;" /></a>
+
+		</div>
+	</div>
+	<!-- =========== 内容结束 ========= -->
+	<!-- Footer Start -->
+
+
+
+
+
+	<div id="Footer">
+		<div>
+			<ul>
+				<li><a href="about.jsp">关于协会</a></li>
+				<li><a href="recruit.jsp">加入我们</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<span>地 址：浙江省杭州市天目山路142号1002室 邮 编：310007 <br />电话：0571-87893019
+				0571-87893027 传真：0571-87893038 0571-87893030 版权所有&copy; 2015
+				杭州市快递行业协会
+			</span>
+		</div>
+	</div>
+	<!--webbot bot="Include" U-Include="about.jsp" TAG="BODY" -->
+	<!-- Footer End -->
 </body>
 </html>
-
-
 

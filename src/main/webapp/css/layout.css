@@ -1,0 +1,22 @@
+
+div.M_Col2{width:100%;}
+div.M_Col2 div.M_Col2Left{float:left;width:252px;}
+div.M_Col2 div.M_Col2Right{float:right;width:694px;}
+div.MainLeft{float:left; width:341px;}
+div.MainRight{float:right; width:341px;}
+div.MainLeft2{float:left; width:49.5%;}
+div.MainRight2{float:right; width:49.5%;}
+
+
+div.K_Col2{width:100%;}
+div.K_Col2 div.K_Col2Left{float:left;width:49.5%;}
+div.K_Col2 div.K_Col2Right{float:right;width:49.5%;}
+
+
+div.K_Col3{width:100%;}
+div.K_Col3 div.K_Col3Left{float:left;width:33%;}
+div.K_Col3 div.K_Col3Mid{float:left;width:33%;}
+div.K_Col3 div.K_Col3Right{float:right;width:33%;}
+
+/* 布局补丁 */
+.K_Box{clear:both;}

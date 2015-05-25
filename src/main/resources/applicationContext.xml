@@ -31,5 +31,11 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 		</property>
 	</bean>
 	
+	<bean id="companyDao" class="com.express.daoImp.CompanyDaoImp">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	
 	
 </beans>

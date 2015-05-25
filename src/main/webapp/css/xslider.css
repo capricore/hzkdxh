@@ -1,0 +1,15 @@
+
+/* slider */
+.slider{width:262px;height:200px;position:relative;overflow:hidden;}
+.conbox{position:absolute;/*必要元素*/}
+.switcher{position:absolute;bottom:20px;right:10px;float:right;z-index:99;}
+.switcher a{background:#fff;border:1px solid #D00000;cursor:pointer;float:left;height:14px;line-height:14px;width:14px;margin:2px;text-align:center;color:#D00000;}
+.switcher a.cur,.switcher a:hover{background:#FF0000;border:1px solid #D00000;height:15px;line-height:15px;width:15px;color:#fff;}
+.showtitle {
+    position:absolute;bottom:0px;right:10px;float:right;z-index:99;overflow:hidden;width:250px;height:15px;text-align:center;font-size:12px;
+}
+.showtitle a {
+    line-height:14px;width:260px;height:14px;
+}
+
+

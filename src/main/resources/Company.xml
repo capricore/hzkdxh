@@ -30,5 +30,16 @@
 	<update id="updateCompany" parameterClass="company">
 		update company set compname=#compname#,address=#address#,tel=#tel#,email=#email#,crtime=#crtime# where compid=#compid#
 	</update>
+	
+	
+	<!-- 根据主公司id获取子公司信息列表 -->
+	<select id="getSubcompanyListByCompId" parameterClass="String" resultClass="company">
+		select * from company where pcompid = #compid#
+	</select>
+	
+	<!-- 根据主公司id获取子公司信息列表 -->
+	<select id="getMainCompanyList" resultClass="company">
+		select * from company where isnull(pcompid)
+	</select>
 
 </sqlMap> 
