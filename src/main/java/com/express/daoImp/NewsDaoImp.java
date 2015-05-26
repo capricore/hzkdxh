@@ -40,6 +40,23 @@ public class NewsDaoImp extends BaseDao implements NewsDao{
 		return news;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<News> getNewsListByNewsTypeAndSubTypeAndPage(int newstype, int subtype,int start,int pagesize) {
+		List<News> news = null;
+		NewsQuery newsQuery = new NewsQuery();
+		newsQuery.setNewstype(newstype);
+		newsQuery.setSubtype(subtype);
+		newsQuery.setStart(start);
+		newsQuery.setPagesize(pagesize);
+		try {
+			news = getSqlMapClientTemplate().queryForList("getNewsListByNewsTypeAndSubTypeAndPage", newsQuery);
+		} catch (Exception e) {
+			logger.error("根据新闻类型和子类型获取新闻信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		return news;
+	}
+
+	
 	public News getByNewsId(String newsid) {
 		News news = null;
 		try {
@@ -90,6 +107,21 @@ public class NewsDaoImp extends BaseDao implements NewsDao{
 			flag = true;
 		}
 		return flag;
+	}
+
+	public int getNewsCount(int newstype, int subtype) {
+		// TODO Auto-generated method stub
+		int count = 0;
+		NewsQuery newsQuery = new NewsQuery();
+		newsQuery.setNewstype(newstype);
+		newsQuery.setSubtype(subtype);
+		try {
+			count = (Integer)getSqlMapClientTemplate().queryForObject("getNewsCount", newsQuery);
+		} catch (Exception e) {
+			logger.error("根据新闻类型和子类型获取新闻总数！" +  ",errMsg=" + e.getMessage());
+		}
+		return count;
+
 	}
 
 }

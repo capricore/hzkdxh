@@ -10,4 +10,5 @@
   <sqlMap  resource ="MercBlacklist.xml" />
   <sqlMap  resource ="OrganizationBlacklist.xml" />
   <sqlMap  resource ="RollingPicture.xml" />
+  <sqlMap  resource ="StaticPicture.xml" />
 </sqlMapConfig>

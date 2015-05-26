@@ -25,6 +25,8 @@ public class BaseService {
 	
 	private RollingPictureDao rollingpictureDao = (RollingPictureDao)context.getBean("rollingpictureDao");
 	
+	private StaticPictureDao staticpictureDao = (StaticPictureDao) context.getBean("staticpictureDao");
+	
 	private UserBlacklistDao userBlacklistDao = (UserBlacklistDao)context.getBean("userBlacklistDao");
 	
 	private MercBlacklistDao mercBlacklistDao = (MercBlacklistDao)context.getBean("mercBlacklistDao");
@@ -57,6 +59,10 @@ public class BaseService {
 
 	public RollingPictureDao getRollingpictureDao() {
 		return rollingpictureDao;
+	}
+	
+	public StaticPictureDao getStaticpictureDao(){
+		return staticpictureDao;
 	}
 	
 }

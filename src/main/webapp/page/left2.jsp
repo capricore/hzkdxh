@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-		<link rel="stylesheet" href="css/system.css" type="text/css" />
-		<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
-		<link rel="stylesheet" href="css/css.css" type="text/css" /> 
-		<link href="css/xslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
+		<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
+		<link rel="stylesheet" href="/hzkdxh/css/css.css" type="text/css" /> 
+		<link href="/hzkdxh/css/xslider.css" rel="stylesheet" />
 		
-		<script type="text/javascript" src="javascript/style.js"></script>
-		<script src="javascript/yu.js" type="text/javascript"></script>
-		<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
-		<script src="javascript/jquery.Xslider.js"></script>
+		<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
+		<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
     		
 		<style type="text/css" >
 		<!--
@@ -26,8 +27,8 @@
 		}
 		</style>
 		
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css">
-		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/hzkdxh/css/bootstrap-select.css">
+		<link href="/hzkdxh/css/bootstrap.min.css" rel="stylesheet">
     
 <div class="M_Col2Left">
 							
@@ -36,37 +37,14 @@
 	</div>
 	<div class="content_right_170">	
 		<div id="listmarquee">
-                          	<div id="b1">
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于詹永枢同志任职的通知</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">高级快递业务员职业技能鉴定培训教...</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于缴纳2015年会费的通知</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于批准入会的通知</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于浙江省快递行业协会新增副会长...</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于变更浙江省快递行业协会副会长...</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-		
-			<div class="listpro">
-				<a href="detail.jsp">关于加入浙江省快递行业协会会员的...</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
-			</div>
-                              </div>
-                              <div id="b2"></div>								
+            <div id="b1">
+				<c:forEach  items="${zyggList}"  var="item"  varStatus="status">
+				<div class="listpro">
+					<a href="/hzkdxh/news/detail.do?newsid=${item.newsid}">${item.title }</a> <!--em> {fn:substring(prop.docIntime,0,11)}</em-->
+				</div>
+				</c:forEach>
+            </div>
+           <div id="b2"></div>								
 		</div>
 		<script language="javascript"> 
 		var speed=80

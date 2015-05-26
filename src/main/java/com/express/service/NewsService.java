@@ -11,6 +11,12 @@ public interface NewsService {
     /* 根据大类型号和之类型号查询子类下新闻*/
     public List<News> getNewsListByNewsTypeAndSubType(int newstype, int subtype);  
     
+    /* 根据大类型号和之类型号分页查询子类下新闻*/
+    public List<News> getNewsListByNewsTypeAndSubTypeAndPage(int newstype, int subtype,int start, int pagesize);  
+
+    /*返回某一类型的新闻页数*/
+    public int getNewsCount(int newstype,int subtype);
+    
     /* 根据newsid查询指定新闻 */
     public News getByNewsId(String newsid); 
     

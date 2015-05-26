@@ -17,6 +17,10 @@ public class NewsQuery {
 	private int subtype; 		// 新闻所属类目下二级目录
 
 	private int del; 			// 该新闻是否被删除，0：正常，1：删除
+	
+	private int start;			//查询起始页
+	
+	private int pagesize;		//每次查询返回的数量
 
 	public String getNewsid() {
 		return newsid;
@@ -73,4 +77,21 @@ public class NewsQuery {
 	public void setDel(int del) {
 		this.del = del;
 	}
+
+	public int getStart() {
+		return start;
+	}
+
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+	public int getPagesize() {
+		return pagesize;
+	}
+
+	public void setPagesize(int pagesize) {
+		this.pagesize = pagesize;
+	}
+	
 }

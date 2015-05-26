@@ -60,20 +60,22 @@ boxmove("contact","c1","c2",1);
 	<h3>会员登录</h3>				
 </div>
 <div class="content_right_170">
-	<div class="QuickLinksRight">								
-	<form action="login.jsp" method="get" name="form2" onsubmit="return login()">
+	<div class="QuickLinksRight" id="loginDiv">								
+	<form id="loginForm" action="/hzkdxh/user/login.do" method="get" name="form2">
 		<ul style="list-style-type:none;">
-		<li><label for="">用户</label> <input type="text" name="username" value="" /> <a href="downloadZone.html">会员申请</a></li>
-		<li><label for="">密码</label> <input type="password" name="userpass" value="" /> <input class="buttonLogin" type="submit" name="submit" value="登录"/> </li>
+		<li><label for="">用户</label> <input type="text" name="username" value="" /> <a href="downloadZone.jsp">会员申请</a></li>
+		<li><label for="">密码</label> <input type="password" name="password" value="" /> <input class="buttonLogin" type="button" name="submit" onclick="login();" value="登录"/> </li>
 		</ul>
 	</form>							
 	</div>
-
+	<div id="welcomeDiv" style="display:none;text-align:center" >
+		<span><label for="">欢迎您, <%=session.getAttribute("username")%>!</label></span>
+	</div>
 </div>
 
 <!-- 登录结束 --> 
 
-                     <div class="caption_right_170_h3"> 
+<div class="caption_right_170_h3"> 
 	<h3>联系我们</h3>				
 </div>
 <div class="content_right_170">
@@ -151,3 +153,55 @@ boxmove("a","a1","a2",1);
 <!-- <a href="zazhi/200902.exe" target="_blank"><img alt="" border="0" src="images/zjkdzazhi.jpg" /></a> -->
 
 </div>
+
+<script>
+function submitById(id){			
+	//Callback handler for form submit event
+	$("#"+id).submit(function(e)
+	{
+		  	e.preventDefault();
+		  	var formObj = $(this);
+		    var formURL = formObj.attr("action");
+		    var formData = new FormData(this);
+		    $.ajax({
+		        url: formURL,
+		    type: 'POST',
+		        data:  formData,
+		    mimeType:"multipart/form-data",
+		    contentType: false,
+		    cache: false,
+		    processData:false,
+		    success: function(transport)
+		    {
+		    	 var jresp = new JsonRespUtils(transport);
+		    	 if (jresp.isSuccessfully()){
+		    		 var res = jresp.getMessage();
+		    		alert("登录成功！");
+		    	 }
+		    	 $("#loginDiv").hide();
+		    	 $("#welcomeDiv").show();
+		    },
+		     error: function(transport) 
+		     {
+		    	alert("登录失败！");
+		     }          
+		    });
+		}); 
+		$("#"+id).submit();
+	}
+
+function login(){
+	submitById('loginForm');
+	return false;
+}
+
+function checkLogin(){
+	var username = "<%=session.getAttribute("username")%>";
+	if(username != "null"  ){
+		 $("#loginDiv").hide();
+    	 $("#welcomeDiv").show();
+	}
+}
+checkLogin();
+
+</script>

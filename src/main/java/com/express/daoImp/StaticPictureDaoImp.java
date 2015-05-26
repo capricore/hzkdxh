@@ -18,7 +18,7 @@ public class StaticPictureDaoImp extends BaseDao implements StaticPictureDao{
 	public List<StaticPicture> getPicturetList() {
 		List<StaticPicture> list= null;
 		try {
-			list = getSqlMapClientTemplate().queryForList("gePicturetList");
+			list = getSqlMapClientTemplate().queryForList("getPicturetList");
 		} catch (Exception e) {
 			logger.error("查询图片列表信息出错！" +  ",errMsg=" + e.getMessage());
 		}
