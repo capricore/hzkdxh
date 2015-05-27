@@ -15,10 +15,10 @@
 	<link rel="stylesheet" href="css/css.css" type="text/css" /> 
 	<link href="css/xslider.css" rel="stylesheet" />
 	
-	<script type="text/javascript" src="javascript/style.js"></script>
-	<script src="javascript/yu.js" type="text/javascript"></script>
-	<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
-	<script src="javascript/jquery.Xslider.js"></script>
+	<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
+	<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
+	<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
 	<script type="text/javascript" src="/hzkdxh/javascript/jsonRespUtils.js"></script>
 	
 	<style type="text/css" >

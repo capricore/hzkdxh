@@ -67,11 +67,11 @@ subMenu.style.display = "none";
 				<div class="copyrightCenter">
 					<ul class="ulli">
 						
-						<li><a href="blackDetail.jsp" target="_blank">员工黑名单</a></li>
+						<li><a href="/hzkdxh/userblacklist/getList.do" target="_blank">员工黑名单</a></li>
 						
-						<li><a href="blackDetail.jsp" target="_blank">电商黑名单</a></li>
+						<li><a href="/hzkdxh/mercblacklist/getList.do" target="_blank">电商黑名单</a></li>
 						
-						<li><a href="blackDetail.jsp" target="_blank">快递公司黑名单</a></li>
+						<li><a href="/hzkdxh/organizationblacklist/getList.do" target="_blank">快递公司黑名单</a></li>
 						
 					</ul>
 				</div>

@@ -2,8 +2,8 @@
     pageEncoding="utf-8"%>
 
 <script type="text/javascript" src="http://www.daimajiayuan.com/download/jquery/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css">
+<script type="text/javascript" src="/javascript/bootstrap-select.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-select.css">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">

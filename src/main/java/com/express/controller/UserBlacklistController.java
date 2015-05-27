@@ -2,7 +2,9 @@ package com.express.controller;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.express.bean.News;
 import com.express.bean.UserBlacklist;
+import com.express.service.NewsService;
 import com.express.service.UserBlacklistService;
 import com.express.util.CodeGenerator;
 import com.express.util.DateUtils;
@@ -21,6 +25,9 @@ import com.express.util.DateUtils;
 @Controller
 @RequestMapping(value="/userblacklist")
 public class UserBlacklistController extends BaseController{
+	
+	@Autowired
+	private NewsService newsService;
 	
 	@Autowired
 	private UserBlacklistService userBlacklistService;
@@ -175,6 +182,38 @@ public class UserBlacklistController extends BaseController{
 		}catch (RuntimeException e) {
 			logger.error("删除黑名单用户出错！" +  ",errMsg=" + e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
+		}
+	}
+	
+	/**
+	 * 返回员工黑名单列表
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/getList.do")
+	public ModelAndView getblackList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			List<UserBlacklist> blacklists = new ArrayList<UserBlacklist>();
+			blacklists = userBlacklistService.getBlackList();
+			String type1 = "诚信建设";
+			String type2 = "员工黑名单";
+			map.put("type1", type1);
+			map.put("type2", type2);
+			map.put("blacklists", blacklists);
+			map.put("zyggList", zyggList);
+			return new ModelAndView("userblackDetail").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			return null;
 		}
 	}
 	

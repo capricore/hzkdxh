@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,7 +17,7 @@
 		<script src="javascript/yu.js" type="text/javascript"></script>
 		<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script src="javascript/jquery.Xslider.js"></script>
-	
+		
 		<style type="text/css" >
 		<!--
 		.ProImg{
@@ -33,8 +31,7 @@
 		#a1 a{
 			display: block;
 		}
-		</style>
-  
+		</style> 
 		
 	</head>
 	<body id="Homepage" class="">
@@ -59,15 +56,29 @@ subMenu.style.display = "none";
 			<div id="Content">
 					<div class="M_Col2">
 
-						<%@include file="page/left2.jsp" %>
-                                            
-                        <%@include file="page/m.jsp" %>
+						<%@ include file="page/left2.jsp"%>
+                        
+                        <div class="M_Col2Right">
+                       <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <a href="/hzkdxh/news/blackList.do">${type1 }</a>  &gt; <strong>${type2 }</strong> </p>
+							<!-- 内容左边开始 -->
+                            <div class="caption_content_780">
+							</div>
+                            <div class="content_780">
+                                <div class="art_title">快递公司黑名单</div>
+								<p>
+								<c:forEach  items="${blacklists}"  var="item"  varStatus="status">
+								${item.organizationname }&nbsp;
+								</c:forEach>
+                                </p>							
+							<div><a href="#top"> &#8593; 返回顶部</a></div>
+                            </div>
+                            </div>
 					</div>
 					
 		</div>
 		<!-- =========== 内容结束 ========= -->
 		<!-- Footer Start -->
-		<%@include file="page/bottom.jsp" %>
+		<%@ include file="page/bottom.jsp"%>
 		<!--webbot bot="Include" U-Include="about.jsp" TAG="BODY" --> 
 		<!-- Footer End -->
 	</body>
