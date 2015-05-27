@@ -32,6 +32,27 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
+	
+	 <filter>  
+	    <filter-name>SecurityServlet</filter-name>  
+	    <filter-class>com.express.util.SecurityServlet</filter-class>  
+	</filter>  
+	<filter-mapping>  
+	    <filter-name>SecurityServlet</filter-name>  
+	    <url-pattern>/news/downloadList.do</url-pattern>  
+	</filter-mapping> 
+	<filter-mapping>  
+	    <filter-name>SecurityServlet</filter-name>  
+	    <url-pattern>/news/message.do</url-pattern>  
+	</filter-mapping> 
+	<filter-mapping>  
+	    <filter-name>SecurityServlet</filter-name>  
+	    <url-pattern>/news/messageList.do</url-pattern>  
+	</filter-mapping> 
+	<filter-mapping>  
+	    <filter-name>SecurityServlet</filter-name>  
+	    <url-pattern>/news/blackList.do</url-pattern>  
+	</filter-mapping> 
 
 	<welcome-file-list>
 		<welcome-file>news/index.do</welcome-file>

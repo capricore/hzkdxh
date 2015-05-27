@@ -60,7 +60,8 @@ boxmove("contact","c1","c2",1);
 	<h3>会员登录</h3>				
 </div>
 <div class="content_right_170">
-	<div class="QuickLinksRight" id="loginDiv">								
+	<div class="QuickLinksRight" id="loginDiv">		
+	<%String name=((String)session.getAttribute("username"));%>						
 	<form id="loginForm" action="/hzkdxh/user/login.do" method="get" name="form2">
 		<ul style="list-style-type:none;">
 		<li><label for="">用户</label> <input type="text" name="username" value="" /> <a href="downloadZone.jsp">会员申请</a></li>
@@ -69,7 +70,7 @@ boxmove("contact","c1","c2",1);
 	</form>							
 	</div>
 	<div id="welcomeDiv" style="display:none;text-align:center" >
-		<span><label for="">欢迎您, <%=session.getAttribute("username")%>!</label></span>
+		<span><label id="welLabel" for=""></label></span>
 	</div>
 </div>
 
@@ -178,8 +179,7 @@ function submitById(id){
 		    		 var res = jresp.getMessage();
 		    		alert("登录成功！");
 		    	 }
-		    	 $("#loginDiv").hide();
-		    	 $("#welcomeDiv").show();
+		    	 location.reload();
 		    },
 		     error: function(transport) 
 		     {
@@ -197,8 +197,10 @@ function login(){
 
 function checkLogin(){
 	var username = "<%=session.getAttribute("username")%>";
-	if(username != "null"  ){
+	if(username !== null && username !== undefined && username !== "null"){
 		 $("#loginDiv").hide();
+		 var wel = '欢迎您, <%=name%>!';
+		 $("#welLabel").text(wel);
     	 $("#welcomeDiv").show();
 	}
 }

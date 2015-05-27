@@ -50,6 +50,7 @@ function hideSubMenu(li) {
 var subMenu = li.getElementsByTagName("ul")[0];
 subMenu.style.display = "none";
 }
+
 </script>
 
 		<%@ include file="page/top.jsp"%>

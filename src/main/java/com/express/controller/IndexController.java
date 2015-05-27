@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -215,5 +214,116 @@ public class IndexController extends BaseController{
 		}
 	}
 
+	/**
+	 * 下载中心
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/downloadList.do")
+	public ModelAndView downloadList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			String type = "下载中心";
+			map.put("type", type);
+			map.put("zyggList", zyggList);
+			return new ModelAndView("downloadList").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("获取下载中心信息出错！" +  ",errMsg=" + e.getMessage());
+			return null;
+		}
+	}
+	
+	/**
+	 * 短信发送
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/message.do")
+	public ModelAndView message(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			String type = "短信发送";
+			map.put("type", type);
+			map.put("zyggList", zyggList);
+			return new ModelAndView("message").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("获取短信发送信息出错！" +  ",errMsg=" + e.getMessage());
+			return null;
+		}
+	}
+	
+	/**
+	 * 短信查看
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/messageList.do")
+	public ModelAndView messageList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			String type = "短信查看";
+			map.put("type", type);
+			map.put("zyggList", zyggList);
+			return new ModelAndView("messageList").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("获取短信查看信息出错！" +  ",errMsg=" + e.getMessage());
+			return null;
+		}
+	}
+	
+	/**
+	 * 诚信建设
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/blackList.do")
+	public ModelAndView blackList(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			String type = "诚信建设";
+			map.put("type", type);
+			map.put("zyggList", zyggList);
+			return new ModelAndView("blackList").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("获取诚信建设信息出错！" +  ",errMsg=" + e.getMessage());
+			return null;
+		}
+	}
 
 }

@@ -48,10 +48,10 @@ subMenu.style.display = "none";
 					 <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/hzkdxh/downloadZone.jsp"><span>下载专区</span></a></li>
 					 <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a><span>会员中心</span></a>
                      	<ul>
-                         <li><a href="downloadList.jsp">下载中心</a></li>
-                         <li><a href="message.jsp">短信发送</a></li>
-                         <li><a href="messageList.jsp">短信查看</a></li>
-                         <li><a href="blackList.jsp">诚信建设</a></li>
+                         <li><a href="/hzkdxh/news/downloadList.do">下载中心</a></li>
+                         <li><a href="/hzkdxh/news/message.do">短信发送</a></li>
+                         <li><a href="/hzkdxh/news/messageList.do">短信查看</a></li>
+                         <li><a href="/hzkdxh/news/blackList.do">诚信建设</a></li>
                          </ul>
                      </li>
 		</ul>
