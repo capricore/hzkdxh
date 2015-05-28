@@ -44,13 +44,19 @@ public class NewsServiceImp extends BaseService implements NewsService {
 
 	public List<News> getNewsListByNewsTypeAndSubTypeAndPage(int newstype,
 			int subtype, int start, int pagesize) {
-		// TODO Auto-generated method stub
 		return getNewsDao().getNewsListByNewsTypeAndSubTypeAndPage(newstype, subtype, start, pagesize);
 	}
 
 	public int getNewsCount(int newstype, int subtype) {
-		// TODO Auto-generated method stub
 		return getNewsDao().getNewsCount(newstype, subtype);
+	}
+
+	public List<News> getNewsListByTitle(String title, int start, int pagesize) {
+		return getNewsDao().getNewsListByTitle(title, start, pagesize);
+	}
+
+	public int getNewsCountByTitle(String title) {
+		return getNewsDao().getNewsCountByTitle(title);
 	}
 
 }

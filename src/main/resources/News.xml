@@ -47,5 +47,16 @@
 	<delete id="deleteNews" parameterClass="String">
 		delete from news where newsid = #newsid#
 	</delete>
+	
+	<!-- 根据搜索标题获得新闻列表 -->
+	<select id="getNewsListByTitle" parameterClass="newsQuery"
+		resultClass="news">
+		SELECT * from news WHERE title like concat('%', #title#, '%') order by crtime desc limit #start#,#pagesize#
+	</select>
+	
+	<!-- 根据搜索标题获取的的新闻数量 -->
+	<select id="getNewsCountByTitle" parameterClass="String" resultClass="java.lang.Integer">
+		select count(*) from news WHERE title like concat('%', #title#, '%')
+	</select>
 
 </sqlMap>  

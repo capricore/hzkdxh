@@ -61,7 +61,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${newstype}</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>搜索结果</strong> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780"><h3>${subtype}</h3></div>
                             <div class="content_780">
@@ -72,15 +72,14 @@ subMenu.style.display = "none";
 	                                        <li><a href="/hzkdxh/news/detail.do?newsid=${item.newsid}" target="_blank">${item.title}</a> <em> ${date}</em></li>
                                         </c:forEach>
                                     </ul>
-                                    <form action="/hzkdxh/news/newsList.do" method="get">
-                                    	  <input type="hidden" name="newstype" value="${r_newstype}"/>
-                                    	  <input type="hidden" name="subtype" value="${r_subtype}" />
+                                    <form action="/hzkdxh/news/search.do" method="get">
+                                    <input type="hidden" name="title" value="${title}" />
                                           <div align="right" style="font-size:12px ">
                                            		 第 ${start} 页 共 ${pagecount} 页 
                                               <c:if test="${start==1}"><font color="#CCCCCC">上一页</font></c:if>
-                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/newsList.do?newstype=${newstype}&subtype=${subtype}&start=${start-1}">上一页</a></c:if>
+                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/search.do?title=${title }&start=${start-1}">上一页</a></c:if>
                                               <c:if test="${start==pagecount}"><font color="#CCCCCC">下一页</font></c:if>
-                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/newsList.do?newstype=${newstype}&subtype=${subtype}&start=${start+1}">下一页</a></c:if> 
+                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/search.do?title=${title }&start=${start+1}">下一页</a></c:if> 
                                            		 转到第 
                                             <input type="text" size="2" name="start"> 页
                                             <input onMouseOver="this.className='input3'" onMouseOut="this.className='input2'" type="submit" class="input2" value="GO"/>&nbsp;&nbsp;&nbsp;
