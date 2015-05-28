@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.express.dao.CompanyDao;
+import com.express.dao.DownloadzoneDao;
 import com.express.dao.RollingPictureDao;
 import com.express.dao.MercBlacklistDao;
 import com.express.dao.NewsDao;
@@ -29,6 +30,8 @@ public class BaseService {
 	
 	private UserBlacklistDao userBlacklistDao = (UserBlacklistDao)context.getBean("userBlacklistDao");
 	
+	private DownloadzoneDao downloadzoneDao = (DownloadzoneDao)context.getBean("downloadzoneDao");
+
 	private MercBlacklistDao mercBlacklistDao = (MercBlacklistDao)context.getBean("mercBlacklistDao");
 	
 	private OrganizationBlacklistDao organizationBlacklistDao = (OrganizationBlacklistDao)context.getBean("organizationBlacklistDao");
@@ -51,6 +54,10 @@ public class BaseService {
 	
 	public UserDao getUserDao(){
 		return userDao;
+	}
+	
+	public DownloadzoneDao getDownloadzoneDao() {
+		return downloadzoneDao;
 	}
 	
 	public  CompanyDao getCompanyDao(){

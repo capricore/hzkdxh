@@ -23,6 +23,7 @@ import org.json.JSONObject;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.express.bean.Downloadzone;
 import com.express.bean.RollingPicture;
 import com.express.util.CodeGenerator;
 import com.express.util.CommonConst;
@@ -103,6 +104,43 @@ public class BaseController {
 				inputStream.close();
 			if (outputStream != null)
 				outputStream.close();
+		}
+	}
+	
+	protected List<Downloadzone> uploadDownloadzone(HttpServletRequest request, HttpServletResponse response, Map map) throws Exception {
+		try {
+			List<Downloadzone> list = new ArrayList<Downloadzone>();
+			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+			Iterator it = multipartRequest.getFileNames();
+			while (it.hasNext()) {
+				String key = (String) it.next();
+				MultipartFile file = multipartRequest.getFile(key);
+				if (file.getOriginalFilename().length() > 0) {
+					String fileName = file.getOriginalFilename();
+					String extName = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
+					String id = (String) map.get("id");
+					String newFileName = id + extName;
+					String fullPath = "";
+					String rootPath = CommonConst.UPLOAD_ROOT_PATH;
+					fullPath = rootPath + (String)map.get("path");
+					//如果目录不存在创建目录
+					File dirFile = new File(fullPath);
+					if (!dirFile.exists())
+						dirFile.mkdirs();
+					//创建文件
+					fullPath += "/" + newFileName;
+					File newFile = new File(fullPath);
+					file.transferTo(newFile);
+					Downloadzone obj = new Downloadzone();
+					obj.setFilename(fileName);
+					obj.setFilesrc((String)map.get("path")+ "/" + newFileName);
+					list.add(obj);
+				}
+			}
+			return list;
+		} catch (Exception e) {
+			//log.error(e.toString());
+			return new ArrayList();
 		}
 	}
 	

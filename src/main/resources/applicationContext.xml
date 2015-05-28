@@ -67,5 +67,11 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 		</property>
 	</bean>
 	
+	<bean id="downloadzoneDao" class="com.express.daoImp.DownloadzoneDaoImp">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	
 	
 </beans>

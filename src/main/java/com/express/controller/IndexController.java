@@ -14,9 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.express.bean.Downloadzone;
 import com.express.bean.News;
 import com.express.bean.RollingPicture;
 import com.express.bean.StaticPicture;
+import com.express.service.DownloadzoneService;
 import com.express.service.NewsService;
 import com.express.service.RollingPictureService;
 import com.express.service.StaticPictureService;
@@ -31,6 +33,8 @@ public class IndexController extends BaseController{
 	private RollingPictureService rpService;
 	@Autowired
 	private StaticPictureService spService;
+	@Autowired
+	private DownloadzoneService	downloadzoneService;
 	
 	
 	private static final Logger logger = Logger.getLogger(IndexController.class);  
@@ -224,14 +228,26 @@ public class IndexController extends BaseController{
 	@RequestMapping("/downloadList.do")
 	public ModelAndView downloadList(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
+			int start = 1;
+			int pagecount = 0;
+			String r_start = request.getParameter("start");
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if (zyggList.size() > 8) {
 				zyggList = zyggList.subList(0, 8);
 			}
+			
+			if(StringUtils.isNotEmpty(r_start))
+				start = Integer.valueOf(r_start);
 			Map map = new HashMap();
+			List<Downloadzone> downlist = downloadzoneService.getFileList((start-1)*pagesize,start*pagesize);
+			int pageSum = downloadzoneService.getFileCount();
+			pagecount = pageSum/pagesize+1;
 			String type = "下载中心";
 			map.put("type", type);
+			map.put("pagecount", pagecount);
+			map.put("start", start);
+			map.put("downlist", downlist);
 			map.put("zyggList", zyggList);
 			return new ModelAndView("downloadList").addAllObjects(map);
 		}catch (RuntimeException e) {

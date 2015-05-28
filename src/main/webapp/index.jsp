@@ -75,6 +75,14 @@
 	           });
 	
 	       });
+			
+			function MM_jumpMenu(selObj)
+			{ //v3.0
+			 if(selObj.options[selObj.selectedIndex].value != "" )
+			 {
+			window.open(selObj.options[selObj.selectedIndex].value,'','height=400,width=600,top=200,left=200,toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes,location=yes,status=yes');
+			 }
+			}
 	</script>	
 </head>
 <body id="Homepage" class="" onload="checkLogin();">

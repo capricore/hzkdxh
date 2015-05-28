@@ -18,6 +18,7 @@
 		<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
 		<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
+		<script type="text/javascript" src="/hzkdxh/javascript/jsonRespUtils.js"></script>
 		
 		<style type="text/css" >
 		<!--
@@ -32,7 +33,8 @@
 		#a1 a{
 			display: block;
 		}
-		</style> 
+		</style>
+         
 		
 	</head>
 	<body id="Homepage" class="">
@@ -50,7 +52,6 @@ function hideSubMenu(li) {
 var subMenu = li.getElementsByTagName("ul")[0];
 subMenu.style.display = "none";
 }
-
 </script>
 
 		<%@ include file="page/top.jsp"%>
@@ -61,34 +62,21 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${type }</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>联系我们</strong> </p>
 							<!-- 内容左边开始 -->
-                            <div class="caption_content_780"><h3>下载中心</h3></div>
-			<div class="content_780">
-				<div class="copyrightCenter">
-					<ul class="ulli">
-						<c:forEach  items="${downlist}"  var="item"  varStatus="status">
-						<c:set var="time" value="${item.crtime}" />
-						<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-							<li><a href="/upload${item.filesrc }" target="_blank">${item.filename }</a> <em>${date}</em></li>
-						</c:forEach>
-						
-					</ul>
-					<form action="/hzkdxh/news/downloadList.do" method="get">
-                                          <div align="right" style="font-size:12px ">
-                                           		 第 ${start} 页 共 ${pagecount} 页 
-                                              <c:if test="${start==1}"><font color="#CCCCCC">上一页</font></c:if>
-                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/downloadList.do&start=${start-1}">上一页</a></c:if>
-                                              <c:if test="${start==pagecount}"><font color="#CCCCCC">下一页</font></c:if>
-                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/downloadList.do&start=${start+1}">下一页</a></c:if> 
-                                           		 转到第 
-                                            <input type="text" size="2" name="start"> 页
-                                            <input onMouseOver="this.className='input3'" onMouseOut="this.className='input2'" type="submit" class="input2" value="GO"/>&nbsp;&nbsp;&nbsp;
-                                          </div>
-                     </form>
-
-				</div>
-			</div>
+                            <div class="caption_content_780"><h3>留言提交</h3></div>
+                            <div class="content_780">
+                                    <div class="QuickLinksRight" style="padding-left:50px">								
+									<form id="contactForm" action="/hzkdxh/mail/send.do">
+										<label for="">留言</label><br></br>								                             
+										<textarea name="message" style="height:200px; width:560px"></textarea><br></br>
+								        <label for="">联系方式</label>&nbsp;<input style="width:200px" name="contact" value="" /><br></br>
+										<input class="buttonLogin" type="button" name="submit" onclick="mail();" value="提交"/>
+									</form>
+								    </div>
+                            </div>
+                            </div>
+					</div>
 					
 		</div>
 		<!-- =========== 内容结束 ========= -->
@@ -98,4 +86,47 @@ subMenu.style.display = "none";
 		<!-- Footer End -->
 	</body>
 	</html>
+<script>
 
+function submitById(id){			
+	//Callback handler for form submit event
+	$("#"+id).submit(function(e)
+	{
+		  	e.preventDefault();
+		  	var formObj = $(this);
+		    var formURL = formObj.attr("action");
+		    var formData = new FormData(this);
+		    $.ajax({
+		        url: formURL,
+		    type: 'POST',
+		        data:  formData,
+		    mimeType:"multipart/form-data",
+		    contentType: false,
+		    cache: false,
+		    processData:false,
+		    success: function(transport)
+		    {
+		    	 var jresp = new JsonRespUtils(transport);
+		    	 if (jresp.isSuccessfully()){
+		    		 var res = jresp.getMessage();
+		    		 if(res=="sendSuccess"){
+		    			 alert("发送成功！");
+		    		 }
+		    		 location.reload();
+		    	 }
+		    },
+		     error: function(transport) 
+		     {
+		    	alert("登录失败！");
+		     }          
+		    });
+		}); 
+		$("#"+id).submit();
+	}
+	
+	function mail(){
+		submitById('contactForm');
+		return false;
+	}
+
+</script>

@@ -82,24 +82,24 @@ boxmove("contact","c1","c2",1);
 <div class="content_right_170">
 	<div id="contact">联系人：沈斌  胡晏平<br />电话：0571-87893019    0571-87893027<br />传真：0571-87893038    0571-87893030<br />地址：杭州市天目山路142号1002室</font></div>
 </div>
-                     
-                     <div class="caption_right_170_h3"> 
-	<h3>留言提交</h3>				
-</div>
-<div class="content_right_170">
-                     <div class="QuickLinksRight">								
-	<form name="form3" action="mes.jsp" method="get" onsubmit="return contact()">
-                         	<ul style="list-style-type:none;">
-                             
-		<li><textarea name="message" style="height:50px; width:200px"></textarea></li>
-                             <li><label for="">联系方式</label> <input style="width:148px" name="id" value="" /></li>
-		<li><input class="buttonLogin" type="submit" name="submit" value="提交" /> </li>
-		</ul>
-	</form>
-                     </div>
-</div>
-                     
-<!-- =========== 12305========= -->
+	<div class="caption_right_170_h3">
+		<h3>留言提交<a href="/hzkdxh/mail/contact.do">更多</a></h3>
+	</div>
+	<div class="content_right_170">
+		<div class="QuickLinksRight">
+			<form id="contactForm" action="/hzkdxh/mail/send.do">
+				<ul style="list-style-type: none;">
+					<li><textarea name="message"
+							style="height: 50px; width: 200px"></textarea></li>
+					<li><label for="">联系方式</label> <input style="width: 148px"
+						name="contact" value="" /></li>
+					<li><input class="buttonLogin" type="button" name="submit"
+						value="提交" onclick="mail();" /></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<!-- =========== 12305========= -->
 <div class="tel12305"><img alt="" border="0" src="images/12305.gif" /></div>
 
 
@@ -156,6 +156,7 @@ boxmove("a","a1","a2",1);
 </div>
 
 <script>
+
 function submitById(id){			
 	//Callback handler for form submit event
 	$("#"+id).submit(function(e)
@@ -177,9 +178,13 @@ function submitById(id){
 		    	 var jresp = new JsonRespUtils(transport);
 		    	 if (jresp.isSuccessfully()){
 		    		 var res = jresp.getMessage();
-		    		alert("登录成功！");
+		    		 if(res=="sendSuccess"){
+		    			 alert("发送成功！");
+		    		 }else{
+			    		 alert("登录成功！");
+		    		 }
+		    		 location.reload();
 		    	 }
-		    	 location.reload();
 		    },
 		     error: function(transport) 
 		     {
@@ -194,6 +199,12 @@ function login(){
 	submitById('loginForm');
 	return false;
 }
+
+function mail(){
+	submitById('contactForm');
+	return false;
+}
+
 
 function checkLogin(){
 	var username = "<%=session.getAttribute("username")%>";
