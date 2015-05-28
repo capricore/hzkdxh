@@ -12,8 +12,8 @@ subMenu.style.display = "none";
 }
 </script>
 
-<div id="Header">
-	<h1 style="padding-bottom:2px"><a href="index.jsp" title="营业管理人门户"></a>
+	<div id="Header">
+	<h1 style="padding-bottom:2px">
 </h1>
 		<ul id="navigation">            
                      <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/hzkdxh"><span>首页</span></a></li>

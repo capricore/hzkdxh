@@ -10,10 +10,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 	<meta name="keywords" content="浙江省快递行业协会" />
 	<meta name="description" content="" />
-	<link rel="stylesheet" href="css/system.css" type="text/css" />
-	<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
-	<link rel="stylesheet" href="css/css.css" type="text/css" /> 
-	<link href="css/xslider.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
+	<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
+	<link rel="stylesheet" href="/hzkdxh/css/css.css" type="text/css" /> 
+	<link href="/hzkdxh/css/xslider.css" rel="stylesheet" />
 	
 	<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
 	<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
@@ -94,7 +94,7 @@
 								<ul>
 									<li class="TasADSOn"><span>协会动态</span></li>
 								</ul>
-								<a href="list.jsp">&gt;&gt; 更多</a>
+								<a href="/hzkdxh">&gt;&gt; 更多</a>
 							</div>
 							<div class="TabADSCon">
 								<div style="display: block;" id="tabadcontent_10">

@@ -9,15 +9,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 		<meta name="keywords" content="浙江省快递行业协会" />
 		<meta name="description" content="" />
-		<link rel="stylesheet" href="css/system.css" type="text/css" />
-		<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
-		<link rel="stylesheet" href="css/css.css" type="text/css" /> 
-		<link href="css/xslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
+		<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
+		<link rel="stylesheet" href="/hzkdxh/css/css.css" type="text/css" /> 
+		<link href="/hzkdxh/css/xslider.css" rel="stylesheet" />
 		
-		<script type="text/javascript" src="javascript/style.js"></script>
-		<script src="javascript/yu.js" type="text/javascript"></script>
-		<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
-		<script src="javascript/jquery.Xslider.js"></script>
+		<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
+		<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
 		
 		<style type="text/css" >
 		<!--
@@ -61,7 +61,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
 						
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="index.jsp">首页</a> &gt; <strong>短信查看</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>短信查看</strong> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780"><h3>已发短信</h3></div>
                             <div class="content_780">

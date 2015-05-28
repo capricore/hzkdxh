@@ -10,15 +10,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 		<meta name="keywords" content="浙江省快递行业协会" />
 		<meta name="description" content="" />
-		<link rel="stylesheet" href="css/system.css" type="text/css" />
-		<link rel="stylesheet" href="css/layout.css" type="text/css" /> 
-		<link rel="stylesheet" href="css/css.css" type="text/css" /> 
-		<link href="css/xslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
+		<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
+		<link rel="stylesheet" href="/hzkdxh/css/css.css" type="text/css" /> 
+		<link href="/hzkdxh/css/xslider.css" rel="stylesheet" />
 		
-		<script type="text/javascript" src="javascript/style.js"></script>
-		<script src="javascript/yu.js" type="text/javascript"></script>
-		<script src="javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
-		<script src="javascript/jquery.Xslider.js"></script>
+		<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
+		<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
 		<script type="text/javascript" src="/hzkdxh/javascript/jsonRespUtils.js"></script>
 	
 		<style type="text/css" >

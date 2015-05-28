@@ -61,7 +61,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="index.jsp">首页</a> &gt; <strong>${type}</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${type}</strong> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780">
 							</div>
