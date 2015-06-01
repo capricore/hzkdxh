@@ -60,6 +60,14 @@
 		var MyMar=setInterval(Marquee,speed) 
 		listmarquee.onmouseover=function() {clearInterval(MyMar)} 
 		listmarquee.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+		
+		function MM_jumpMenu(selObj)
+		{ //v3.0
+		 if(selObj.options[selObj.selectedIndex].value != "" )
+		 {
+		window.open(selObj.options[selObj.selectedIndex].value,'','height=400,width=600,top=200,left=200,toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes,location=yes,status=yes');
+		 }
+		}
 		</script> 
 			
 	</div>
@@ -69,11 +77,12 @@
 		<h3>站内搜索</h3>				
 	</div>
 	<div class="content_right_170">
-		<form method="get" action="morepage.jsp" class="search">
-			<input type="text" style="width:172px" name="querystring" value=""/> 
-			<button type="submit" class="btn" style="padding:0 0 0 0"> 搜索</button>
-		</form>
-	</div>
+	<form method="get" name="form1" action="/hzkdxh/news/search.do" class="search" onsubmit="return query()">
+		<input type="text" name="title" value=""/> 
+		<button type="submit" class="btn"> 搜索</button>
+	</form>
+</div>
+
 	
 	<!-- 站内搜索结束 -->
 	

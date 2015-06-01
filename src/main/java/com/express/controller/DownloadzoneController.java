@@ -56,20 +56,7 @@ public class DownloadzoneController extends BaseController{
 		}
 	}
 	
-	@RequestMapping("/list.do")
-	public ModelAndView newsList(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		try{
-			List<Downloadzone> list = downloadzoneService.getFileList();
-			Map map = new HashMap();
-			map.put("fileList", list);
-			return new ModelAndView("downloadzone/fileList").addAllObjects(map);
-		}catch (RuntimeException e) {
-			outputJsonResponse(response, false, e.getMessage());
-			logger.error("获取文件列表信息出错！" +  ",errMsg=" + e.getMessage());
-			return null;
-		}
-	}
-	
+
 	@RequestMapping("/fileAdd.do")
 	public ModelAndView addFile(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
