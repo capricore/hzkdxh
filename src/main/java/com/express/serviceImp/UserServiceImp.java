@@ -43,4 +43,8 @@ public class UserServiceImp extends BaseService implements UserService{
 		return getUserDao().getUserIdbyLogin(username, passwd);
 	}
 
+	public List<String> getPhoneByCompId(String compid) {
+		return getUserDao().getPhoneByCompId(compid);
+	}
+
 }

@@ -28,4 +28,6 @@ public interface UserService {
     public List<User> getMessageListbyUserId(String userid);
 
     public String getUserIdbyLogin(String username, String passwd);
+    
+    public List<String> getPhoneByCompId(String compid);
 }

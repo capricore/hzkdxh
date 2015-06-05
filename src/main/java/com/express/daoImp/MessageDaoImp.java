@@ -75,4 +75,14 @@ public class MessageDaoImp extends BaseDao implements MessageDao{
 		return flag;
 	}
 
+	public int getMessageCount() {
+		int count = 0;
+		try {
+			count = (Integer) getSqlMapClientTemplate().queryForObject("getMessageCount");
+		} catch (Exception e) {
+			logger.error("获取信息数量信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		return count; 
+	}
+
 }

@@ -195,11 +195,11 @@ public class SendMsg {
 		String phone = "13757125744";
 		String text = "验证码：678910，请您在5分钟内填写。如非本人操作，请忽略本短信。";
 		String reply = "服务器回执：result=0&description=发送短信成功&taskid=203150025019&faillist=&task_id=203150025019";
-		SendMsg.sendMessage_yxt(phone, text);
-		SendMsg.reply();
-		SendMsg.replyConfirm("2037453502");
+//		SendMsg.sendMessage_yxt(phone, text);
+//		SendMsg.reply();
+//		SendMsg.replyConfirm("2037453502");
 //		String replys = "[{'callmdn':'1069026200121551','mdn':'15088785126','content':'你好啊','reply_time':'2015-06-01 18:06:52','id':'2037453383'},{'callmdn':'1069026200121551','mdn':'15088785126','content':'哈哈','reply_time':'2015-06-01 18:30:21','id':'2037453502'}]";
-//		List<Reply> r = JsonUtils.toBeans(replys, Reply.class);
+//		List<Reply> r = JsonUtils.jsonToBeanList(replys, Reply.class);
 //		System.out.println(r.get(0).getContent());
 	}
 }

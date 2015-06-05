@@ -21,4 +21,5 @@ public interface MessageDao {
     /* É¾³ı¶ÌĞÅĞÅÏ¢*/
     public boolean deleteMessage(String id);
 
+    public int getMessageCount();
 }

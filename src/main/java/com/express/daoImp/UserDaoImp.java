@@ -133,4 +133,15 @@ public class UserDaoImp extends BaseDao implements UserDao {
 		return userid;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<String> getPhoneByCompId(String compid) {
+		List<String> phone = null;
+		try {
+			phone = getSqlMapClientTemplate().queryForList("getPhoneByCompId",compid);
+		} catch (Exception e) {
+			logger.error("获取电话列表出错！" + ",errMsg=" + e.getMessage());
+		}
+		return phone;
+	}
+
 }

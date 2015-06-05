@@ -17,12 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.express.bean.Company;
 import com.express.bean.Downloadzone;
+import com.express.bean.Message;
 import com.express.bean.News;
 import com.express.bean.RollingPicture;
 import com.express.bean.StaticPicture;
 import com.express.bean.User;
 import com.express.service.CompanyService;
 import com.express.service.DownloadzoneService;
+import com.express.service.MessageService;
 import com.express.service.NewsService;
 import com.express.service.RollingPictureService;
 import com.express.service.StaticPictureService;
@@ -44,6 +46,8 @@ public class IndexController extends BaseController{
 	private StaticPictureService spService;
 	@Autowired
 	private DownloadzoneService	downloadzoneService;
+	@Autowired
+	private MessageService messageService;
 	
 	
 	private static final Logger logger = Logger.getLogger(IndexController.class);  
@@ -324,14 +328,22 @@ public class IndexController extends BaseController{
 	@RequestMapping("/messageList.do")
 	public ModelAndView messageList(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
+			int start = 1;
+			int pagecount = 0;
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if (zyggList.size() > 8) {
 				zyggList = zyggList.subList(0, 8);
 			}
+			List<Message> messageList = messageService.getMessageListByTime((start-1)*pagesize,start*pagesize);
+			int pageSum = messageService.getMessageCount();
+			pagecount = pageSum/pagesize+1;
 			Map map = new HashMap();
 			String type = "短信查看";
 			map.put("type", type);
+			map.put("pagecount", pagecount);
+			map.put("start", start);
+			map.put("messageList", messageList);
 			map.put("zyggList", zyggList);
 			return new ModelAndView("messageList").addAllObjects(map);
 		}catch (RuntimeException e) {

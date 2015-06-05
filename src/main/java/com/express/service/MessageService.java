@@ -20,5 +20,7 @@ public interface MessageService {
     
     /* É¾³ı¶ÌĞÅĞÅÏ¢*/
     public boolean deleteMessage(String id);
+    
+    public int getMessageCount();
 
 }

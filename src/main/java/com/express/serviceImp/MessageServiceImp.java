@@ -31,4 +31,8 @@ public class MessageServiceImp extends BaseService implements MessageService{
 		return getMessageDao().deleteMessage(id);
 	}
 
+	public int getMessageCount() {
+		return getMessageDao().getMessageCount();
+	}
+
 }

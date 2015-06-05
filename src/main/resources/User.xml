@@ -45,5 +45,9 @@
 	<select id="getUserIdbyLogin"  parameterClass="userQuery" resultClass="String">
 		select userid from user where username = #username# and passwd = #passwd#
 	</select>
+	
+	<select id="getPhoneByCompId"  parameterClass="String" resultClass="String">
+		select phone from user where compid=#compid#
+	</select>
 
 </sqlMap>  
