@@ -11,8 +11,8 @@ import com.express.service.ReplyService;
 @Service
 public class ReplyServiceImp extends BaseService implements ReplyService{
 
-	public List<Reply> getReplyListByDeadline(String deadline) {
-		return getReplyDao().getReplyListByDeadline(deadline);
+	public List<Reply> getReplyListByDeadline(String deadline,int start, int pagesize) {
+		return getReplyDao().getReplyListByDeadline(deadline,start,pagesize);
 	}
 
 	public boolean addReply(Reply reply) {

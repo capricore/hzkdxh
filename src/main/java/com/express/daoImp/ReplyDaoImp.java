@@ -7,16 +7,21 @@ import org.apache.log4j.Logger;
 import com.express.bean.Reply;
 import com.express.dao.BaseDao;
 import com.express.dao.ReplyDao;
+import com.express.query.ReplyQuery;
 
 public class ReplyDaoImp extends BaseDao implements ReplyDao{
 	
 	private static final Logger logger = Logger.getLogger(MercBlacklistDaoImp.class);
 
 	@SuppressWarnings("unchecked")
-	public List<Reply> getReplyListByDeadline(String deadline) {
+	public List<Reply> getReplyListByDeadline(String deadline,int start, int pagesize) {
 		List<Reply> replylists = null;
+		ReplyQuery replyQuery = new ReplyQuery();
+		replyQuery.setDeadline(deadline);
+		replyQuery.setStart(start);;
+		replyQuery.setPagesize(pagesize);
 		try {
-			replylists = getSqlMapClientTemplate().queryForList("getReplyListByDeadline",deadline);
+			replylists = getSqlMapClientTemplate().queryForList("getReplyListByDeadline",replyQuery);
 		} catch (Exception e) {
 			logger.error("获取短信回复信息列表出错！" +  ",errMsg=" + e.getMessage());
 		}

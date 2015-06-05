@@ -7,7 +7,7 @@ import com.express.bean.Reply;
 public interface ReplyDao {
 	
 	/* 根据截至时间查询回复列表*/
-    public List<Reply> getReplyListByDeadline(String deadline);
+    public List<Reply> getReplyListByDeadline(String deadline,int start, int pagesize);
     
     /* 添加新回复 */
     public boolean addReply(Reply reply);
