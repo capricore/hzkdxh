@@ -101,7 +101,6 @@ subMenu.style.display = "none";
 		<!-- Header End -->
 			<div id="Content">
 					<div class="M_Col2">
-
 						<%@include file="page/left2.jsp" %>
                                             
                         <%@include file="page/m.jsp" %>

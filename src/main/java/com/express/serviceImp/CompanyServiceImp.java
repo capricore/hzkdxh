@@ -44,4 +44,8 @@ public class CompanyServiceImp extends BaseService implements CompanyService {
 		return getCompanyDao().deleteComp(compid);
 	}
 
+	public List<Company> getSubcompanyList() {
+		return getCompanyDao().getSubcompanyList();
+	}
+
 }

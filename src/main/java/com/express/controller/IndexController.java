@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.express.bean.Company;
 import com.express.bean.Downloadzone;
 import com.express.bean.News;
 import com.express.bean.RollingPicture;
 import com.express.bean.StaticPicture;
+import com.express.bean.User;
+import com.express.service.CompanyService;
 import com.express.service.DownloadzoneService;
 import com.express.service.NewsService;
 import com.express.service.RollingPictureService;
 import com.express.service.StaticPictureService;
+import com.express.service.UserService;
 import com.express.util.StringUtils;
 
 @Controller
@@ -29,6 +34,10 @@ import com.express.util.StringUtils;
 public class IndexController extends BaseController{
 	@Autowired
 	private NewsService newsService;
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private CompanyService companyService;
 	@Autowired
 	private RollingPictureService rpService;
 	@Autowired
@@ -268,14 +277,33 @@ public class IndexController extends BaseController{
 	@RequestMapping("/message.do")
 	public ModelAndView message(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
+			HttpSession session = request.getSession(true); 
+			String username = (String)session.getAttribute("username");
+			User user = userService.getByUserName(username);
+			List<Company> mainmessageList = new ArrayList<Company>();
+			List<Company> submessageList = new ArrayList<Company>();
+			Map map = new HashMap();
+			if (user.getLevel() == 1) {
+				Company company = companyService.getByCompanyId(user.getCompid());
+				submessageList = companyService.getSubcompanyListByCompId(company.getPcompid());
+			}else if(user.getLevel() == 2){
+				Company company = companyService.getByCompanyId(user.getCompid());
+				mainmessageList = companyService.getMainCompanyList();
+				submessageList = companyService.getSubcompanyListByCompId(company.getCompid());
+				
+			}else if(user.getLevel() == 3){
+				mainmessageList = companyService.getMainCompanyList();
+				submessageList = companyService.getSubcompanyList();
+			}
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if (zyggList.size() > 8) {
 				zyggList = zyggList.subList(0, 8);
 			}
-			Map map = new HashMap();
 			String type = "短信发送";
 			map.put("type", type);
+			map.put("mainmessageList", mainmessageList);
+			map.put("submessageList", submessageList);
 			map.put("zyggList", zyggList);
 			return new ModelAndView("message").addAllObjects(map);
 		}catch (RuntimeException e) {

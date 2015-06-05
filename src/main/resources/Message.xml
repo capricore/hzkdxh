@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap>
+	<typeAlias alias="message" type="com.express.bean.Message" />
+	<typeAlias alias="messageQuery" type="com.express.query.MessageQuery" />
+
+
+	<!-- 根据deadline获得回复列表 -->
+	<select id="getMessageListByTime" parameterClass="messageQuery"
+		resultClass="message">
+		SELECT * FROM message order by send_time desc limit #start#,#pagesize#
+	</select>
+	
+	<select id="getMessageById" parameterClass="String"
+		resultClass="message">
+		select * from message where id = #id#
+	</select>
+
+	<insert id="addMessage" parameterClass="message">
+		insert into message (id,mdn,content,send_time) values(#id#,#mdn#,#content#,#send_time#)
+		<selectKey resultClass="String" keyProperty="id">  
+  		 	 SELECT @@IDENTITY as id  
+ 		 </selectKey> 
+	</insert>
+
+	<update id="updateMessage" parameterClass="message">
+		update message set mdn=#mdn#,content=#content#,send_time=#send_time# where id=#id#
+	</update>
+	
+	<delete id="deleteMessage" parameterClass="String">
+		delete from message where id = #id#
+	</delete>
+
+</sqlMap>  

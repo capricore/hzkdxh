@@ -107,4 +107,15 @@ public class CompanyDaoImp extends BaseDao implements CompanyDao{
 		return flag;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Company> getSubcompanyList() {
+		List<Company> Company = null;
+		try {
+			Company = getSqlMapClientTemplate().queryForList("getSubcompanyList");
+		} catch (Exception e) {
+			logger.error("获取子公司信息列表出错！" +  ",errMsg=" + e.getMessage());
+		}
+		return Company; 
+	}
+
 }

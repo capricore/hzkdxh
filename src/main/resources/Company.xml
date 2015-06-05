@@ -7,6 +7,10 @@
 	<select id="getCompanyList" resultClass="company">
 		select * from company
 	</select>
+	
+	<select id="getSubcompanyList" resultClass="company">
+		select * from company where pcompid is NOT NULL
+	</select>
 
 	<!-- 根据公司名获得公司对象 -->
 	<select id="getByCompanyName" parameterClass="String"

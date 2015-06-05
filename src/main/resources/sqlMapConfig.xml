@@ -11,5 +11,7 @@
   <sqlMap  resource ="OrganizationBlacklist.xml" />
   <sqlMap  resource ="RollingPicture.xml" />
   <sqlMap  resource ="StaticPicture.xml" />
+  <sqlMap  resource ="Message.xml" />
+  <sqlMap  resource ="Reply.xml" />
   <sqlMap  resource ="Downloadzone.xml" />
 </sqlMapConfig>

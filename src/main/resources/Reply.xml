@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap>
+	<typeAlias alias="reply" type="com.express.bean.Reply" />
+
+
+	<!-- 根据deadline获得回复列表 -->
+	<select id="getReplyListByDeadline" parameterClass="String"
+		resultClass="reply">
+		SELECT * FROM reply where reply_time &lt; #deadline# ORDER BY reply_time DESC
+	</select>
+
+	<insert id="addReply" parameterClass="reply">
+		insert into reply (id,mdn,callmdn,content,reply_time) values(#id#,#mdn#,#callmdn#,#content#,#reply_time#)
+		<selectKey resultClass="String" keyProperty="id">  
+  		 	 SELECT @@IDENTITY as id  
+ 		 </selectKey> 
+	</insert>
+
+	<update id="updateReply" parameterClass="reply">
+		update reply set mdn=#mdn#,callmdn=#callmdn#,content=#content#, reply_time=#reply_time# where id=#id#
+	</update>
+	
+	<delete id="deleteReply" parameterClass="String">
+		delete from reply where id = #id#
+	</delete>
+
+</sqlMap>  

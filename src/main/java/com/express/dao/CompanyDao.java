@@ -11,6 +11,9 @@ public interface CompanyDao {
     /* 根据主公司id查询对应子公司列表 */
     public List<Company> getSubcompanyListByCompId(String compid);
     
+    /* 查询子公司列表 */
+    public List<Company> getSubcompanyList();
+    
     /* 根据compname查询指定用户 */
     public Company getByCompanyName(String compname);  
     

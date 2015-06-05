@@ -30,7 +30,7 @@ public class SecurityServlet extends HttpServlet implements Filter{
 //		}
 		if( username == null || "".equals(username)) {    
 			//判断获取的路径不为空且不是访问登录页面或执行登录操作时跳转     
-			request.getSession().setAttribute("returnUri", servletPath);  
+			request.getSession().setAttribute("returnUri", servletPath); 
             response.sendRedirect(request.getContextPath() + "/login.jsp");
             return ;
 		}
