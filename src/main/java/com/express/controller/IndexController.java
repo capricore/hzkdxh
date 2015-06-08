@@ -330,6 +330,9 @@ public class IndexController extends BaseController{
 		try{
 			int start = 1;
 			int pagecount = 0;
+			String r_start = request.getParameter("start");	
+			if(StringUtils.isNotEmpty(r_start))
+				start = Integer.valueOf(r_start);
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if (zyggList.size() > 8) {

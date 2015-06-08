@@ -67,10 +67,10 @@ subMenu.style.display = "none";
                             <div class="content_780">
                                     <ul class="ulli">
                                     	<c:forEach  items="${messageList}"  var="item"  varStatus="status">
-		                        			<li><a href="messageDetail.html" target="_blank">${item.content }</a> <em> ${item.send_time}</em></li>              
+		                        			<li><a href="/hzkdxh/message/messageDetail.do?id=${item.id }" target="_blank">${item.content }</a> <em> ${item.send_time}</em></li>              
 	                      				 </c:forEach>
                                     </ul>
-                                    <form action="about.jsp" method="get">
+                                    <form action="/hzkdxh/news/messageList.do" method="get">
                                           <div align="right" style="font-size:12px ">
                                            		 第 ${start} 页 共 ${pagecount} 页 
                                               <c:if test="${start==1}"><font color="#CCCCCC">上一页</font></c:if>

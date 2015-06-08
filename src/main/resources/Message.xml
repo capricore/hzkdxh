@@ -30,5 +30,9 @@
 	<delete id="deleteMessage" parameterClass="String">
 		delete from message where id = #id#
 	</delete>
+	
+	<select id="getMessageCount"  resultClass="java.lang.Integer">
+		select count(*) from message 
+	</select>
 
 </sqlMap>  

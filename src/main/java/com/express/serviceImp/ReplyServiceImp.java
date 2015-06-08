@@ -27,4 +27,8 @@ public class ReplyServiceImp extends BaseService implements ReplyService{
 		return getReplyDao().deleteReply(id);
 	}
 
+	public int getReplyCount(String deadtime) {
+		return getReplyDao().getReplyCount(deadtime);
+	}
+
 }

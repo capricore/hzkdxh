@@ -15,6 +15,44 @@
 
         // $('.selectpicker').selectpicker('hide');
     });
+    
+    function submitById(id){			
+    	//Callback handler for form submit event
+    	$("#"+id).submit(function(e)
+    	{
+    		  	e.preventDefault();
+    		  	var formObj = $(this);
+    		    var formURL = formObj.attr("action");
+    		    var formData = new FormData(this);
+    		    $.ajax({
+    		        url: formURL,
+    		    type: 'POST',
+    		        data:  formData,
+    		    mimeType:"multipart/form-data",
+    		    contentType: false,
+    		    cache: false,
+    		    processData:false,
+    		    success: function(transport)
+    		    {
+    		    	 var jresp = new JsonRespUtils(transport);
+    		    	 if (jresp.isSuccessfully()){
+    		    		 var res = jresp.getMessage();
+    		    		alert("登录成功！");
+    		    	 }
+    		    },
+    		     error: function(transport) 
+    		     {
+    		    	alert("登录失败！");
+    		     }          
+    		    });
+    		}); 
+    		$("#"+id).submit();
+    	}
+
+    function login(){
+    	submitById('loginForm');
+    	return false;
+    }
 </script>
 <div class="M_Col2Right">
 <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>短信群发</strong> </p>
@@ -22,7 +60,7 @@
     <div class="caption_content_780"><h3>短信群发</h3></div>
     <div class="content_780">
 
-            <form class="form-horizontal"  action="/hzkdxh/message/save.do" role="form">
+            <form class="form-horizontal"  action="/hzkdxh/message/save.do" role="form" id="loginForm">
                 <div class="form-group">
                     <label for="bs3Select"class="col-lg-2 control-label">选择联系人</label>
                     <div class="col-lg-10">
@@ -40,7 +78,7 @@
                     <div class="col-lg-10">
                     	<textarea style="width:545px" name="content"></textarea>
                         <br /><br />
-                        <input class="buttonLogin" type="submit" value="发送" />
+                        <input class="buttonLogin" type="submit" onclick="login();" value="发送" />
                     </div>
                   </div>
             </form>
