@@ -51,8 +51,7 @@ public class MessageController extends BaseController {
 			HttpServletResponse response) throws Exception {
 		try {
 			String content = new String(request.getParameter("content").getBytes("ISO-8859-1"), "UTF-8"); 
-			String query = request.getQueryString(); 
-			String[] compid = parseResult(query);
+			String[] compid = request.getParameterValues("select"); 
 			StringBuilder phone = new StringBuilder();
 			for (String comp : compid) {
 				List<String> phonelist = userService.getPhoneByCompId(comp);
@@ -76,15 +75,6 @@ public class MessageController extends BaseController {
 			logger.error("·¢ËÍ¶ÌÐÅ³ö´í£¡" +  ",errMsg=" + e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 		}
-	}
-
-	public static String[] parseResult(String response) {
-		String query[] = response.split("&");
-		String result[] = new String[query.length-1];
-		for (int i = 0; i < query.length - 1; i++) {
-			result[i] = query[i].substring(7, query[i].length());
-		}
-		return result;
 	}
 	
 	@RequestMapping("/messageDetail.do")
