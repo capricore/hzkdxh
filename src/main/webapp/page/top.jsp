@@ -25,7 +25,7 @@ subMenu.style.display = "none";
                          <li><a href="/hzkdxh/news/newsList.do?newstype=1&subtype=4&start=1">协会成员</a></li>
                          </ul>
                      </li>
-                     <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="#"><span>协会动态</span></a></li>
+                     <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/hzkdxh/news/newsList.do?newstype=8&subtype=0&start=1"><span>协会动态</span></a></li>
                      <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a><span>政策法规</span></a>
                          <ul>
                          <li><a href="/hzkdxh/news/newsList.do?newstype=2&subtype=1&start=1">行业法律法规</a></li>

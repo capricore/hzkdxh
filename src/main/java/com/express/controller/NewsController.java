@@ -30,9 +30,9 @@ public class NewsController extends BaseController{
 	
 	private static final Logger logger = Logger.getLogger(NewsController.class);  
 	
-	private String[] NewsType = {"","关于协会","政策法规","行业公告","会员风采","重要公告","行业咨询","行业统计"};
+	private String[] NewsType = {"","关于协会","政策法规","行业公告","会员风采","重要公告","行业咨询","行业统计","协会动态"};
 	private String[][] SubType = {{},{"","协会简介","协会章程","协会制度","协会成员"},{"","行业法律规范","部门规章","规范性文件","地方性法规","行业其它要求"}
-	,{"","统计报告","消费者申述通告","旺季消费"},{"","最新活动"},{""},{""},{""}};
+	,{"","统计报告","消费者申述通告","旺季消费"},{"","最新活动"},{""},{""},{""},{""}};
 	
 	/**
 	 * 保存文章
