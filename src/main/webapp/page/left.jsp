@@ -180,10 +180,18 @@ function submitById(id){
 		    		 var res = jresp.getMessage();
 		    		 if(res=="sendSuccess"){
 		    			 alert("发送成功！");
-		    		 }else{
+		    		 }else if(res=="loginSuccess"){
 			    		 alert("登录成功！");
 		    		 }
 		    		 location.reload();
+		    	 }else{
+		    		 var res = jresp.getMessage();
+		    		 if(res=="loginFailed"){
+		    			 alert("用户名密码错误！");
+		    		 }else{
+		    			 alert("发送失败！");
+		    		 }
+	    			 location.reload();
 		    	 }
 		    },
 		     error: function(transport) 

@@ -45,11 +45,17 @@ public class NewsDaoImp extends BaseDao implements NewsDao{
 		List<News> news = null;
 		NewsQuery newsQuery = new NewsQuery();
 		newsQuery.setNewstype(newstype);
-		newsQuery.setSubtype(subtype);
+		if (subtype != 0) {
+			newsQuery.setSubtype(subtype);
+		}
 		newsQuery.setStart(start);
 		newsQuery.setPagesize(pagesize);
 		try {
-			news = getSqlMapClientTemplate().queryForList("getNewsListByNewsTypeAndSubTypeAndPage", newsQuery);
+			if (subtype == 0) {
+				news = getSqlMapClientTemplate().queryForList("getNewsListByNewsTypeAndPage", newsQuery);
+			}else {
+				news = getSqlMapClientTemplate().queryForList("getNewsListByNewsTypeAndSubTypeAndPage", newsQuery);
+			}
 		} catch (Exception e) {
 			logger.error("根据新闻类型和子类型获取新闻信息出错！" +  ",errMsg=" + e.getMessage());
 		}
@@ -115,7 +121,11 @@ public class NewsDaoImp extends BaseDao implements NewsDao{
 		newsQuery.setNewstype(newstype);
 		newsQuery.setSubtype(subtype);
 		try {
-			count = (Integer)getSqlMapClientTemplate().queryForObject("getNewsCount", newsQuery);
+			if (subtype == 0) {
+				count = (Integer)getSqlMapClientTemplate().queryForObject("getNewsCountByNewsType", newstype);
+			}else {
+				count = (Integer)getSqlMapClientTemplate().queryForObject("getNewsCount", newsQuery);
+			}
 		} catch (Exception e) {
 			logger.error("根据新闻类型和子类型获取新闻总数！" +  ",errMsg=" + e.getMessage());
 		}
@@ -145,6 +155,22 @@ public class NewsDaoImp extends BaseDao implements NewsDao{
 			logger.error("根据搜索新闻标题获取新闻总数！" +  ",errMsg=" + e.getMessage());
 		}
 		return count;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<News> getNewsListByNewsType(int newstype, int start,
+			int pagesize) {
+		List<News> news = null;
+		NewsQuery newsQuery = new NewsQuery();
+		newsQuery.setNewstype(newstype);
+		newsQuery.setStart(start);
+		newsQuery.setPagesize(pagesize);
+		try {
+			news = getSqlMapClientTemplate().queryForList("getNewsListByNewsTypeAndPage", newsQuery);
+		} catch (Exception e) {
+			logger.error("根据新闻类型获取新闻信息出错(含分页)！" +  ",errMsg=" + e.getMessage());
+		}
+		return news;
 	}
 
 }

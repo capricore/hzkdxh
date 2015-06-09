@@ -102,7 +102,7 @@
 								<ul>
 									<li class="TasADSOn"><span>协会动态</span></li>
 								</ul>
-								<a href="/hzkdxh">&gt;&gt; 更多</a>
+								<a href="/hzkdxh/news/newsList.do?newstype=8&subtype=0&start=1">&gt;&gt; 更多</a>
 							</div>
 							<div class="TabADSCon">
 								<div style="display: block;" id="tabadcontent_10">
@@ -139,7 +139,7 @@
 
 						<!-- 内容左边开始 -->
 						<div class="MainLeft">
-							<div class="caption_left_470">重要公告 <a  href="list.jsp">&gt;&gt; 更多</a></div>
+							<div class="caption_left_470">重要公告 <a  href="/hzkdxh/news/newsList.do?newstype=5&subtype=0&start=1">&gt;&gt; 更多</a></div>
 							<div class="content_left_470">
 								<ul class="ulli">
 									<c:forEach  items="${zyggList}"  var="item"  varStatus="status">
@@ -157,7 +157,7 @@
 						
 						<div class="MainRight">
 							<div class="caption_right_298_h3"> 
-								<h3>行业公告<a href="list.jsp">&gt;&gt; 更多</a></h3>
+								<h3>行业公告<a href="/hzkdxh/news/newsList.do?newstype=3&subtype=0&start=1">&gt;&gt; 更多</a></h3>
 								<ul class="ulli">
 									<c:forEach  items="${hyggList}"  var="item"  varStatus="status">
 										<c:set var="time" value="${item.crtime}" />
@@ -175,7 +175,7 @@
 					
 
 					<div class="MainLeft">
-							<div class="caption_left_470">行业资讯 <a href="morepage.jsp?colname=zcfg">&gt;&gt; 更多</a></div>
+							<div class="caption_left_470">行业资讯 <a href="/hzkdxh/news/newsList.do?newstype=6&subtype=0&start=1">&gt;&gt; 更多</a></div>
 							<div class="content_left_470">
 								<ul class="ulli">
 									<c:forEach  items="${hyzxList}"  var="item"  varStatus="status">
@@ -192,7 +192,7 @@
 					</div>
 					<div class="MainRight">
 						<div class="caption_right_298_h3"> 
-							<h3>行业统计<a href="list.jsp">&gt;&gt; 更多</a></h3>
+							<h3>行业统计<a href="/hzkdxh/news/newsList.do?newstype=7&subtype=0&start=1">&gt;&gt; 更多</a></h3>
 							<ul class="ulli">
 								<c:forEach  items="${hytjList}"  var="item"  varStatus="status">
 									<c:set var="time" value="${item.crtime}" />
@@ -207,7 +207,7 @@
 						</div>
 					</div>
 					<div class="MainLeft">
-							<div class="caption_left_470">会员风采<a href="list.jsp">&gt;&gt; 更多</a></div>
+							<div class="caption_left_470">会员风采<a href="/hzkdxh/news/newsList.do?newstype=4&subtype=0&start=1">&gt;&gt; 更多</a></div>
 							<div class="content_left_470">
 								<ul class="ulli">
 									<c:forEach  items="${hyfcList}"  var="item"  varStatus="status">
@@ -225,7 +225,7 @@
 						
 						<div class="MainRight">
 							<div class="caption_right_298_h3"> 
-								<h3>政策法规<a href="list.jsp">&gt;&gt; 更多</a></h3>
+								<h3>政策法规<a href="/hzkdxh/news/newsList.do?newstype=2&subtype=0&start=1">&gt;&gt; 更多</a></h3>
 								<ul class="ulli">
 									<c:forEach  items="${zcfgList}"  var="item"  varStatus="status">
 										<c:set var="time" value="${item.crtime}" />

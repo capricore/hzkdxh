@@ -40,9 +40,10 @@ public class LoginController extends BaseController{
 				if(userid != null){
 					hs.setAttribute("username",username);
 					hs.setAttribute("userid", userid);
-					outputJsonResponse(response, true, username);
+					message = "loginSuccess";
+					outputJsonResponse(response, true, message);
 				}else{
-					message = "ÓÃ»§ÃûÃÜÂë´íÎó£¡";
+					message = "loginFailed";
 					outputJsonResponse(response, false, message);
 				}
 			}

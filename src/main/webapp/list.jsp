@@ -61,9 +61,9 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${newstype}</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${newstype}</strong> &gt; <strong>${subtype}</strong> </p>
 							<!-- 内容左边开始 -->
-                            <div class="caption_content_780"><h3>${subtype}</h3></div>
+                            <div class="caption_content_780"><h3>${type}</h3></div>
                             <div class="content_780">
                                     <ul class="ulli">
                                         <c:forEach  items="${newsList}"  var="item"  varStatus="status">

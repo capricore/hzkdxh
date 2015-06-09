@@ -92,10 +92,19 @@ function submitById(id){
 		    	 var jresp = new JsonRespUtils(transport);
 		    	 if (jresp.isSuccessfully()){
 		    		 var res = jresp.getMessage();
-		    		alert("登录成功！");
-		    	 }
-	    	 	var returnUri = '/hzkdxh<%=session.getAttribute("returnUri")%>';
-		    	window.location.href= returnUri;
+		    		 if(res=="loginSuccess"){
+		    			 alert("登陆成功！");
+		 	    	 	var returnUri = '/hzkdxh<%=session.getAttribute("returnUri")%>';
+				    	window.location.href= returnUri;
+		    		 }
+		    	 }else{
+		    		 var res = jresp.getMessage();
+		    		 if(res=="loginFailed"){
+		    			 alert("用户名密码错误！");
+		    		 }
+	    			 location.reload();
+	    		 }
+
 		    },
 		     error: function(transport) 
 		     {

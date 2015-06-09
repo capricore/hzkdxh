@@ -52,9 +52,9 @@ public class IndexController extends BaseController{
 	
 	private static final Logger logger = Logger.getLogger(IndexController.class);  
 	
-	private String[] NewsType = {"","关于协会","政策法规","行业公告","会员风采","重要公告","行业资讯","行业统计"};
+	private String[] NewsType = {"","关于协会","政策法规","行业公告","会员风采","重要公告","行业资讯","行业统计","协会动态"};
 	private String[][] SubType = {{},{"","协会简介","协会章程","协会制度","协会成员"},{"","行业法律规范","部门规章","规范性文件","地方性法规","行业其它要求"}
-	,{"","统计报告","消费者申述通告","旺季消费"},{"会员风采","最新活动"},{"重要公告"},{"行业资讯"},{"行业统计"}};
+	,{"","统计报告","消费者申述通告","旺季消费"},{"","最新活动"},{""},{""},{""},{""}};
 
 	private int pagesize = 15;			//每次查询返回的次数 
 	
@@ -70,7 +70,7 @@ public class IndexController extends BaseController{
 		try{
 
 			List<News> xhdtList = new ArrayList<News>();
-			xhdtList = newsService.getNewsListByNewsType(1);//获取协会动态
+			xhdtList = newsService.getNewsListByNewsType(8);//获取协会动态
 			if (xhdtList.size() > 8) {
 				xhdtList = xhdtList.subList(0, 8);
 			}
@@ -121,7 +121,6 @@ public class IndexController extends BaseController{
 			spList = spService.getPicturetList(); //获取静态轮播图片
 			
 			Map map = new HashMap();
-			
 			map.put("rpList", rpList);
 			map.put("xhdtList", xhdtList);
 			map.put("zyggList", zyggList);
@@ -215,8 +214,15 @@ public class IndexController extends BaseController{
 			String newstype_name = NewsType[newstype];
 			String subtype_name = SubType[newstype][subtype];
 			Map map = new HashMap();
+			String type = null;
+			if (subtype_name != "") {
+				type = subtype_name;
+			}else {
+				type = newstype_name;
+			}
 			map.put("newstype", newstype_name);
 			map.put("subtype", subtype_name);
+			map.put("type", type);
 			map.put("r_newstype", r_newstype);
 			map.put("r_subtype", r_subtype);
 			map.put("newsList", newsList);
@@ -230,6 +236,7 @@ public class IndexController extends BaseController{
 			return null;
 		}
 	}
+	
 
 	/**
 	 * 下载中心

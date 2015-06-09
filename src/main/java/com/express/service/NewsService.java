@@ -8,6 +8,7 @@ public interface NewsService {
 	/* 查询表中大类下的新闻 */
     public List<News> getNewsListByNewsType(int newstype);
     
+    
     /* 根据大类型号和之类型号查询子类下新闻*/
     public List<News> getNewsListByNewsTypeAndSubType(int newstype, int subtype); 
     

@@ -10,6 +10,12 @@
 		select * from news where newsid = #newsid# 
 	</select>
 
+	<!-- 根据newstype获得新闻列表（含分页） -->
+	<select id="getNewsListByNewsTypeAndPage" parameterClass="newsQuery"
+		resultClass="news">
+		select * from news where newstype = #newstype# order by crtime desc limit #start#,#pagesize#
+	</select>
+	
 	<!-- 根据newstype获得新闻列表 -->
 	<select id="getNewsListByNewsType" parameterClass="int"
 		resultClass="news">
@@ -31,6 +37,11 @@
 	<!-- 根据newstype和subtype获得某一类别下的新闻数量 -->
 	<select id="getNewsCount" parameterClass="newsQuery" resultClass="java.lang.Integer">
 		select count(*) from news where newstype = #newstype# and subtype = #subtype#
+	</select>
+	
+	<!-- 根据newstype获得某一类别下的新闻数量 -->
+	<select id="getNewsCountByNewsType" parameterClass="int" resultClass="java.lang.Integer">
+		select count(*) from news where newstype = #newstype# 
 	</select>
 
 	<insert id="addNews" parameterClass="news">
