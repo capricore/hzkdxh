@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap>
-	<typeAlias alias="news" type="com.express.bean.News" />
-	<typeAlias alias="newsQuery" type="com.express.query.NewsQuery" />
+	<typeAlias alias="news" type="com.hzkdxh.bean.News" />
+	<typeAlias alias="newsQuery" type="com.hzkdxh.query.NewsQuery" />
 
 	<!-- 根据newsid获得新闻 -->
 	<select id="getByNewsId" parameterClass="String"

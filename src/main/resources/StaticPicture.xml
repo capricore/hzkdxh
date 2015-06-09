@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap>
-	<typeAlias alias="staticpicture" type="com.express.bean.StaticPicture" />
+	<typeAlias alias="staticpicture" type="com.hzkdxh.bean.StaticPicture" />
 
 	<!-- 获得全查询列表 -->
 	<select id="getPicturetList" resultClass="staticpicture">

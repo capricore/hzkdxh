@@ -1,0 +1,80 @@
+package com.hzkdxh.daoImp;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
+
+import com.hzkdxh.bean.RollingPicture;
+import com.hzkdxh.dao.BaseDao;
+import com.hzkdxh.dao.RollingPictureDao;
+
+@Repository
+public class RollingPictureDaoImp extends BaseDao implements RollingPictureDao{
+	
+	private static final Logger logger = Logger.getLogger(RollingPictureDaoImp.class);  
+
+	@SuppressWarnings("unchecked")
+	public List<RollingPicture> getListBySequence(){
+		List<RollingPicture> list= null;
+		try {
+			list = getSqlMapClientTemplate().queryForList("getListBySequence");
+		} catch (Exception e) {
+			logger.error("查询文件列表信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		return list; 
+	}
+
+	public RollingPicture getById(String id){
+		RollingPicture pic = null;
+		try {
+			pic = (RollingPicture) getSqlMapClientTemplate().queryForObject("getById",id);
+		} catch (Exception e) {
+			logger.error("根据id获取文件信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		return pic; 
+	}
+
+	 public boolean addRollingPicture(RollingPicture rollingPicture){
+		String object = null;
+		boolean flag = false;
+		try {
+			object =(String) getSqlMapClientTemplate().insert("addRollingPicture", rollingPicture);
+		} catch (Exception e) {
+			logger.error("添加文件信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		if (object != null) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	public boolean updateRollingPicture(RollingPicture rollingPicture){
+		Object object = null;
+		boolean flag = false;
+		try {
+			object =(Integer) getSqlMapClientTemplate().update("updateRollingPicture", rollingPicture);
+		} catch (Exception e) {
+			logger.error("更新文件信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		if (object != null) {
+			flag = true;
+		}
+		return flag;
+	}
+	
+	public boolean deleteRollingPicture(String id){
+		Object object = null;
+		boolean flag = false;
+		try {
+			object =(Integer) getSqlMapClientTemplate().update("deleteRollingPicture", id);
+		} catch (Exception e) {
+			logger.error("删除文件信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+		if (object != null) {
+			flag = true;
+		}
+		return flag;
+	}
+
+}

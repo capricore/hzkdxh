@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap>
-	<typeAlias alias="userblacklist" type="com.express.bean.UserBlacklist" />
+	<typeAlias alias="userblacklist" type="com.hzkdxh.bean.UserBlacklist" />
 
 	<!-- 获得全查询列表 -->
 	<select id="getBlackList" resultClass="userblacklist">

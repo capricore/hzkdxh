@@ -19,13 +19,13 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 		<property name="configLocation" value="sqlMapConfig.xml" />
 	</bean>
 
-	<bean id="userDao" class="com.express.daoImp.UserDaoImp">
+	<bean id="userDao" class="com.hzkdxh.daoImp.UserDaoImp">
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>
 	</bean>
 
-	<bean id="newsDao" class="com.express.daoImp.NewsDaoImp">
+	<bean id="newsDao" class="com.hzkdxh.daoImp.NewsDaoImp">
 		<property name="dataSource">
 			<ref bean="dataSource" />
 		</property>

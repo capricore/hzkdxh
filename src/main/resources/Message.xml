@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap>
-	<typeAlias alias="message" type="com.express.bean.Message" />
-	<typeAlias alias="messageQuery" type="com.express.query.MessageQuery" />
+	<typeAlias alias="message" type="com.hzkdxh.bean.Message" />
+	<typeAlias alias="messageQuery" type="com.hzkdxh.query.MessageQuery" />
 
 
 	<!-- 根据deadline获得回复列表 -->
