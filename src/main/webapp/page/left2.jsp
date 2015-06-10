@@ -33,7 +33,7 @@
 <div class="M_Col2Left">
 							
 	<div class="caption_right_170_h3"> 
-		<h3>重要公告<a href="list.jsp">&gt;&gt; 更多</a></h3>
+		<h3>重要公告<a href="/hzkdxh/news/newsList.do?newstype=5&subtype=0&start=1">&gt;&gt; 更多</a></h3>
 	</div>
 	<div class="content_right_170">	
 		<div id="listmarquee">

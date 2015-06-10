@@ -49,7 +49,7 @@ subMenu.style.display = "none";
                          <li><a href="/hzkdxh/news/newsList.do?newstype=4&subtype=1&start=1">最新活动</a></li>
                          </ul>
 					 </li>
-					 <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/hzkdxh/downloadZone.jsp"><span>下载专区</span></a></li>
+					 <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="/hzkdxh/news/download.do"><span>下载专区</span></a></li>
 					 <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a><span>会员中心</span></a>
                      	<ul>
                          <li><a href="/hzkdxh/news/downloadList.do">下载中心</a></li>

@@ -396,5 +396,31 @@ public class IndexController extends BaseController{
 			return null;
 		}
 	}
+	
+	/**
+	 * 下载专区
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/download.do")
+	public ModelAndView download(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		try{
+			List<News> zyggList = new ArrayList<News>();
+			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
+			if (zyggList.size() > 8) {
+				zyggList = zyggList.subList(0, 8);
+			}
+			Map map = new HashMap();
+			map.put("zyggList", zyggList);
+			return new ModelAndView("downloadZone").addAllObjects(map);
+		}catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("获取下载专区信息出错！" +  ",errMsg=" + e.getMessage());
+			return null;
+		}
+	}
 
 }
