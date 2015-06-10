@@ -144,4 +144,15 @@ public class UserDaoImp extends BaseDao implements UserDao {
 		return phone;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<String> getAdminCompanyByLevel(int level) {
+		List<String> adminCompany = null;
+		try {
+			adminCompany = getSqlMapClientTemplate().queryForList("getAdminCompanyByLevel",level);
+		} catch (Exception e) {
+			logger.error("获取管理员company列表出错！" + ",errMsg=" + e.getMessage());
+		}
+		return adminCompany;
+	}
+
 }

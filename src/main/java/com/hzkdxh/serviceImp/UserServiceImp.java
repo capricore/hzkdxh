@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.User;
 import com.hzkdxh.service.BaseService;
 import com.hzkdxh.service.UserService;
@@ -45,6 +46,10 @@ public class UserServiceImp extends BaseService implements UserService{
 
 	public List<String> getPhoneByCompId(String compid) {
 		return getUserDao().getPhoneByCompId(compid);
+	}
+
+	public List<String> getAdminCompanyByLevel(int level) {
+		return getUserDao().getAdminCompanyByLevel(level);
 	}
 
 }

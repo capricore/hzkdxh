@@ -49,5 +49,9 @@
 	<select id="getPhoneByCompId"  parameterClass="String" resultClass="String">
 		select phone from user where compid=#compid#
 	</select>
+	
+	<select id="getAdminCompanyByLevel"  parameterClass="int" resultClass="String">
+		select compid from user where level=#level#
+	</select>
 
 </sqlMap>  

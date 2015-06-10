@@ -2,6 +2,7 @@ package com.hzkdxh.dao;
 
 import java.util.List;
 
+import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.User;
 
 public interface UserDao {
@@ -30,4 +31,6 @@ public interface UserDao {
 	public String getUserIdbyLogin(String username, String passwd);
 	
 	public List<String> getPhoneByCompId(String compid);
+	
+	public List<String> getAdminCompanyByLevel(int level);
 }

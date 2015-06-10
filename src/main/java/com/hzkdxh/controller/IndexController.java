@@ -296,6 +296,11 @@ public class IndexController extends BaseController{
 			Map map = new HashMap();
 			if (user.getLevel() == 1) {
 				Company company = companyService.getByCompanyId(user.getCompid());
+				List<String> adminList = userService.getAdminCompanyByLevel(3);
+				for (String string : adminList) {
+					mainmessageList.add(companyService.getByCompanyId(string));
+				}
+				mainmessageList.add(companyService.getByCompanyId(company.getPcompid()));
 				submessageList = companyService.getSubcompanyListByCompId(company.getPcompid());
 			}else if(user.getLevel() == 2){
 				Company company = companyService.getByCompanyId(user.getCompid());
