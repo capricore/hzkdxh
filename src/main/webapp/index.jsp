@@ -6,9 +6,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>浙江省快递行业协会</title>
+<title>杭州市快递行业协会</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-	<meta name="keywords" content="浙江省快递行业协会" />
+	<meta name="keywords" content="杭州市快递行业协会" />
 	<meta name="description" content="" />
 	<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
 	<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
@@ -111,7 +111,7 @@
 										<div id="slider3" class="slider">
                                                <div class="conbox">
 	                                               <c:forEach  items="${rpList}"  var="item"  varStatus="status">
-	                                               	    <div><a href="${item.link}" title="${item.title}"><img width="262" height="182"  src="/upload/${item.filesrc}"></a></div>
+	                                               	    <div><a href="${item.link}" title="${item.title}"><img width="262" height="182"  src="/epUpload/${item.filesrc}"></a></div>
 	                                               </c:forEach>
                                                </div>
                                                <div class="switcher">
@@ -259,7 +259,7 @@
 				                               <td align="center" style="border:1px solid #FFFFFF;">
 				                                   <div>
 				                                       <a href="#nogo" class="listname">
-				                                           <img src="/upload/${item.picturesrc}" class="listimage" />
+				                                           <img src="/epUpload/${item.picturesrc}" class="listimage" />
 				                                       </a>
 				                                   </div>
 				                                </td>

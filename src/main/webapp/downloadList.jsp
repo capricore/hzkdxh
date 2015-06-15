@@ -5,9 +5,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<title>浙江省快递行业协会</title>
+	<title>杭州市快递行业协会</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-		<meta name="keywords" content="浙江省快递行业协会" />
+		<meta name="keywords" content="杭州市快递行业协会" />
 		<meta name="description" content="" />
 		<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
 		<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
@@ -70,7 +70,7 @@ subMenu.style.display = "none";
 						<c:forEach  items="${downlist}"  var="item"  varStatus="status">
 						<c:set var="time" value="${item.crtime}" />
 						<c:set var="date" value="${fn:substring(time, 0, 10)}" />
-							<li><a href="/upload${item.filesrc }" target="_blank">${item.filename }</a> <em>${date}</em></li>
+							<li><a href="/epUpload${item.filesrc }" target="_blank">${item.filename }</a> <em>${date}</em></li>
 						</c:forEach>
 						
 					</ul>

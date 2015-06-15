@@ -11,8 +11,8 @@ import com.hzkdxh.service.ReplyService;
 @Service
 public class ReplyServiceImp extends BaseService implements ReplyService{
 
-	public List<Reply> getReplyListByDeadline(String deadline,int start, int pagesize) {
-		return getReplyDao().getReplyListByDeadline(deadline,start,pagesize);
+	public List<Reply> getReplyListByDeadline(String starttime,String deadline,int start, int pagesize) {
+		return getReplyDao().getReplyListByDeadline(starttime,deadline,start,pagesize);
 	}
 
 	public boolean addReply(Reply reply) {

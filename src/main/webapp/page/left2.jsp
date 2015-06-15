@@ -5,9 +5,9 @@
 		<link rel="stylesheet" href="/hzkdxh/css/system.css" type="text/css" />
 		<link rel="stylesheet" href="/hzkdxh/css/layout.css" type="text/css" /> 
 		<link rel="stylesheet" href="/hzkdxh/css/css.css" type="text/css" /> 
-		<link href="/hzkdxh/css/xslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/hzkdxh/css/xslider.css" type="text/css" />
 		
-		<script type="text/javascript" src="/hzkdxh/javascript/style.js"></script>
+		<script src="/hzkdxh/javascript/style.js" type="text/javascript" ></script>
 		<script src="/hzkdxh/javascript/yu.js" type="text/javascript"></script>
 		<script src="/hzkdxh/javascript/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script src="/hzkdxh/javascript/jquery.Xslider.js"></script>
@@ -27,7 +27,7 @@
 		}
 		</style>
 		
-		<link rel="stylesheet" type="text/css" href="/hzkdxh/css/bootstrap-select.css">
+		<link href="/hzkdxh/css/bootstrap-select.css" rel="stylesheet" type="text/css" >
 		<link href="/hzkdxh/css/bootstrap.min.css" rel="stylesheet">
     
 <div class="M_Col2Left">

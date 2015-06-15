@@ -17,9 +17,20 @@ public class ReplyQuery {
 	
 	private String deadline;
 	
+	private String starttime;
+
 	private int start;			//查询起始页
 	
 	private int pagesize;		//每次查询返回的数量
+	
+	
+	public String getStarttime() {
+		return starttime;
+	}
+
+	public void setStarttime(String starttime) {
+		this.starttime = starttime;
+	}
 
 	public String getMdn() {
 		return mdn;

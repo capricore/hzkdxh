@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script type="text/javascript" src="http://www.daimajiayuan.com/download/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/hzkdxh/message/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/hzkdxh/javascript/bootstrap-select.js"></script>
 <link rel="stylesheet" type="text/css" href="/hzkdxh/css/bootstrap-select.css">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     $(window).on('load', function () {
 
@@ -36,13 +37,15 @@
     		    {
     		    	 var jresp = new JsonRespUtils(transport);
     		    	 if (jresp.isSuccessfully()){
-    		    		 var res = jresp.getMessage();
-    		    		alert("登录成功！");
+    		    		alert("发送成功！");
+    		    		location.reload();
+    		    	 }else{
+    		    		 alert("发送失败！");
     		    	 }
     		    },
     		     error: function(transport) 
     		     {
-    		    	alert("登录失败！");
+    		    	alert("发送失败！");
     		     }          
     		    });
     		}); 
@@ -78,7 +81,7 @@
                     <div class="col-lg-10">
                     	<textarea style="width:545px" name="content"></textarea>
                         <br /><br />
-                        <input class="buttonLogin" type="submit" onclick="login();" value="发送" />
+                        <input class="buttonLogin" type="button" onclick="login();" value="发送" />
                     </div>
                   </div>
             </form>

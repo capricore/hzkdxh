@@ -14,11 +14,12 @@ public class ReplyDaoImp extends BaseDao implements ReplyDao{
 	private static final Logger logger = Logger.getLogger(MercBlacklistDaoImp.class);
 
 	@SuppressWarnings("unchecked")
-	public List<Reply> getReplyListByDeadline(String deadline,int start, int pagesize) {
+	public List<Reply> getReplyListByDeadline(String starttime, String deadline,int start, int pagesize) {
 		List<Reply> replylists = null;
 		ReplyQuery replyQuery = new ReplyQuery();
 		replyQuery.setDeadline(deadline);
-		replyQuery.setStart(start);;
+		replyQuery.setStart(start);
+		replyQuery.setStarttime(starttime);
 		replyQuery.setPagesize(pagesize);
 		try {
 			replylists = getSqlMapClientTemplate().queryForList("getReplyListByDeadline",replyQuery);

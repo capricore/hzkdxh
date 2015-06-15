@@ -21,6 +21,7 @@ import com.hzkdxh.bean.Message;
 import com.hzkdxh.bean.News;
 import com.hzkdxh.bean.Reply;
 import com.hzkdxh.message.ReplyThread;
+import com.hzkdxh.message.SendMsg;
 import com.hzkdxh.service.MessageService;
 import com.hzkdxh.service.NewsService;
 import com.hzkdxh.service.ReplyService;
@@ -60,7 +61,7 @@ public class MessageController extends BaseController {
 					phone.append(",");
 				}
 			}
-//			SendMsg.sendMessage(phone.toString(), content);
+			SendMsg.sendMessage_yxt(phone.toString(), content);
 			Message message = new Message();
 			message.setId(CodeGenerator.createUUID());
 			message.setContent(content);
@@ -68,9 +69,10 @@ public class MessageController extends BaseController {
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());
 			message.setSend_time(crtime.toString().substring(0, 19));
 			messageService.addMessage(message);
-			ReplyThread replyThread = new ReplyThread();
-			replyThread.run();
 			outputJsonResponse(response, true, "uploadSuccess");
+			ReplyThread replyThread = new ReplyThread();
+			Thread t1 = new Thread(replyThread);
+			t1.start();
 		} catch (RuntimeException e) {
 			logger.error("·¢ËÍ¶ÌÐÅ³ö´í£¡" +  ",errMsg=" + e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
@@ -97,7 +99,7 @@ public class MessageController extends BaseController {
 			Date deadtime = new Date(time.getTime()+Integer.parseInt(deanline)*60*60*1000);
 			pageSum = replyService.getReplyCount(formatter.format(deadtime));
 			pagecount = pageSum/pagesize+1;	
-			replyList = replyService.getReplyListByDeadline(formatter.format(deadtime),(start-1)*pagesize,start*pagesize);
+			replyList = replyService.getReplyListByDeadline(message.getSend_time(),formatter.format(deadtime),(start-1)*pagesize,start*pagesize);
 		}
 		Map map = new HashMap();
 		List<News> zyggList = new ArrayList<News>();

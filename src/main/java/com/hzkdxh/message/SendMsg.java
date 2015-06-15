@@ -1,7 +1,6 @@
 package com.hzkdxh.message;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,55 +20,55 @@ public class SendMsg {
 
 	public static final String UTF8 = "utf-8";
 	public static final String GB2312 = "GB2312";
-	//中国网建短信平台参数
-	public static final String UID = "秦殇007";
-	public static final String KEY = "4aaa53ecb1ca403d9a07";
-	public static final String SMS_SEND_URI = "http://utf8.sms.webchinese.cn";
-	public static final String SMS_NUM_URI = "http://sms.webchinese.cn/web_api/SMS/?Action=SMS_Num";
+//	//中国网建短信平台参数
+//	public static final String UID = "秦殇007";
+//	public static final String KEY = "4aaa53ecb1ca403d9a07";
+//	public static final String SMS_SEND_URI = "http://utf8.sms.webchinese.cn";
+//	public static final String SMS_NUM_URI = "http://sms.webchinese.cn/web_api/SMS/?Action=SMS_Num";
 	//一信通短信平台参数
-	public static final String SPCODE = "220264";				//企业编号
-	public static final String LOGINNAME = "haz_glwl";			//用户名称
-	public static final String PASSWORD = "glwl568980";			//用户密码
+	public static final String SPCODE = "222474";				//企业编号
+	public static final String LOGINNAME = "haz_kdhy";			//用户名称
+	public static final String PASSWORD = "hzkdxh613";			//用户密码
 	public static final String YXT_SEND_URI = "http://ums.zj165.com:8888/sms/Api/Send.do"; //发送短信
 	public static final String YXT_REPLY_URI = "http://gd.ums86.com:8899/sms/Api/reply.do";	//上行回复内容查询接口
 	public static final String YXT_REPLY_CONFIRM_URI = "http://gd.ums86.com:8899/sms/Api/replyConfirm.do";	//上行回复内容查询接口
 	
-	/**
-	 * 中国网建短信发送
-	 * @param phone
-	 * @param smsText
-	 * @return
-	 * @throws HttpException
-	 * @throws IOException
-	 */
-	public static int sendMessage(String phone, String smsText) throws HttpException, IOException{
-		PostMethod post = new PostMethod(SMS_SEND_URI);
-		NameValuePair[] data = { new NameValuePair("Uid", UID),
-				new NameValuePair("Key", KEY),
-				new NameValuePair("smsMob", phone),
-				new NameValuePair("smsText", smsText) };
-		String result = executeMethod(post, data,UTF8);
-		System.out.println("发送短信数量：" + result + "，手机号：" + phone + " 信息：" + smsText);
-		post.releaseConnection();
-		return Integer.parseInt(result);
-	}
-	
-
-	
-	/**
-	 * 中国网建获取短信数量
-	 * @return
-	 * @throws UnsupportedEncodingException
-	 * @throws IOException
-	 */
-	public static int smsNum() throws UnsupportedEncodingException, IOException{
-		PostMethod post = new PostMethod(SMS_NUM_URI);
-		NameValuePair[] data = { new NameValuePair("Uid", UID), new NameValuePair("Key", KEY) };
-		String result = executeMethod(post, data,UTF8);
-		System.out.println("短信数量：" + result);
-		post.releaseConnection();
-		return Integer.parseInt(result);
-	}
+//	/**
+//	 * 中国网建短信发送
+//	 * @param phone
+//	 * @param smsText
+//	 * @return
+//	 * @throws HttpException
+//	 * @throws IOException
+//	 */
+//	public static int sendMessage(String phone, String smsText) throws HttpException, IOException{
+//		PostMethod post = new PostMethod(SMS_SEND_URI);
+//		NameValuePair[] data = { new NameValuePair("Uid", UID),
+//				new NameValuePair("Key", KEY),
+//				new NameValuePair("smsMob", phone),
+//				new NameValuePair("smsText", smsText) };
+//		String result = executeMethod(post, data,UTF8);
+//		System.out.println("发送短信数量：" + result + "，手机号：" + phone + " 信息：" + smsText);
+//		post.releaseConnection();
+//		return Integer.parseInt(result);
+//	}
+//	
+//
+//	
+//	/**
+//	 * 中国网建获取短信数量
+//	 * @return
+//	 * @throws UnsupportedEncodingException
+//	 * @throws IOException
+//	 */
+//	public static int smsNum() throws UnsupportedEncodingException, IOException{
+//		PostMethod post = new PostMethod(SMS_NUM_URI);
+//		NameValuePair[] data = { new NameValuePair("Uid", UID), new NameValuePair("Key", KEY) };
+//		String result = executeMethod(post, data,UTF8);
+//		System.out.println("短信数量：" + result);
+//		post.releaseConnection();
+//		return Integer.parseInt(result);
+//	}
 	
 	/**
 	 * 一信通短信发送
