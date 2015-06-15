@@ -227,11 +227,9 @@ function MM_jumpMenu(selObj)
                             <div class="caption_content_780">
 							</div>
                             <div class="content_780">
-                            	<h4>
-                              		短信内容：${message.content}<br></br>
-	                             	发送时间：${message.send_time }
-                             	 </h4>
-                               <hr></hr>
+                            	<div class="art_title2">短信内容：${message.content}
+                            	<br></br>
+	                             	发送时间：${message.send_time }</div>
                                 
                                <h4>回复时间：<select onChange="self.location.href=options[selectedIndex].value" id="deadline" name="deadline" style="margin-right:30px">
                                 	<option value="" selected>--请选择--</option>
