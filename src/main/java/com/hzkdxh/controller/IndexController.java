@@ -201,7 +201,7 @@ public class IndexController extends BaseController{
 			else if(StringUtils.isNumber(r_newstype)){
 				newstype = Integer.valueOf(r_newstype);
 			}
-			newsList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(newstype,subtype,(start-1)*pagesize,start*pagesize); 					//获取文章列表
+			newsList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(newstype,subtype,(start-1)*pagesize,pagesize); 					//获取文章列表
 			int pageSum = newsService.getNewsCount(newstype, subtype);
 			pagecount = pageSum/pagesize+1;																	//新闻总页数
 
@@ -260,7 +260,7 @@ public class IndexController extends BaseController{
 			if(StringUtils.isNotEmpty(r_start))
 				start = Integer.valueOf(r_start);
 			Map map = new HashMap();
-			List<Downloadzone> downlist = downloadzoneService.getFileList((start-1)*pagesize,start*pagesize);
+			List<Downloadzone> downlist = downloadzoneService.getFileList((start-1)*pagesize,pagesize);
 			int pageSum = downloadzoneService.getFileCount();
 			pagecount = pageSum/pagesize+1;
 			String type = "下载中心";
@@ -350,7 +350,7 @@ public class IndexController extends BaseController{
 			if (zyggList.size() > 8) {
 				zyggList = zyggList.subList(0, 8);
 			}
-			List<Message> messageList = messageService.getMessageListByTime((start-1)*pagesize,start*pagesize);
+			List<Message> messageList = messageService.getMessageListByTime((start-1)*pagesize,pagesize);
 			int pageSum = messageService.getMessageCount();
 			pagecount = pageSum/pagesize+1;
 			Map map = new HashMap();

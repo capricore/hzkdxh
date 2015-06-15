@@ -35,14 +35,13 @@ public class SearchController extends BaseController{
 			int start = 1;
 			int pagecount = 0;
 			String r_start = request.getParameter("start");												
-			String title = new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8");				//文章标题
-
+			String title = request.getParameter("title");				//文章标题
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if(StringUtils.isNotEmpty(r_start))
 				start = Integer.valueOf(r_start);
 			pagecount = newsService.getNewsCountByTitle(title)/pagesize+1;	
-			List<News> newsList = newsService.getNewsListByTitle(title,(start-1)*pagesize,start*pagesize);
+			List<News> newsList = newsService.getNewsListByTitle(title,(start-1)*pagesize,pagesize);
 			Map map = new HashMap();
 			map.put("title", title);
 			map.put("newsList", newsList);

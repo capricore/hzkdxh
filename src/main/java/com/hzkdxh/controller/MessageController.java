@@ -99,7 +99,7 @@ public class MessageController extends BaseController {
 			Date deadtime = new Date(time.getTime()+Integer.parseInt(deanline)*60*60*1000);
 			pageSum = replyService.getReplyCount(message.getSend_time(),formatter.format(deadtime));
 			pagecount = pageSum/pagesize+1;	
-			replyList = replyService.getReplyListByDeadline(message.getSend_time(),formatter.format(deadtime),(start-1)*pagesize,start*pagesize);
+			replyList = replyService.getReplyListByDeadline(message.getSend_time(),formatter.format(deadtime),(start-1)*pagesize,pagesize);
 		}
 		Map map = new HashMap();
 		List<News> zyggList = new ArrayList<News>();

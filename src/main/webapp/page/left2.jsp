@@ -90,7 +90,7 @@
 		<h3>联系我们</h3>				
 	</div>
 	<div class="content_right_170">
-		<div id="contact">联系人：沈斌  胡晏平<br />电话：0571-87893019<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0571-87893027<br />传真：0571-87893038<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0571-87893030<br />地址：杭州市天目山路142号1002室</font></div>
+		<div id="contact">联系人<B>:</B> &nbsp;沈斌  胡晏平<br />电话<B>:</B> &nbsp;0571-87893019<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0571-87893027<br />传真<B>:</B> &nbsp;0571-87893038<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0571-87893030<br />地址<B>:</B> &nbsp;杭州市天目山路142号1002室</font></div>
 	</div>
 
 	<div class=caption_right_170_h3> 

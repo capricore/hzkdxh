@@ -13,7 +13,7 @@
 	<h3>站内搜索</h3>				
 </div>
 <div class="content_right_170">
-	<form method="get" name="form1" action="/hzkdxh/news/search.do" class="search" >
+	<form id="searchForm" method="get" name="form1" action="/hzkdxh/news/search.do" class="search" >
 		<input type="text" name="title" value=""/> 
 		<button type="submit" class="btn"> 搜索</button>
 	</form>
