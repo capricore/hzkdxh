@@ -18,6 +18,6 @@ public interface ReplyService {
     /* É¾³ý»Ø¸´ÐÅÏ¢*/
     public boolean deleteReply(String id);
     
-    public int getReplyCount(String deadtime);
+    public int getReplyCount(String starttime,String deadtime);
 
 }

@@ -26,8 +26,8 @@
 		delete from reply where id = #id#
 	</delete>
 	
-	<select id="getReplyCount" parameterClass="String" resultClass="java.lang.Integer">
-		select count(*) from reply where reply_time &lt; #deadtime#  
+	<select id="getReplyCount" parameterClass="replyQuery" resultClass="java.lang.Integer">
+		select count(*) from reply where reply_time &lt; #deadline#  and reply_time <![CDATA[   >=  ]]> #starttime#
 	</select>
 
 </sqlMap>  

@@ -71,10 +71,13 @@ public class ReplyDaoImp extends BaseDao implements ReplyDao{
 		return flag;
 	}
 
-	public int getReplyCount(String deadtime) {
+	public int getReplyCount(String starttime,String deadtime) {
 		int count = 0;
+		ReplyQuery replyQuery = new ReplyQuery();
+		replyQuery.setDeadline(deadtime);
+		replyQuery.setStarttime(starttime);
 		try {
-			count = (Integer) getSqlMapClientTemplate().queryForObject("getReplyCount",deadtime);
+			count = (Integer) getSqlMapClientTemplate().queryForObject("getReplyCount",replyQuery);
 		} catch (Exception e) {
 			logger.error("获取回复数量信息出错！" +  ",errMsg=" + e.getMessage());
 		}

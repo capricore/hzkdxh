@@ -97,7 +97,7 @@ public class MessageController extends BaseController {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date time = formatter.parse(sendtime);
 			Date deadtime = new Date(time.getTime()+Integer.parseInt(deanline)*60*60*1000);
-			pageSum = replyService.getReplyCount(formatter.format(deadtime));
+			pageSum = replyService.getReplyCount(message.getSend_time(),formatter.format(deadtime));
 			pagecount = pageSum/pagesize+1;	
 			replyList = replyService.getReplyListByDeadline(message.getSend_time(),formatter.format(deadtime),(start-1)*pagesize,start*pagesize);
 		}

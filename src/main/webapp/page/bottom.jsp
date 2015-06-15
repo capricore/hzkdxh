@@ -3,7 +3,7 @@
 <div id="Footer">
 	<div>
 		 <ul>
-			<li><a href="list.jsp">关于协会</a></li>
+			<li><a href="/hzkdxh/news/newsList.do?newstype=1&subtype=0&start=1">关于协会</a></li>
 			<li><a href="downloadZone.jsp">加入我们</a></li>
 		</ul>
 	</div>
