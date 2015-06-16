@@ -56,8 +56,8 @@ $(function(){
 </script>
 
 		<div id="Header">
-	<h1 style="padding-bottom:2px">
-</h1>
+	<div id="Headerh1" style="padding-bottom:2px">
+</div>
 		<ul id="navigation" style="padding-top:2px">            
                      <li><a style="width:96px; height:36px" href="/hzkdxh"><span>首页</span></a></li>
                      <li><a style="width:96px; height:36px"><span>关于协会</span></a>

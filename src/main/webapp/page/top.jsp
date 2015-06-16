@@ -14,8 +14,7 @@ $(function(){
 </script>
 
 	<div id="Header">
-	<h1 style="padding-bottom:2px">
-</h1>
+	<div id="Headerh1" style="padding-bottom:2px"></div>
 		<ul id="navigation">            
                      <li><a href="/hzkdxh"><span>首页</span></a></li>
                      <li><a href="/hzkdxh/news/newsList.do?newstype=1&subtype=0&start=1"><span>关于协会</span></a>
