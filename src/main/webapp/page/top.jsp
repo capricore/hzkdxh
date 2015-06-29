@@ -14,7 +14,7 @@ $(function(){
 </script>
 
 	<div id="Header">
-	<div id="Headerh1" style="padding-bottom:2px"></div>
+	<h1></h1>
 		<ul id="navigation">            
                      <li><a href="/hzkdxh"><span>首页</span></a></li>
                      <li><a href="/hzkdxh/news/newsList.do?newstype=1&subtype=0&start=1"><span>关于协会</span></a>
@@ -38,7 +38,7 @@ $(function(){
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=0&start=1"><span>行业公告</span></a>
 					   <ul>
                          <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=1&start=1">邮政统计报告</a></li>
-                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=2&start=1">消费者申述通告</a></li>
+                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=2&start=1">消费者申诉</a></li>
                          <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=3&start=1">旺季消费提示</a></li>
                          </ul>
 					 </li>
