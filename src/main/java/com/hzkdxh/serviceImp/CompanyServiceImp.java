@@ -48,4 +48,8 @@ public class CompanyServiceImp extends BaseService implements CompanyService {
 		return getCompanyDao().getSubcompanyList();
 	}
 
+	public List<Company> getCompanyListByLevel(int level) {
+		return getCompanyDao().getCompanyListByLevel(level);
+	}
+
 }

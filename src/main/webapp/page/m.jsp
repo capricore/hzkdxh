@@ -68,12 +68,10 @@
                     <label for="bs3Select"class="col-lg-2 control-label">选择联系人</label>
                     <div class="col-lg-10">
                         <select id="bs3Select" class="selectpicker show-tick form-control" multiple data-live-search="true" name="select">
-	                        <c:forEach  items="${mainmessageList}"  var="item"  varStatus="status">
+	                        <c:forEach  items="${messageList}"  var="item"  varStatus="status">
 		                        <option value="${item.compid }">${item.compname }</option>                
 	                        </c:forEach>
-	                        <c:forEach  items="${submessageList}"  var="item"  varStatus="status">
-		                        <option value="${item.compid }">${item.compname }</option>                
-	                        </c:forEach>
+	                        
                         </select>
                     </div>
                     <br /><br />

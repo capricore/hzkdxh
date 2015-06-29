@@ -43,7 +43,7 @@
 	#Skip{display:none;}
 	#Header{position:relative;}
 	#Header ul{margin:0;padding:0;list-style:none;}
-	#Header h1{height:192px; width:960px; background:url("image/h-bg.png") no-repeat; position:relative; margin:0; padding:0;}
+	#Header h1{height:192px; width:960px; background:url("image/h-bg.jpg") no-repeat; position:relative; margin:0; padding:0;}
 	#Headerh1 a{position:absolute; left:20px; top:20px;}
 	.logout{background:#F7F6F6; height:25px; text-align:right; line-height:25px; padding-right:8px;}
 

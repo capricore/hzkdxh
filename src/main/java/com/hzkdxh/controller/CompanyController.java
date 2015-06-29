@@ -44,7 +44,8 @@ public class CompanyController extends BaseController{
 			String address = new String(request.getParameter("address").getBytes("ISO-8859-1"),"UTF-8");		
 			String pcompid = request.getParameter("pcompid");
 			String tel = request.getParameter("tel");
-			String email = request.getParameter("email");
+			String principal = new String(request.getParameter("principal").getBytes("ISO-8859-1"),"UTF-8");		
+			int level = Integer.parseInt(request.getParameter("level"));
 			Company company = new Company();
 			company.setCompid(CodeGenerator.createUUID());
 			company.setCompname(compname);
@@ -56,7 +57,7 @@ public class CompanyController extends BaseController{
 			}
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());	
 			company.setCrtime(crtime);
-			company.setEmail(email);		
+			company.setPrincipal(principal);
 			company.setTel(tel);
 			compService.addCompany(company);
 			outputJsonResponse(response, true, "uploadSuccess");
@@ -99,8 +100,9 @@ public class CompanyController extends BaseController{
 			String compname = new String(request.getParameter("compname").getBytes("ISO-8859-1"),"UTF-8");		
 			String address = new String(request.getParameter("address").getBytes("ISO-8859-1"),"UTF-8");				
 			String tel = request.getParameter("tel");
-			String email = request.getParameter("email");
 			String pcompid = request.getParameter("pcompid");
+			String principal = new String(request.getParameter("principal").getBytes("ISO-8859-1"),"UTF-8");		
+			int level = Integer.parseInt(request.getParameter("level"));
 			Company company = new Company();
 			company.setCompid(compid);
 			company.setCompname(compname);
@@ -112,7 +114,7 @@ public class CompanyController extends BaseController{
 			}
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());	
 			company.setCrtime(crtime);
-			company.setEmail(email);		
+			company.setPrincipal(principal);
 			company.setTel(tel);
 			compService.updateCompany(company);
 			outputJsonResponse(response, true, "uploadSuccess");
@@ -163,7 +165,7 @@ public class CompanyController extends BaseController{
 		try{
 			String compid = request.getParameter("compid");														
 			Company company = compService.getByCompanyId(compid);
-			List<Company> compList = compService.getMainCompanyList();
+			List<Company> compList = compService.getCompanyList();
 			String pcompname = new String();
 			if (company.getPcompid() != null) {
 				Company pCompany = compService.getByCompanyId(company.getPcompid());

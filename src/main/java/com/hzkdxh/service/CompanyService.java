@@ -29,7 +29,12 @@ public interface CompanyService {
     /* 获得主公司信息列表*/
     public List<Company> getMainCompanyList();
     
+    /* 根据公司等级公司信息列表*/
+    public List<Company> getCompanyListByLevel(int level);
+    
     /* 删除公司信息*/
     public boolean deleteComp(String compid);
+    
+    
 
 }

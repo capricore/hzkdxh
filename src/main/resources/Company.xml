@@ -5,7 +5,7 @@
 
 	<!-- 获得全查询列表 -->
 	<select id="getCompanyList" resultClass="company">
-		select * from company
+		select * from company order by level desc
 	</select>
 	
 	<select id="getSubcompanyList" resultClass="company">
@@ -25,25 +25,29 @@
 	</select>
 
 	<insert id="addCompany" parameterClass="company">
-		insert into company(compid,compname,address,tel,email,crtime,pcompid) values(#compid#,#compname#,#address#,#tel#,#email#,#crtime#,#pcompid#)
+		insert into company(compid,compname,address,tel,principal,crtime,pcompid,level) values(#compid#,#compname#,#address#,#tel#,#principal#,#crtime#,#pcompid#,#level#)
 		<selectKey resultClass="String" keyProperty="compid">  
   		 	 SELECT @@IDENTITY as compid  
  		 </selectKey> 
 	</insert>
 	
 	<update id="updateCompany" parameterClass="company">
-		update company set compname=#compname#,address=#address#,tel=#tel#,email=#email#,crtime=#crtime#,pcompid=#pcompid# where compid=#compid#
+		update company set compname=#compname#,address=#address#,tel=#tel#,principal=#principal#,crtime=#crtime#,pcompid=#pcompid#,level=#level# where compid=#compid#
 	</update>
 	
 	
 	<!-- 根据主公司id获取子公司信息列表 -->
 	<select id="getSubcompanyListByCompId" parameterClass="String" resultClass="company">
-		select * from company where pcompid = #compid#
+		select * from company where pcompid = #compid# order by compname
 	</select>
 	
 	<!-- 根据主公司id获取子公司信息列表 -->
 	<select id="getMainCompanyList" resultClass="company">
-		select * from company where isnull(pcompid)
+		select * from company where isnull(pcompid) order by compname
+	</select>
+	
+	<select id="getCompanyListByLevel" parameterClass="int" resultClass="company">
+		select * from company where level = #level# order by compname
 	</select>
 	
 	<delete id="deleteComp" parameterClass="String">

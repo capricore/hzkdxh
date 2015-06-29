@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -68,10 +68,8 @@ subMenu.style.display = "none";
 							<div class="art_title">会员申请表下载</div>
 							<div class="art_info"><strong> 时间：</strong>2009-08-11
 							</div>
-								<p><IMG src="/hzkdxh/images/xls.gif" border=0>
-                                   <A href="http://www.zjkd.org/system/editor/UploadFile//20100824091004921.xls" target=_blank>浙江省快递行业协会团体（单位）会员申请表.xls</A></p>
                                 <p><IMG src="/hzkdxh/images/doc.gif" border=0>
-                                   <A href="http://www.zjkd.org/system/editor/UploadFile//2009081100084815.doc" target=_blank>浙江省快递行业协会个人会员申请表.doc</A></p>
+                                   <A href="http://210.32.133.25:8090/epUpload/download/会员申请表.doc" target=_blank>会员申请表.doc</A></p>
 					</div>
 
                                 

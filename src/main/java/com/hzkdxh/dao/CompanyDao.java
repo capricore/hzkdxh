@@ -31,5 +31,8 @@ public interface CompanyDao {
     
     /* 删除公司信息*/
     public boolean deleteComp(String compid);
+    
+    /* 根据公司等级公司信息列表*/
+    public List<Company> getCompanyListByLevel(int level);
 
 }

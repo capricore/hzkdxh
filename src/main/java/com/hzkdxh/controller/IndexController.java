@@ -291,25 +291,31 @@ public class IndexController extends BaseController{
 			HttpSession session = request.getSession(true); 
 			String username = (String)session.getAttribute("username");
 			User user = userService.getByUserName(username);
-			List<Company> mainmessageList = new ArrayList<Company>();
-			List<Company> submessageList = new ArrayList<Company>();
+			List<Company> messageList = new ArrayList<Company>();
 			Map map = new HashMap();
 			if (user.getLevel() == 1) {
+				List<Company> adminmessageList = companyService.getCompanyListByLevel(3); //获得管局、协会（管理员）列表
+				messageList.addAll(adminmessageList);
+				List<Company> membermessageList = companyService.getCompanyListByLevel(1); //获得所有会员单位列表
 				Company company = companyService.getByCompanyId(user.getCompid());
-				List<String> adminList = userService.getAdminCompanyByLevel(3);
-				for (String string : adminList) {
-					mainmessageList.add(companyService.getByCompanyId(string));
+				if (company.getPcompid()!=null) {
+					messageList.add(companyService.getByCompanyId(company.getPcompid()));
 				}
-				mainmessageList.add(companyService.getByCompanyId(company.getPcompid()));
-				submessageList = companyService.getSubcompanyListByCompId(company.getPcompid());
+				messageList.addAll(membermessageList);
 			}else if(user.getLevel() == 2){
-				Company company = companyService.getByCompanyId(user.getCompid());
-				mainmessageList = companyService.getMainCompanyList();
-				submessageList = companyService.getSubcompanyListByCompId(company.getCompid());
-				
+				List<Company> adminmessageList = companyService.getCompanyListByLevel(3); //获得管局、协会（管理员）列表
+				messageList.addAll(adminmessageList);
+				List<Company> councilmessageList = companyService.getCompanyListByLevel(2); //获得所有理事列表
+				messageList.addAll(councilmessageList);
+				List<Company> submessageList = companyService.getSubcompanyListByCompId(user.getCompid());
+				messageList.addAll(submessageList);
 			}else if(user.getLevel() == 3){
-				mainmessageList = companyService.getMainCompanyList();
-				submessageList = companyService.getSubcompanyList();
+				List<Company> adminmessageList = companyService.getCompanyListByLevel(3); //获得管局、协会（管理员）列表
+				messageList.addAll(adminmessageList);
+				List<Company> councilmessageList = companyService.getCompanyListByLevel(2); //获得所有理事列表
+				messageList.addAll(councilmessageList);
+				List<Company> submessageList = companyService.getCompanyListByLevel(1);
+				messageList.addAll(submessageList);
 			}
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
@@ -318,8 +324,7 @@ public class IndexController extends BaseController{
 			}
 			String type = "短信发送";
 			map.put("type", type);
-			map.put("mainmessageList", mainmessageList);
-			map.put("submessageList", submessageList);
+			map.put("messageList", messageList);
 			map.put("zyggList", zyggList);
 			return new ModelAndView("message").addAllObjects(map);
 		}catch (RuntimeException e) {

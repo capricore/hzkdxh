@@ -49,13 +49,13 @@ public class UserController extends BaseController{
 			String password = request.getParameter("password");			//password
 			String compid = request.getParameter("compid");
 			String phone = request.getParameter("phone");
-			String email = request.getParameter("email");
 			int level = Integer.parseInt(request.getParameter("level"));
+			String linkman = new String(request.getParameter("linkman").getBytes("ISO-8859-1"),"UTF-8");
 			User user = new User();
 			user.setCompid(compid);
 			user.setUsername(username);
 			user.setPasswd(password);
-			user.setEmail(email);
+			user.setLinkman(linkman);
 			user.setPhone(phone);
 			user.setLevel(level);
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());								
@@ -103,13 +103,13 @@ public class UserController extends BaseController{
 			String password = request.getParameter("password");			//password
 			String compid = request.getParameter("compid");
 			String phone = request.getParameter("phone");
-			String email = request.getParameter("email");
 			int level = Integer.parseInt(request.getParameter("level"));
+			String linkman = new String(request.getParameter("linkman").getBytes("ISO-8859-1"),"UTF-8");
 			User user = new User();
 			user.setCompid(compid);
 			user.setUsername(username);
 			user.setPasswd(password);
-			user.setEmail(email);
+			user.setLinkman(linkman);
 			user.setPhone(phone);
 			user.setLevel(level);
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());

@@ -22,14 +22,14 @@
 	</select>
 
 	<insert id="addUser" parameterClass="user">
-		insert into user (userid,compid,username,passwd,phone,email,level,restime) values(#userid#,#compid#,#username#,#passwd#,#phone#,#email#,#level#,#restime#)
+		insert into user (userid,compid,username,passwd,phone,linkman,level,restime) values(#userid#,#compid#,#username#,#passwd#,#phone#,#linkman#,#level#,#restime#)
 		<selectKey resultClass="String" keyProperty="userid">  
   		 	 SELECT @@IDENTITY as userid  
  		 </selectKey> 
 	</insert>
 	
 	<update id="updateUser" parameterClass="user">
-		update user set compid=#compid#,username=#username#,passwd=#passwd#, phone=#phone#, email=#email#,level=#level# where userid=#userid#
+		update user set compid=#compid#,username=#username#,passwd=#passwd#, phone=#phone#, linkman=#linkman#,level=#level# where userid=#userid#
 	</update>
 	
 	<!-- 根据用户权限获得群发短信列表 -->
