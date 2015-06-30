@@ -61,7 +61,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <a href="/hzkdxh/news/downloadList.do">${type }</a> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <c:choose><c:when test="${level=='1'}"><a href="/hzkdxh/news/downloadList.do">${type }</a> </c:when><c:otherwise><a href="/hzkdxh/news/download.do">${type }</a> </c:otherwise></c:choose></p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780"><h3>下载中心</h3></div>
 			<div class="content_780">
@@ -78,9 +78,9 @@ subMenu.style.display = "none";
                                           <div align="right" style="font-size:12px ">
                                            		 第 ${start} 页 共 ${pagecount} 页 
                                               <c:if test="${start==1}"><font color="#CCCCCC">上一页</font></c:if>
-                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/downloadList.do&start=${start-1}">上一页</a></c:if>
+                                              <c:if test="${start gt 1}"><c:choose><c:when test="${level=='1'}"><a href="/hzkdxh/news/downloadList.do?start=${start-1}">上一页</a></c:when><c:otherwise><a href="/hzkdxh/news/download.do?start=${start-1}">上一页</a></c:otherwise></c:choose></c:if>
                                               <c:if test="${start==pagecount}"><font color="#CCCCCC">下一页</font></c:if>
-                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/downloadList.do&start=${start+1}">下一页</a></c:if> 
+                                              <c:if test="${start lt pagecount}"><c:choose><c:when test="${level=='1'}"><a href="/hzkdxh/news/downloadList.do?start=${start+1}">下一页</a></c:when><c:otherwise><a href="/hzkdxh/news/download.do?start=${start+1}">下一页</a></c:otherwise></c:choose></c:if> 
                                            		 转到第 
                                             <input type="text" size="2" name="start"> 页
                                             <input onMouseOver="this.className='input3'" onMouseOut="this.className='input2'" type="submit" class="input2" value="GO"/>&nbsp;&nbsp;&nbsp;

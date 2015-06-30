@@ -16,9 +16,10 @@ public class DownloadzoneDaoImp extends BaseDao implements DownloadzoneDao{
 	private static final Logger logger = Logger.getLogger(DownloadzoneDaoImp.class);
 
 	@SuppressWarnings("unchecked")
-	public List<Downloadzone> getFileList(int start, int pagesize) {
+	public List<Downloadzone> getFileList(int level, int start, int pagesize) {
 		List<Downloadzone> list= null;
 		NewsQuery newsQuery = new NewsQuery();
+		newsQuery.setLevel(level);
 		newsQuery.setStart(start);
 		newsQuery.setPagesize(pagesize);
 		try {
@@ -82,10 +83,10 @@ public class DownloadzoneDaoImp extends BaseDao implements DownloadzoneDao{
 	}
 
 
-	public int getFileCount() {
+	public int getFileCount(int level) {
 		int file = 0;
 		try {
-			file = (Integer) getSqlMapClientTemplate().queryForObject("getFileCount");
+			file = (Integer) getSqlMapClientTemplate().queryForObject("getFileCount",level);
 		} catch (Exception e) {
 			logger.error("根据文件信息出错！" +  ",errMsg=" + e.getMessage());
 		}

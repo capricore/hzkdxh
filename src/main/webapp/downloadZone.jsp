@@ -66,13 +66,11 @@ subMenu.style.display = "none";
 						</div>
 						<div class="content_780">
 							<div class="art_title">会员申请表下载</div>
-							<div class="art_info"><strong> 时间：</strong>2009-08-11
-							</div>
-                                <p><IMG src="/hzkdxh/images/doc.gif" border=0>
-                                   <A href="http://210.32.133.25:8090/epUpload/download/会员申请表.doc" target=_blank>会员申请表.doc</A></p>
-					</div>
-
-                                
+							<div class="art_info"><strong> 时间：</strong>2009-08-11</div>
+                                <p>
+                                	<IMG src="/hzkdxh/images/doc.gif" border=0><A href="http://210.32.133.25:8090/epUpload/download/会员申请表.doc" target=_blank>会员申请表.doc</A>
+                                </p>
+						</div>
 					</div>
 					
 		</div>

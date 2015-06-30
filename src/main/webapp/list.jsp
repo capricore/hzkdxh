@@ -78,9 +78,9 @@ subMenu.style.display = "none";
                                           <div align="right" style="font-size:12px ">
                                            		 第 ${start} 页 共 ${pagecount} 页 
                                               <c:if test="${start==1}"><font color="#CCCCCC">上一页</font></c:if>
-                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/newsList.do?newstype=${newstype}&subtype=${subtype}&start=${start-1}">上一页</a></c:if>
+                                              <c:if test="${start gt 1}"><a href="/hzkdxh/news/newsList.do?newstype=${r_newstype}&subtype=${subtype}&start=${start-1}">上一页</a></c:if>
                                               <c:if test="${start==pagecount}"><font color="#CCCCCC">下一页</font></c:if>
-                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/newsList.do?newstype=${newstype}&subtype=${subtype}&start=${start+1}">下一页</a></c:if> 
+                                              <c:if test="${start lt pagecount}"><a href="/hzkdxh/news/newsList.do?newstype=${r_newstype}&subtype=${subtype}&start=${start+1}">下一页</a></c:if> 
                                            		 转到第 
                                             <input type="text" size="2" name="start"> 页
                                             <input onMouseOver="this.className='input3'" onMouseOut="this.className='input2'" type="submit" class="input2" value="GO"/>&nbsp;&nbsp;&nbsp;

@@ -11,6 +11,8 @@ public class Downloadzone {
 	private Timestamp crtime;
 	
 	private String filename;
+	
+	private int level;
 
 	public String getFilename() {
 		return filename;
@@ -44,5 +46,12 @@ public class Downloadzone {
 		this.crtime = crtime;
 	}
 
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
 
 }

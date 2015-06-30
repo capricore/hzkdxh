@@ -6,7 +6,7 @@
 
 	<!-- 获得全查询列表 -->
 	<select id="getFileList" parameterClass="newsQuery" resultClass="downloadzone">
-		select * from downloadzone order by crtime desc limit #start#,#pagesize#
+		select * from downloadzone where level=#level# order by crtime desc limit #start#,#pagesize#
 	</select>
 
 	<!-- 根据用户名获得用户对象 -->
@@ -16,22 +16,22 @@
 	</select>
 
 	<insert id="addDownloadzone" parameterClass="downloadzone">
-		insert into downloadzone (id,filesrc,filename,crtime) values(#id#,#filesrc#,#filename#,#crtime#)
+		insert into downloadzone (id,filesrc,filename,level,crtime) values(#id#,#filesrc#,#filename#,#level#,#crtime#)
 		<selectKey resultClass="String" keyProperty="id">  
   		 	 SELECT @@IDENTITY as id  
  		 </selectKey> 
 	</insert>
 	
 	<update id="updateDownloadzone" parameterClass="downloadzone">
-		update downloadzone set filesrc=#filesrc#,filename=#filename#,crtime=#crtime# where id=#id#
+		update downloadzone set filesrc=#filesrc#,filename=#filename#,level=#level#,crtime=#crtime# where id=#id#
 	</update>
 	
 	<delete id="deleteDownloadzone" parameterClass="String">
 		delete from downloadzone where id = #id#
 	</delete>
 	
-	<select id="getFileCount"  resultClass="java.lang.Integer">
-		select count(*) from downloadzone 
+	<select id="getFileCount"  parameterClass="int" resultClass="java.lang.Integer">
+		select count(*) from downloadzone where level=#level#
 	</select>
 
 </sqlMap>  

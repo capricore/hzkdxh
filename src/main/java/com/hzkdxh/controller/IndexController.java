@@ -52,9 +52,9 @@ public class IndexController extends BaseController{
 	
 	private static final Logger logger = Logger.getLogger(IndexController.class);  
 	
-	private String[] NewsType = {"","关于协会","政策法规","行业公告","会员风采","重要公告","行业资讯","行业统计","协会动态"};
+	private String[] NewsType = {"","关于协会","政策法规","行业统计","会员风采","重要公告","行业资讯","行业公告","协会动态"};
 	private String[][] SubType = {{},{"","协会简介","协会章程","协会制度","协会成员"},{"","法律法规","部门规章","规范性文件","地方性法规","其它要求"}
-	,{"","统计报告","消费者申诉","旺季提示"},{"","最新活动"},{""},{""},{""},{""}};
+	,{"","统计报告","申诉通告"},{""},{""},{""},{""},{""}};
 
 	private int pagesize = 15;			//每次查询返回的次数 
 	
@@ -82,10 +82,7 @@ public class IndexController extends BaseController{
 			}
 			
 			List<News> hyggList = new ArrayList<News>();
-			hyggList = newsService.getNewsListByNewsType(3);//获取行业公告
-			if (hyggList.size() > 8) {
-				hyggList = hyggList.subList(0, 8);
-			}
+			hyggList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(5,0,8,8);//获取行业公告
 			
 			List<News> hyzxList = new ArrayList<News>();
 			hyzxList = newsService.getNewsListByNewsType(6);//获取行业资讯
@@ -207,7 +204,12 @@ public class IndexController extends BaseController{
 			else if(StringUtils.isNumber(r_newstype)){
 				newstype = Integer.valueOf(r_newstype);
 			}
-			newsList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(newstype,subtype,(start-1)*pagesize,pagesize); 					//获取文章列表
+			if(newstype==7){//行业公告，从重要公告中第八个开始取
+				newsList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(5,0,(start-1)*pagesize+8,pagesize); 					//获取文章列表
+			}
+			else {
+				newsList = newsService.getNewsListByNewsTypeAndSubTypeAndPage(newstype,subtype,(start-1)*pagesize,pagesize); 
+			}
 			int pageSum = newsService.getNewsCount(newstype, subtype);
 			pagecount = pageSum/pagesize+1;																	//新闻总页数
 
@@ -255,6 +257,7 @@ public class IndexController extends BaseController{
 	public ModelAndView downloadList(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
 			int start = 1;
+			int level = 1;
 			int pagecount = 0;
 			String r_start = request.getParameter("start");
 			List<News> zyggList = new ArrayList<News>();
@@ -266,13 +269,14 @@ public class IndexController extends BaseController{
 			if(StringUtils.isNotEmpty(r_start))
 				start = Integer.valueOf(r_start);
 			Map map = new HashMap();
-			List<Downloadzone> downlist = downloadzoneService.getFileList((start-1)*pagesize,pagesize);
-			int pageSum = downloadzoneService.getFileCount();
+			List<Downloadzone> downlist = downloadzoneService.getFileList(level,(start-1)*pagesize,pagesize);
+			int pageSum = downloadzoneService.getFileCount(level);
 			pagecount = pageSum/pagesize+1;
 			String type = "下载中心";
 			map.put("type", type);
 			map.put("pagecount", pagecount);
 			map.put("start", start);
+			map.put("level", level);
 			map.put("downlist", downlist);
 			map.put("zyggList", zyggList);
 			return new ModelAndView("downloadList").addAllObjects(map);
@@ -418,14 +422,30 @@ public class IndexController extends BaseController{
 	@RequestMapping("/download.do")
 	public ModelAndView download(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
+			int start = 1;
+			int level = 2;
+			int pagecount = 0;
+			String r_start = request.getParameter("start");
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);//获取重要公告
 			if (zyggList.size() > 8) {
 				zyggList = zyggList.subList(0, 8);
 			}
+			
+			if(StringUtils.isNotEmpty(r_start))
+				start = Integer.valueOf(r_start);
 			Map map = new HashMap();
+			List<Downloadzone> downlist = downloadzoneService.getFileList(level,(start-1)*pagesize,pagesize);
+			int pageSum = downloadzoneService.getFileCount(level);
+			pagecount = pageSum/pagesize+1;
+			String type = "下载专区";
+			map.put("type", type);
+			map.put("pagecount", pagecount);
+			map.put("start", start);
+			map.put("level", level);
+			map.put("downlist", downlist);
 			map.put("zyggList", zyggList);
-			return new ModelAndView("downloadZone").addAllObjects(map);
+			return new ModelAndView("downloadList").addAllObjects(map);
 		}catch (RuntimeException e) {
 			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());

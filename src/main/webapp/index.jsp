@@ -157,7 +157,7 @@
 						
 						<div class="MainRight">
 							<div class="caption_right_298_h3"> 
-								<h3>行业公告<a href="/hzkdxh/news/newsList.do?newstype=3&subtype=0&start=1">&gt;&gt; 更多</a></h3>
+								<h3>行业公告<a href="/hzkdxh/news/newsList.do?newstype=7&subtype=0&start=1">&gt;&gt; 更多</a></h3>
 								<ul class="ulli">
 									<c:forEach  items="${hyggList}"  var="item"  varStatus="status">
 										<c:set var="time" value="${item.crtime}" />

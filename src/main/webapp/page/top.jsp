@@ -35,15 +35,15 @@ $(function(){
                          <li><a href="/hzkdxh/news/newsList.do?newstype=2&subtype=5&start=1">其他行业要求</a></li>
                          </ul>
                      </li>
-					 <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=0&start=1"><span>行业公告</span></a>
+					 <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=0&start=1"><span>行业统计</span></a>
 					   <ul>
-                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=1&start=1">邮政统计报告</a></li>
-                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=2&start=1">消费者申诉</a></li>
-                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=3&start=1">旺季消费提示</a></li>
-                         </ul>
+                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=1&start=1">统计报告</a></li>
+                         <li><a href="/hzkdxh/news/newsList.do?newstype=3&subtype=2&start=1">申诉通告</a></li>
+                       </ul>
+					 </li>
+					 <li><a href="/hzkdxh/news/newsList.do?newstype=7&subtype=0&start=1"><span>行业公告</span></a>
 					 </li>
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=6&subtype=0&start=1"><span>行业资讯</span></a></li>
-					 <li><a href="/hzkdxh/news/newsList.do?newstype=7&subtype=0&start=1"><span>行业统计</span></a></li>
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=4&subtype=0&start=1"><span>会员风采</span></a>
 					 </li>
 					 <li><a href="/hzkdxh/news/download.do"><span>下载专区</span></a></li>

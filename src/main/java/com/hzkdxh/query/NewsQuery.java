@@ -18,6 +18,8 @@ public class NewsQuery {
 
 	private int del; 			// 该新闻是否被删除，0：正常，1：删除
 	
+	private int level;			//文件级别，1，需要登录，2，不需要登录
+	
 	private int start;			//查询起始页
 	
 	private int pagesize;		//每次查询返回的数量
@@ -92,6 +94,14 @@ public class NewsQuery {
 
 	public void setPagesize(int pagesize) {
 		this.pagesize = pagesize;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 }

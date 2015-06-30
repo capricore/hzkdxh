@@ -11,8 +11,8 @@ import com.hzkdxh.service.DownloadzoneService;
 @Service
 public class DownloadzoneServiceImp extends BaseService implements DownloadzoneService{
 
-	public List<Downloadzone> getFileList(int start, int pagesize) {
-		return getDownloadzoneDao().getFileList(start, pagesize);
+	public List<Downloadzone> getFileList(int level,int start, int pagesize) {
+		return getDownloadzoneDao().getFileList(level,start, pagesize);
 	}
 	
 	public Downloadzone getById(String id) {
@@ -30,8 +30,8 @@ public class DownloadzoneServiceImp extends BaseService implements DownloadzoneS
 	public boolean deleteDownloadzone(String id) {
 		return getDownloadzoneDao().deleteDownloadzone(id);
 	}
-	public int getFileCount() {
-		return getDownloadzoneDao().getFileCount();
+	public int getFileCount(int level) {
+		return getDownloadzoneDao().getFileCount(level);
 	}
 
 }
