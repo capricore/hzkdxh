@@ -60,7 +60,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>诚信建设</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <a href="/hzkdxh/news/blackList.do">诚信建设</a> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780"><h3>诚信建设</h3></div>
 			<div class="content_780">

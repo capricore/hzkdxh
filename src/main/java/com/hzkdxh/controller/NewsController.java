@@ -156,7 +156,7 @@ public class NewsController extends BaseController{
 			int newstype = 0;
 			int subtype = 0;
 			String r_newstype = request.getParameter("newstype");											//新闻大类
-			String r_subtype = request.getParameter("subtype");												//新闻戏类
+			String r_subtype = request.getParameter("subtype");												//新闻小类
 			List<News> newsList = new ArrayList<News>();
 			if(StringUtils.isNumber(r_newstype)&&StringUtils.isNumber(r_subtype)){
 				newstype = Integer.valueOf(r_newstype);

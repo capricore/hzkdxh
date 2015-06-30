@@ -45,9 +45,6 @@ $(function(){
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=6&subtype=0&start=1"><span>行业资讯</span></a></li>
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=7&subtype=0&start=1"><span>行业统计</span></a></li>
 					 <li><a href="/hzkdxh/news/newsList.do?newstype=4&subtype=0&start=1"><span>会员风采</span></a>
-					  <ul>
-                         <li><a href="/hzkdxh/news/newsList.do?newstype=4&subtype=1&start=1">最新活动</a></li>
-                         </ul>
 					 </li>
 					 <li><a href="/hzkdxh/news/download.do"><span>下载专区</span></a></li>
 					 <li><a><span>会员中心</span></a>

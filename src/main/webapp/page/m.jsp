@@ -58,7 +58,7 @@
     }
 </script>
 <div class="M_Col2Right">
-<p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>短信群发</strong> </p>
+<p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <a href="/hzkdxh/news/message.do">短信群发</a> </p>
 <!-- 内容左边开始 -->
     <div class="caption_content_780"><h3>短信群发</h3></div>
     <div class="content_780">

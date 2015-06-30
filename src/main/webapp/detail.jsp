@@ -61,7 +61,7 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>${news.title}</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> <c:if test="${not empty newstype }">&gt; </c:if>  <a href="/hzkdxh/news/newsList.do?newstype=${r_newstype}&subtype=0&start=1">${newstype}</a><c:if test="${not empty subtype }">&gt; </c:if> <a href="/hzkdxh/news/newsList.do?newstype=${r_newstype}&subtype=${r_subtype}&start=1">${subtype}</a> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780">
 							</div>
