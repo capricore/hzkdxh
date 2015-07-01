@@ -41,12 +41,12 @@ public class ReplyThread implements Runnable {
 					}
 				}
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(3600000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 				long tEnd = System.currentTimeMillis();
-				if (tEnd - tStart >= 100000) { // 86400000ms等于一天
+				if (tEnd - tStart >= 86400000) { // 86400000ms等于一天
 					break;
 				}
 			}
