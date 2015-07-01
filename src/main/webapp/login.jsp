@@ -35,25 +35,6 @@
 			display: block;
 		}
 		</style>
-		
-		<script type="text/javascript">         
-		//表单验证 		
-		function login(){
-		var username = document.form2.username;
-		var psw = document.form2.userpass;
-		if(username.value.length==0){
-			alert("请输入用户名");
-			username.focus();
-			return false;
-		}
-		if(psw.value.length==0){
-			alert("请输入密码");
-			psw.focus();
-			return false;
-		}
-		}
-		</script>
-		
 	</head>
 	<body id="Homepage" class="">
 		
@@ -63,54 +44,49 @@
 
 <script type="text/javascript">
 function displaySubMenu(li) {
-var subMenu = li.getElementsByTagName("ul")[0];
-subMenu.style.display = "block";
+	var subMenu = li.getElementsByTagName("ul")[0];
+	subMenu.style.display = "block";
 }
 function hideSubMenu(li) {
-var subMenu = li.getElementsByTagName("ul")[0];
-subMenu.style.display = "none";
+	var subMenu = li.getElementsByTagName("ul")[0];
+	subMenu.style.display = "none";
 }
 
 function submitById(id){			
 	//Callback handler for form submit event
-	$("#"+id).submit(function(e)
-	{
-		  	e.preventDefault();
-		  	var formObj = $(this);
-		    var formURL = formObj.attr("action");
-		    var formData = new FormData(this);
-		    $.ajax({
-		        url: formURL,
-		    type: 'POST',
-		        data:  formData,
-		    mimeType:"multipart/form-data",
-		    contentType: false,
-		    cache: false,
-		    processData:false,
-		    success: function(transport)
-		    {
-		    	 var jresp = new JsonRespUtils(transport);
-		    	 if (jresp.isSuccessfully()){
-		    		 var res = jresp.getMessage();
-		    		 if(res=="loginSuccess"){
-		    			 alert("登陆成功！");
-		 	    	 	var returnUri = '/hzkdxh<%=session.getAttribute("returnUri")%>';
-				    	window.location.href= returnUri;
-		    		 }
-		    	 }else{
-		    		 var res = jresp.getMessage();
-		    		 if(res=="loginFailed"){
-		    			 alert("用户名密码错误！");
-		    		 }
-	    			 location.reload();
-	    		 }
-
-		    },
-		     error: function(transport) 
-		     {
-		    	alert("登录失败！");
-		     }          
-		    });
+		$("#"+id).submit(function(e)
+		{
+			  	e.preventDefault();
+			    var formData = $(this).serializeArray();
+			    var formURL = $(this).attr("action");
+			    $.ajax({
+			        url: formURL,
+			    	type: 'POST',
+			        data:  formData,
+				    success: function(transport)
+				    {
+				    	 var jresp = new JsonRespUtils(transport);
+				    	 if (jresp.isSuccessfully()){
+				    		 var res = jresp.getMessage();
+				    		 if(res=="loginSuccess"){
+				    			 alert("登陆成功！");
+				 	    	 	var returnUri = '/hzkdxh<%=session.getAttribute("returnUri")%>';
+						    	window.location.href= returnUri;
+				    		 }
+				    	 }else{
+				    		 var res = jresp.getMessage();
+				    		 if(res=="loginFailed"){
+				    			 alert("用户名密码错误！");
+				    		 }
+			    			 location.reload();
+			    		 }
+		
+				    },
+				     error: function(transport) 
+				     {
+				    	alert("登录失败！");
+				     }          
+				    });
 		}); 
 		$("#"+id).submit();
 	}
@@ -131,15 +107,13 @@ function login(){
                             	<div class="content_780">
 									<div class="QuickLinksRight" style="padding:20px 0px 20px 150px">								
 									<form action="/hzkdxh/user/login.do" method="get" id="loginForm" name="form2">
-										<label for="" style="font-size:1.4em">用户</label> <input type="text" name="username" value="" style="width:200px"/> <a href="downloadZone.jsp" style="font-size:1.2em">会员申请</a><br></br>
-										<label for="" style="font-size:1.4em">密码</label> <input type="password" name="password" value="" style="width:200px"/> <input class="buttonLogin" type="button" name="submit"  onclick="login();" value="登录"/>
+										<label for="" style="font-size:1.4em">用户</label> <input id="username" type="text" name="username" value="" style="width:200px"/> <a href="downloadZone.jsp" style="font-size:1.2em">会员申请</a><br></br>
+										<label for="" style="font-size:1.4em">密码</label> <input id="password" type="password" name="password" value="" style="width:200px"/> <input class="buttonLogin" type="button" name="submit"  onclick="login();" value="登录"/>
 									</form>							
 									</div>
 								
 								</div>
 								</div>
-                        
-                        
 					</div>
 					
 		</div>

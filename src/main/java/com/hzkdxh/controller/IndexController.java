@@ -53,7 +53,7 @@ public class IndexController extends BaseController{
 	private static final Logger logger = Logger.getLogger(IndexController.class);  
 	
 	private String[] NewsType = {"","关于协会","政策法规","行业统计","会员风采","重要公告","行业资讯","行业公告","协会动态"};
-	private String[][] SubType = {{},{"","协会简介","协会章程","协会制度","协会成员"},{"","法律法规","部门规章","规范性文件","地方性法规","其它要求"}
+	private String[][] SubType = {{},{"","协会简介","协会章程","协会制度","协会成员"},{"","法律法规","部门规章","规范性文件","地方性法规","其它行业要求"}
 	,{"","统计报告","申诉通告"},{""},{""},{""},{""},{""}};
 
 	private int pagesize = 15;			//每次查询返回的次数 

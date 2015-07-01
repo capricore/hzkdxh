@@ -13,7 +13,7 @@
 	<h3>站内搜索</h3>				
 </div>
 <div class="content_right_170">
-	<form id="searchForm" method="get" name="form1" action="/hzkdxh/news/search.do" class="search" >
+	<form id="searchForm" method="post" name="form1" action="/hzkdxh/news/search.do" class="search" >
 		<input type="text" name="title" value=""/> 
 		<button type="submit" class="btn"> 搜索</button>
 	</form>
@@ -21,7 +21,7 @@
 
 <!-- 站内搜索结束 -->
                      
-                     <div class="caption_right_170_h3"> 
+<div class="caption_right_170_h3"> 
 	<h3>理事会成员</h3>				
 </div>
 <div class="content_right_170">                             
@@ -29,24 +29,25 @@
 	<div id="c1" > 
   	<p>会长单位：<br />
                          浙江省邮政速递物流有限公司杭州分公司</p>
-                         <p>副会长单位：<br />
-                         浙江顺丰速运有限公司<br />
-                         浙江申通快递有限公司<br />
-                         浙江圆通速递有限公司<br />
-                         浙江中通速递有限公司<br />
-                         浙江浙韵速递有限公司<br />
-                         浙江天天快递有限公司<br />
-                         浙江百世网络科技有限公司<br />
-                         浙江红楼国通快递有限公司<br />
-                         浙江德邦货运代理有限公司
-                         </p>
-                         <p>理事单位：<br />
+         <p>副会长单位：<br />
+	                         浙江顺丰速运有限公司<br />
+	                         浙江申通快递有限公司<br />
+	                         浙江圆通速递有限公司<br />
+	                         浙江中通速递有限公司<br />
+	                         浙江浙韵速递有限公司<br />
+	                         浙江天天快递有限公司<br />
+	                         浙江百世网络科技有限公司<br />
+	                         浙江红楼国通快递有限公司<br />
+	                         浙江德邦货运代理有限公司
+         </p>
+         <p>理事单位：<br />
                          杭州萧申快递有限公司<br />
                          杭州圆通秋涛速递有限公司<br />
                          富阳市圆通快递有限公司
-                         </p>
-                         <p>监事单位：<br />
-                         富阳市盛彤快件服务有限公司</p>
+         </p>
+         <p>监事单位：<br />
+                         富阳市盛彤快件服务有限公司
+         </p>
  	</div>  
 	<div id="c2"></div> 
 </div>  
@@ -55,17 +56,17 @@ boxmove("contact","c1","c2",1);
 </script> 
 </div>
 
-	<!-- 登录开始 -->
+<!-- 登录开始 -->
 <div class="caption_right_170_h3"> 
 	<h3>会员登录</h3>				
 </div>
 <div class="content_right_170">
 	<div class="QuickLinksRight" id="loginDiv">		
 	<%String name=((String)session.getAttribute("username"));%>						
-	<form id="loginForm" action="/hzkdxh/user/login.do" method="get" name="form2">
+	<form id="loginForm" action="/hzkdxh/user/login.do" method="post" name="form2">
 		<ul style="list-style-type:none;">
-		<li><label for="">用户</label> <input type="text" name="username" value="" /> <a href="downloadZone.jsp">会员申请</a></li>
-		<li><label for="">密码</label> <input type="password" name="password" value="" /> <input class="buttonLogin" type="button" name="submit" onclick="login();" value="登录"/> </li>
+		<li><label for="">用户</label> <input id="username" type="text" name="username" value="" /> <a href="downloadZone.jsp">会员申请</a></li>
+		<li><label for="">密码</label> <input id="password" type="password" name="password" value="" /><input class="buttonLogin" type="button" name="submit"  onclick="login();" value="登录"/></li>
 		</ul>
 	</form>							
 	</div>
@@ -87,12 +88,11 @@ boxmove("contact","c1","c2",1);
 	</div>
 	<div class="content_right_170">
 		<div class="QuickLinksRight">
-			<form id="contactForm" action="/hzkdxh/mail/send.do">
+			<form id="contactForm" action="/hzkdxh/mail/send.do" method="post">
 				<ul style="list-style-type: none;">
 					<li><textarea name="message"
 							style="height: 50px; width: 200px"></textarea></li>
-					<li><label for="">联系方式</label> <input style="width: 148px"
-						name="contact" value="" /></li>
+					<li><label for="">联系方式</label> <input id="contact" style="width: 148px" name="contact" value="" /></li>
 					<li><input class="buttonLogin" type="button" name="submit"
 						value="提交" onclick="mail();" /></li>
 				</ul>
@@ -155,50 +155,44 @@ boxmove("a","a1","a2",1);
 
 </div>
 
-<script>
-
+<script type="text/javascript">
 function submitById(id){			
 	//Callback handler for form submit event
 	$("#"+id).submit(function(e)
-	{
+		{
 		  	e.preventDefault();
-		  	var formObj = $(this);
-		    var formURL = formObj.attr("action");
-		    var formData = new FormData(this);
+		    var formData = $(this).serializeArray();
+		    var formURL = $(this).attr("action");
 		    $.ajax({
 		        url: formURL,
-		    type: 'POST',
+		    	type: 'POST',
 		        data:  formData,
-		    mimeType:"multipart/form-data",
-		    contentType: false,
-		    cache: false,
-		    processData:false,
-		    success: function(transport)
-		    {
-		    	 var jresp = new JsonRespUtils(transport);
-		    	 if (jresp.isSuccessfully()){
-		    		 var res = jresp.getMessage();
-		    		 if(res=="sendSuccess"){
-		    			 alert("发送成功！");
-		    		 }else if(res=="loginSuccess"){
-			    		 alert("登录成功！");
-		    		 }
-		    		 location.reload();
-		    	 }else{
-		    		 var res = jresp.getMessage();
-		    		 if(res=="loginFailed"){
-		    			 alert("用户名密码错误！");
-		    		 }else{
-		    			 alert("发送失败！");
-		    		 }
-	    			 location.reload();
-		    	 }
-		    },
-		     error: function(transport) 
-		     {
-		    	alert("登录失败！");
-		     }          
-		    });
+			    success: function(transport)
+			    {
+			    	 var jresp = new JsonRespUtils(transport);
+			    	 if (jresp.isSuccessfully()){
+			    		 var res = jresp.getMessage();
+			    		 if(res=="sendSuccess"){
+			    			 alert("发送成功！");
+			    		 }else if(res=="loginSuccess"){
+				    		 alert("登录成功！");
+			    		 }
+			    		 location.reload();
+			    	 }else{
+			    		 var res = jresp.getMessage();
+			    		 if(res=="loginFailed"){
+			    			 alert("用户名密码错误！");
+			    		 }else{
+			    			 alert("发送失败！");
+			    		 }
+		    			 location.reload();
+			    	 }
+			    },
+			     error: function(transport) 
+			     {
+			    	alert("登录失败！");
+			     }          
+		  	});
 		}); 
 		$("#"+id).submit();
 	}

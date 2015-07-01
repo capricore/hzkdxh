@@ -22,17 +22,12 @@
     	$("#"+id).submit(function(e)
     	{
     		  	e.preventDefault();
-    		  	var formObj = $(this);
-    		    var formURL = formObj.attr("action");
-    		    var formData = new FormData(this);
+			    var formData = $(this).serializeArray();
+			    var formURL = $(this).attr("action");
     		    $.ajax({
     		        url: formURL,
     		    type: 'POST',
     		        data:  formData,
-    		    mimeType:"multipart/form-data",
-    		    contentType: false,
-    		    cache: false,
-    		    processData:false,
     		    success: function(transport)
     		    {
     		    	 var jresp = new JsonRespUtils(transport);
