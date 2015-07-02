@@ -51,7 +51,8 @@ public class MessageController extends BaseController {
 	public void addMessage(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
-			String content = new String(request.getParameter("content").getBytes("ISO-8859-1"), "UTF-8"); 
+//			String content = new String(request.getParameter("content").getBytes("ISO-8859-1"), "UTF-8"); 
+			String content = request.getParameter("content"); 
 			String[] compid = request.getParameterValues("select"); 
 			StringBuilder phone = new StringBuilder();
 			for (String comp : compid) {

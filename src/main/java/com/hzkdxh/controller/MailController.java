@@ -38,9 +38,11 @@ public class MailController extends BaseController{
 	public void newsView(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		try{
 			//获取联系方式
-			String contact = new String(request.getParameter("contact").getBytes("ISO-8859-1"),"UTF-8");
+//			String contact = new String(request.getParameter("contact").getBytes("ISO-8859-1"),"UTF-8");
+			String contact = request.getParameter("contact");
 			//获取邮件内容
-			String message = new String(request.getParameter("message").getBytes("ISO-8859-1"),"UTF-8");	
+//			String message = new String(request.getParameter("message").getBytes("ISO-8859-1"),"UTF-8");
+			String message = request.getParameter("message");
 	        //这个类主要是设置邮件  
 		     MailSenderInfo mailInfo = new MailSenderInfo();   
 		     mailInfo.setMailServerHost("smtp.sina.com.cn");   
@@ -49,7 +51,7 @@ public class MailController extends BaseController{
 		     mailInfo.setUserName("lpff1218@sina.com");   
 		     mailInfo.setPassword("mumu0201lpf");//您的邮箱密码   
 		     mailInfo.setFromAddress("lpff1218@sina.com");   
-		     mailInfo.setToAddress("496512833@qq.com");   
+		     mailInfo.setToAddress("shenbin@hzkdxh.com");   
 		     mailInfo.setSubject("用户反馈");
 		     message = "联系方式:"+contact + "\n" +"邮件内容:"+message;
 		     mailInfo.setContent(message);   
