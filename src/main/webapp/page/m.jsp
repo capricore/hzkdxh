@@ -68,9 +68,8 @@ function submitById(id){
             	<textarea style="width:545px; margin-left:12px" name="content"></textarea>
                 <br /><br />
                 </div>
-                <input class="buttonLogin" type="button" style="margin-left:80px" onclick="onCheck();" value="发送" />
-                    
-                  </div>
+                <input id="sendButton" class="buttonLogin" type="button" style="margin-left:80px" onclick="onCheck();" value="发送" />
+                </div>
             </form>
 
     </div>
@@ -110,7 +109,8 @@ function submitById(id){
 	        	v+=nodes[i].phone + ",";
         }
        	$("#phone").val(v);
-        submitById('loginForm');
+		submitById('loginForm');
+        $("#sendButton").attr("disabled","disabled");
     	return false;
     }
 

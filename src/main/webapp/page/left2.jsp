@@ -72,11 +72,11 @@
 			
 	</div>
                       
-                      <!-- 站内搜索开始 -->
-	<div class="caption_right_170_h3"> 
-		<h3>站内搜索</h3>				
-	</div>
-	<div class="content_right_170">
+<!-- 站内搜索开始 -->
+<div class="caption_right_170_h3"> 
+	<h3>站内搜索</h3>				
+</div>
+<div class="content_right_170">
 	<form method="get" name="form1" action="/hzkdxh/news/search.do" class="search" onsubmit="return query()">
 		<input type="text" name="title" value=""/> 
 		<button type="submit" class="btn" style="padding:0 0 0 0"> 搜索</button>
