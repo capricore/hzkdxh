@@ -53,5 +53,13 @@
 	<select id="getAdminCompanyByLevel"  parameterClass="int" resultClass="String">
 		select compid from user where level=#level#
 	</select>
+	
+	<select id="getUserListByLevel"  parameterClass="int" resultClass="user">
+		select * from user where level=#level#
+	</select>
+	
+	<select id="getUserListByCompid"  parameterClass="String" resultClass="user">
+		select * from user where compid=#compid#
+	</select>
 
 </sqlMap>  

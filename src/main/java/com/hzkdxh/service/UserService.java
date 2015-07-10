@@ -2,7 +2,6 @@ package com.hzkdxh.service;
 
 import java.util.List;
 
-import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.User;
 
 public interface UserService {
@@ -33,4 +32,8 @@ public interface UserService {
     public List<String> getPhoneByCompId(String compid);
     
     public List<String> getAdminCompanyByLevel(int level);
+    
+    public List<User> getUserListByLevel(int level);
+    
+    public List<User> getUserListByCompid(String compid);
 }

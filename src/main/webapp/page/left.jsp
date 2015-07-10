@@ -70,9 +70,11 @@ boxmove("contact","c1","c2",1);
 		</ul>
 	</form>							
 	</div>
-	<div id="welcomeDiv" style="display:none;text-align:center" >
-		<span><label id="welLabel" for=""></label></span>
-	</div>
+	<form id="logoutForm" action="/hzkdxh/user/logout.do" method="post" name="form2">
+		<div id="welcomeDiv" style="display:none;text-align:center" >
+			<span><label id="welLabel" for=""></label><input type="button" name="submit"  onclick="logout();" value="注销"/>
+		</div>
+	</form>	
 </div>
 
 <!-- 登录结束 --> 
@@ -169,13 +171,15 @@ function submitById(id){
 		        data:  formData,
 			    success: function(transport)
 			    {
-			    	 var jresp = new JsonRespUtils(transport);
+			    	var jresp = new JsonRespUtils(transport);
 			    	 if (jresp.isSuccessfully()){
 			    		 var res = jresp.getMessage();
 			    		 if(res=="sendSuccess"){
 			    			 alert("发送成功！");
 			    		 }else if(res=="loginSuccess"){
 				    		 alert("登录成功！");
+			    		 }else if(res=="logoutSuccess"){
+			    			 alert("注销成功！");
 			    		 }
 			    		 location.reload();
 			    	 }else{
@@ -207,6 +211,10 @@ function mail(){
 	return false;
 }
 
+function logout(){
+	submitById('logoutForm');
+	return false;
+}
 
 function checkLogin(){
 	var username = "<%=session.getAttribute("username")%>";

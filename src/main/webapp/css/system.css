@@ -48,7 +48,7 @@
 	.logout{background:#F7F6F6; height:25px; text-align:right; line-height:25px; padding-right:8px;}
 
 	#NvaaBg{display:block; clear:both; height:14px; background: url("image/navBg.gif");  border-top:2px solid #3662BF;}
-	p.C_Crumbs{margin:0 0 8px 0; padding-left:8px; text-indent:1px !important;  clear:both;}
+	p.C_Crumbs{margin:0 0 8px 0; padding:3px 8px 3px 0; text-indent:1px !important;  clear:both;}
 	#banner{margin:8px 0 8px 0; float:right}
 	#Header #QuickLinks .buttonLogin input{border:1px solid #348609; width:50px; height:20px; background:#4FA20C;  padding-top:1px; margin-right:4px; cursor:pointer; color:#fff;}
 	
@@ -186,8 +186,8 @@ width:95px;
 		.caption_content_780{position:relative;  BACKGROUND: url("image/caption_left_780.gif") no-repeat left bottom;  LINE-HEIGHT: 26px; PADDING-TOP: 0px; HEIGHT: 26px;}
 		.content_780{border:1px solid #ccc; border-top:0; margin-bottom:8px; padding:8px 16px}
 		.content_780 ul{margin-left:0; padding-left:0;}
-		.content_780 ul li{position:relative; line-height:1.6em; margin-left:10px; padding-left:16px; background:url("image/iocnBg.gif") no-repeat 0px -234px; list-style-type:none; font-size:1.1em;}
-		.content_780 ul li a{display:inline-block; width:480px !important; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+		.content_780 ul li{position:relative; line-height:1.6em; margin-left:10px; padding-left:16px;list-style-type:none; font-size:1.1em;}
+		.content_780 ul li a{display:inline-block; vertical-align: middle; width:480px !important; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 		.content_780 .art_title{text-align:center; height:auto; margin:12px 0;font-size:1.6em; font-weight:bold; color:#2678DA; border-bottom:1px solid #BDBDBD;}
 		.content_780 .art_title2{text-align:justify; margin:12px 0;font-size:1.4em; border-bottom:1px solid #BDBDBD;}
 		.art_info{text-align:center; font-size:1em; color:#666; height:30px; }

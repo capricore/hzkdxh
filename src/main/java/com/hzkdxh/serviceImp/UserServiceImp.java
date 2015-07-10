@@ -2,22 +2,29 @@ package com.hzkdxh.serviceImp;
 
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.User;
+import com.hzkdxh.dao.UserDao;
 import com.hzkdxh.service.BaseService;
 import com.hzkdxh.service.UserService;
 
 @Service
 public class UserServiceImp extends BaseService implements UserService{
+	
+	ApplicationContext context = new ClassPathXmlApplicationContext(
+			"classpath:/applicationContext.xml");
+	private UserDao userDao = (UserDao)context.getBean("userDao");
 
 	public List<User> getUserList() {
 		return getUserDao().getUserList();
 	}
 
 	public User getByUserName(String username) {
-		return getUserDao().getByUserName(username);
+		return userDao.getByUserName(username);
 	}
 
 	public User getByUserId(String userid) {
@@ -50,6 +57,14 @@ public class UserServiceImp extends BaseService implements UserService{
 
 	public List<String> getAdminCompanyByLevel(int level) {
 		return getUserDao().getAdminCompanyByLevel(level);
+	}
+	
+	public List<User> getUserListByLevel(int level) {
+		return getUserDao().getUserListByLevel(level);
+	}
+
+	public List<User> getUserListByCompid(String compid) {
+		return getUserDao().getUserListByCompid(compid);
 	}
 
 }

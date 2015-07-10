@@ -154,5 +154,27 @@ public class UserDaoImp extends BaseDao implements UserDao {
 		}
 		return adminCompany;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<User> getUserListByLevel(int level) {
+		List<User> adminCompany = null;
+		try {
+			adminCompany = getSqlMapClientTemplate().queryForList("getUserListByLevel",level);
+		} catch (Exception e) {
+			logger.error("根据level获取user列表出错！" + ",errMsg=" + e.getMessage());
+		}
+		return adminCompany;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<User> getUserListByCompid(String compid) {
+		List<User> user = null;
+		try {
+			user = getSqlMapClientTemplate().queryForList("getUserListByCompid",compid);
+		} catch (Exception e) {
+			logger.error("根据compid获取user列表出错！" + ",errMsg=" + e.getMessage());
+		}
+		return user;
+	}
 
 }

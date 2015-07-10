@@ -54,6 +54,23 @@ public class LoginController extends BaseController{
 		}
 
 	}
+	
+	@RequestMapping("/logout.do")
+	public void logout(HttpServletRequest request, HttpServletResponse response){
+		try {
+			HttpSession hs = request.getSession();
+			hs.removeAttribute("username");
+			hs.removeAttribute("userid");
+			String message = "";
+			message = "logoutSuccess";
+			outputJsonResponse(response, true, message);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			outputJsonResponse(response, false, e.getMessage());
+			logger.error("会员登录信息出错！" +  ",errMsg=" + e.getMessage());
+		}
+
+	}
 
 	
 

@@ -79,7 +79,7 @@
 	<div class="content_right_170">
 	<form method="get" name="form1" action="/hzkdxh/news/search.do" class="search" onsubmit="return query()">
 		<input type="text" name="title" value=""/> 
-		<button type="submit" class="btn"> 搜索</button>
+		<button type="submit" class="btn" style="padding:0 0 0 0"> 搜索</button>
 	</form>
 </div>
 

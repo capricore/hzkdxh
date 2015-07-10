@@ -34,5 +34,5 @@ public interface CompanyDao {
     
     /* 根据公司等级公司信息列表*/
     public List<Company> getCompanyListByLevel(int level);
-
+    
 }

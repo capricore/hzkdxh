@@ -53,20 +53,12 @@ public class MessageController extends BaseController {
 		try {
 //			String content = new String(request.getParameter("content").getBytes("ISO-8859-1"), "UTF-8"); 
 			String content = request.getParameter("content"); 
-			String[] compid = request.getParameterValues("select"); 
-			StringBuilder phone = new StringBuilder();
-			for (String comp : compid) {
-				List<String> phonelist = userService.getPhoneByCompId(comp);
-				for (String number : phonelist) {
-					phone.append(number);
-					phone.append(",");
-				}
-			}
+			String phone = request.getParameter("phone"); 
 			SendMsg.sendMessage_yxt(phone.toString(), content);
 			Message message = new Message();
 			message.setId(CodeGenerator.createUUID());
 			message.setContent(content);
-			message.setMdn(phone.toString());
+			message.setMdn(phone);
 			Timestamp crtime = Timestamp.valueOf(DateUtils.getCurrDateTimeStr());
 			message.setSend_time(crtime.toString().substring(0, 19));
 			messageService.addMessage(message);
