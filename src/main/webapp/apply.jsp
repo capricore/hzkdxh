@@ -60,13 +60,13 @@ subMenu.style.display = "none";
 						<%@ include file="page/left2.jsp"%>
                         
                         <div class="M_Col2Right">
-                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>下载专区</strong> </p>
+                        <p class="C_Crumbs"><em>当前位置:</em> <a href="/hzkdxh">首页</a> &gt; <strong>会员申请</strong> </p>
 							<!-- 内容左边开始 -->
                             <div class="caption_content_780">
 						</div>
 						<div class="content_780">
 							<div class="art_title">会员申请表下载</div>
-							<div class="art_info"><strong> 时间：</strong>2009-08-11</div>
+							<div class="art_info"><strong> 时间：</strong>2015-07-11</div>
                                 <p>
                                 	<IMG src="/hzkdxh/images/doc.gif" border=0><A href="http://210.32.133.25:8090/epUpload/download/会员申请表.doc" target=_blank>会员申请表.doc</A>
                                 </p>

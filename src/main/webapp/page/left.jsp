@@ -64,7 +64,7 @@ boxmove("contact","c1","c2",1);
 	<%String name=((String)session.getAttribute("username"));%>						
 	<form id="loginForm" action="/hzkdxh/user/login.do" method="post" name="form2">
 		<ul style="list-style-type:none;">
-		<li><label for="">用户</label> <input id="username" type="text" name="username" value="" /> <a href="downloadZone.jsp">会员申请</a></li>
+		<li><label for="">用户</label> <input id="username" type="text" name="username" value="" /> <a href="/hzkdxh/news/apply.do">会员申请</a></li>
 		<li><label for="">密码</label> <input id="password" type="password" name="password" value="" /><input class="buttonLogin" type="button" name="submit"  onclick="login();" value="登录"/></li>
 		</ul>
 	</form>							

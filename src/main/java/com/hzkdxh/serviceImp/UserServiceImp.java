@@ -6,7 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
-import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.User;
 import com.hzkdxh.dao.UserDao;
 import com.hzkdxh.service.BaseService;

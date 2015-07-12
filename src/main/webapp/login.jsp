@@ -107,7 +107,7 @@ function login(){
                             	<div class="content_780">
 									<div class="QuickLinksRight" style="padding:20px 0px 20px 150px">								
 									<form action="/hzkdxh/user/login.do" method="get" id="loginForm" name="form2">
-										<label for="" style="font-size:1.4em">用户</label> <input id="username" type="text" name="username" value="" style="width:200px"/> <a href="downloadZone.jsp" style="font-size:1.2em">会员申请</a><br></br>
+										<label for="" style="font-size:1.4em">用户</label> <input id="username" type="text" name="username" value="" style="width:200px"/> <a href="/hzkdxh/news/apply.do" style="font-size:1.2em">会员申请</a><br></br>
 										<label for="" style="font-size:1.4em">密码</label> <input id="password" type="password" name="password" value="" style="width:200px"/> <input class="buttonLogin" type="button" name="submit"  onclick="login();" value="登录"/>
 									</form>							
 									</div>

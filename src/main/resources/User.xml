@@ -6,7 +6,7 @@
 
 	<!-- 获得全查询列表 -->
 	<select id="getUserList" resultClass="user">
-		select * from user
+		select * from user ORDER BY level DESC, company 
 	</select>
 
 	<!-- 根据用户名获得用户对象 -->

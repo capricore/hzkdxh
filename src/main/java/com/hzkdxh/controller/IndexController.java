@@ -353,17 +353,38 @@ public class IndexController extends BaseController {
 						messageList.add(message);
 					}
 				}
+				Company company = companyService.getByCompanyId(user.getCompid());
+				if(company.getPcompid() != null){// 如果该会员单位隶属于某理事，需要将该理事加进去
+					Company pcompany = companyService.getByCompanyId(company.getPcompid());
+					MessageList lishi = new MessageList();
+					lishi.setName(pcompany.getCompname());
+					lishi.setId(pcompany.getCompid());
+					lishi.setPid(String.valueOf(user.getCompany()));
+					lishi.setPhone("null");
+					messageList.add(lishi);
+					List<User> lishiList = userService.getUserListByLevel(2);// 获得所有理事单位列表
+					for (User user2 : lishiList) {
+						if (user2.getCompid().equals(company.getPcompid())) {
+							MessageList lishiNum = new MessageList();
+							lishiNum.setName(user2.getLinkman());
+							lishiNum.setId(user2.getUserid());
+							lishiNum.setPid(user2.getCompid());
+							lishiNum.setPhone(user2.getPhone());
+							messageList.add(lishiNum);
+						}
+					}
+				}
 				HashMap<String, MessageList> hasAddSub = new HashMap<String, MessageList>();
 				for (User user2 : submessageList) {//将会员单位的公司加到短信列表中
-					Company company = companyService.getByCompanyId(user2.getCompid());
-					if (!hasAddSub.containsKey(company.getCompid())) {
+					Company member = companyService.getByCompanyId(user2.getCompid());
+					if (!hasAddSub.containsKey(member.getCompid())) {
 						MessageList message = new MessageList();
-						message.setName(company.getCompname());
+						message.setName(member.getCompname());
 						message.setId(user2.getCompid());
 						message.setPid(String.valueOf(user2.getCompany()));
 						message.setPhone("null");
 						messageList.add(message);
-						hasAddSub.put(company.getCompid(),message);
+						hasAddSub.put(member.getCompid(),message);
 					}
 				}
 				for (User user2 : submessageList) {//将会员单位公司的人员号码加到短信列表中
@@ -373,21 +394,6 @@ public class IndexController extends BaseController {
 						message.setPid(user2.getCompid());
 						message.setPhone(user2.getPhone());
 						messageList.add(message);
-				}
-				Company company = companyService.getByCompanyId(user.getCompid());
-				if(company.getPcompid() != null){
-					MessageList lishi = new MessageList();
-					lishi.setName(company.getCompname());
-					lishi.setId(company.getCompid());
-					lishi.setPid(Company[user.getCompany()]);
-					lishi.setPhone("null");
-					messageList.add(lishi);
-					MessageList linkman = new MessageList();
-					linkman.setName(user.getUsername());
-					linkman.setId(user.getUserid());
-					linkman.setPid(user.getCompid());
-					linkman.setPhone(user.getPhone());
-					messageList.add(linkman);
 				}
 			} else if (user.getLevel() == 2) {
 				List<User> adminmessageList = userService.getUserListByLevel(3); // 获得管局、协会（管理员）列表
@@ -635,6 +641,27 @@ public class IndexController extends BaseController {
 			logger.error("获取下载专区信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
 		}
+	}
+	
+	/**
+	 * 会员申请表页面
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/apply.do")
+	public ModelAndView apply(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		List<News> zyggList = new ArrayList<News>();
+		zyggList = newsService.getNewsListByNewsType(5);// 获取重要公告
+		if (zyggList.size() > 8) {
+			zyggList = zyggList.subList(0, 8);
+		}
+		Map map = new HashMap();
+		map.put("zyggList", zyggList);
+		return new ModelAndView("apply").addAllObjects(map);
 	}
 
 }
