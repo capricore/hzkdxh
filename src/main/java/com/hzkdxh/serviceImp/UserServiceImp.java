@@ -66,4 +66,8 @@ public class UserServiceImp extends BaseService implements UserService{
 		return getUserDao().getUserListByCompid(compid);
 	}
 
+	public List<User> getListByLevelAndCategory(int level, int category) {
+		return getUserDao().getListByLevelAndCategory(level, category);
+	}
+
 }

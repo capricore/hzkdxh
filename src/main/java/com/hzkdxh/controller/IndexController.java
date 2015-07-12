@@ -355,23 +355,23 @@ public class IndexController extends BaseController {
 				}
 				Company company = companyService.getByCompanyId(user.getCompid());
 				if(company.getPcompid() != null){// 如果该会员单位隶属于某理事，需要将该理事加进去
-					Company pcompany = companyService.getByCompanyId(company.getPcompid());
-					MessageList lishi = new MessageList();
-					lishi.setName(pcompany.getCompname());
-					lishi.setId(pcompany.getCompid());
-					lishi.setPid(String.valueOf(user.getCompany()));
-					lishi.setPhone("null");
-					messageList.add(lishi);
-					List<User> lishiList = userService.getUserListByLevel(2);// 获得所有理事单位列表
+					List<User> lishiList = userService.getListByLevelAndCategory(2, user.getCompany());// 获得该会员所对应的理事单位列表
 					for (User user2 : lishiList) {
-						if (user2.getCompid().equals(company.getPcompid())) {
-							MessageList lishiNum = new MessageList();
-							lishiNum.setName(user2.getLinkman());
-							lishiNum.setId(user2.getUserid());
-							lishiNum.setPid(user2.getCompid());
-							lishiNum.setPhone(user2.getPhone());
-							messageList.add(lishiNum);
-						}
+						Company pcompany = companyService.getByCompanyId(user2.getCompid());
+						MessageList lishi = new MessageList();
+						lishi.setName(pcompany.getCompname());
+						lishi.setId(pcompany.getCompid());
+						lishi.setPid(String.valueOf(user.getCompany()));
+						lishi.setPhone("null");
+						messageList.add(lishi);
+					}
+					for (User user2 : lishiList) {
+						MessageList lishiNum = new MessageList();
+						lishiNum.setName(user2.getLinkman());
+						lishiNum.setId(user2.getUserid());
+						lishiNum.setPid(user2.getCompid());
+						lishiNum.setPhone(user2.getPhone());
+						messageList.add(lishiNum);
 					}
 				}
 				HashMap<String, MessageList> hasAddSub = new HashMap<String, MessageList>();
@@ -417,6 +417,87 @@ public class IndexController extends BaseController {
 					message.setPid(String.valueOf(user2.getCompany()));
 					messageList.add(message);
 				}
+				
+				List<User> submessageList = userService.getUserListByLevel(2);// 获得所有理事单位列表
+				for (User user2 : submessageList) {//将理事单位所属的公司大类加到短信列表中
+					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
+						MessageList message = new MessageList();
+						message.setName(Company[user2.getCompany()]);
+						message.setId(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						hasAddList.put(Company[user2.getCompany()], message);
+						messageList.add(message);
+					}
+				}
+				
+				HashMap<String, MessageList> hasAddSub = new HashMap<String, MessageList>();
+				for (User user2 : submessageList) {//将理事单位的公司加到短信列表中
+					Company company = companyService.getByCompanyId(user2.getCompid());
+					if (!hasAddSub.containsKey(company.getCompid())) {
+						MessageList message = new MessageList();
+						message.setName(company.getCompname());
+						message.setId(user2.getCompid());
+						message.setPid(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						messageList.add(message);
+						hasAddSub.put(company.getCompid(),message);
+					}
+				}
+				for (User user2 : submessageList) {//将理事单位公司的人员号码加到短信列表中
+					MessageList message = new MessageList();
+					message.setName(user2.getLinkman());
+					message.setId(user2.getUserid());
+					message.setPid(user2.getCompid());
+					message.setPhone(user2.getPhone());
+					messageList.add(message);
+				}
+				
+				List<User> companyList = userService.getListByLevelAndCategory(1,user.getCompany());
+				HashMap<String, MessageList> memberAdd = new HashMap<String, MessageList>();
+				for (User user2 : companyList) {
+					Company company = companyService.getByCompanyId(user2.getCompid());
+					if (!memberAdd.containsKey(company.getCompid())) {
+						MessageList message = new MessageList();
+						message.setName(company.getCompname());
+						message.setId(user2.getCompid());
+						message.setPid(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						messageList.add(message);
+						memberAdd.put(company.getCompid(),message);
+					}
+				}
+				for (User user2 : companyList) {
+					MessageList message = new MessageList();
+					message.setName(user2.getLinkman());
+					message.setId(user2.getUserid());
+					message.setPid(user2.getCompid());
+					message.setPhone(user2.getPhone());
+					messageList.add(message);
+				}
+			} else if (user.getLevel() == 3) {
+				
+				List<User> adminmessageList = userService.getUserListByLevel(3); // 获得管局、协会（管理员）列表
+				HashMap<String, MessageList> hasAddList = new HashMap<String, MessageList>();
+				for (User user2 : adminmessageList) {//将管理员所属的公司大类加到短信列表中
+					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
+						MessageList message = new MessageList();
+						message.setName(Company[user2.getCompany()]);
+						message.setId(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						message.setPid("0");
+						messageList.add(message);
+						hasAddList.put(Company[user2.getCompany()], message);
+					}
+				}
+				for (User user2 : adminmessageList) {//将管理员的电话加到短信列表中
+					MessageList message = new MessageList();
+					message.setName(user2.getLinkman());
+					message.setId(user2.getUserid());
+					message.setPhone(user2.getPhone());
+					message.setPid(String.valueOf(user2.getCompany()));
+					messageList.add(message);
+				}
+				
 				List<User> submessageList = userService.getUserListByLevel(2);// 获得所有理事单位列表
 				for (User user2 : submessageList) {//将理事单位所属的公司大类加到短信列表中
 					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
@@ -449,50 +530,32 @@ public class IndexController extends BaseController {
 					message.setPhone(user2.getPhone());
 					messageList.add(message);
 				}
-				List<Company> companyList = companyService.getSubcompanyListByCompId(user.getCompid());
-				for (Company company : companyList) {//添加该理事下的子公司到短信列表中
-					MessageList message = new MessageList();
-					message.setName(company.getCompname());
-					message.setId(company.getCompid());
-					message.setPid(String.valueOf(user.getCompany()));
-					message.setPhone("null");
-					messageList.add(message);
-				}
-				for (Company company : companyList) {
-					List<User> userList = userService.getUserListByCompid(company.getCompid());
-					for (User user2 : userList) {//添加该理事下的子公司的成员号码到短信列表中
+				
+				List<User> memmessageList = userService.getUserListByLevel(1);// 获得所有会员单位列表
+				for (User user2 : memmessageList) {//将会员单位所属的公司大类加到短信列表中
+					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
 						MessageList message = new MessageList();
-						message.setName(user2.getLinkman());
-						message.setId(user2.getUserid());
-						message.setPid(user2.getCompid());
-						message.setPhone(user2.getPhone());
+						message.setName(Company[user2.getCompany()]);
+						message.setId(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						hasAddList.put(Company[user2.getCompany()], message);
 						messageList.add(message);
 					}
 				}
-			} else if (user.getLevel() == 3) {
-				List<User> userList = userService.getUserList();// 获得所有所有会员列表
-				for (int i = 1; i < Company.length; i++) {//将公司大类加到短信列表中
-					MessageList message = new MessageList();
-					message.setName(Company[i]);
-					message.setId(String.valueOf(i));
-					message.setPhone("null");
-					message.setPid("0");
-					messageList.add(message);
-				}
-				HashMap<String, MessageList> hasAddSub = new HashMap<String, MessageList>();
-				for (User user2 : userList) {//将所有会员的公司加到短信列表中
+				HashMap<String, MessageList> hasAddMem = new HashMap<String, MessageList>();
+				for (User user2 : memmessageList) {//将会员单位的公司加到短信列表中
 					Company company = companyService.getByCompanyId(user2.getCompid());
-					if (!hasAddSub.containsKey(company.getCompid())) {
+					if (!hasAddMem.containsKey(company.getCompid())) {
 						MessageList message = new MessageList();
 						message.setName(company.getCompname());
 						message.setId(user2.getCompid());
 						message.setPid(String.valueOf(user2.getCompany()));
 						message.setPhone("null");
 						messageList.add(message);
-						hasAddSub.put(company.getCompid(),message);
+						hasAddMem.put(company.getCompid(),message);
 					}
 				}
-				for (User user2 : userList) {//将理事单位公司的人员号码加到短信列表中
+				for (User user2 : memmessageList) {//将会员单位公司的人员号码加到短信列表中
 					MessageList message = new MessageList();
 					message.setName(user2.getLinkman());
 					message.setId(user2.getUserid());
@@ -500,6 +563,7 @@ public class IndexController extends BaseController {
 					message.setPhone(user2.getPhone());
 					messageList.add(message);
 				}
+				
 			}
 			List<News> zyggList = new ArrayList<News>();
 			zyggList = newsService.getNewsListByNewsType(5);// 获取重要公告

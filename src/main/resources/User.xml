@@ -55,11 +55,15 @@
 	</select>
 	
 	<select id="getUserListByLevel"  parameterClass="int" resultClass="user">
-		select * from user where level=#level#
+		select * from user where level=#level# order by company
 	</select>
 	
 	<select id="getUserListByCompid"  parameterClass="String" resultClass="user">
 		select * from user where compid=#compid#
+	</select>
+
+	<select id="getListByLevelAndCategory"  parameterClass="userQuery" resultClass="user">
+		select * from user where level=#level# and company=#company# order by company
 	</select>
 
 </sqlMap>  

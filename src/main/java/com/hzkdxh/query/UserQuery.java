@@ -16,6 +16,8 @@ public class UserQuery {
 	private String email; 		// 用户邮箱
 
 	private int level; 			// 用户权限，0：普通，1：单位，2：理事，3：管理员
+	
+	private int company;
 
 	private Timestamp restime; 		// 用户注册时间
 
@@ -25,6 +27,14 @@ public class UserQuery {
 
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+
+	public int getCompany() {
+		return company;
+	}
+
+	public void setCompany(int company) {
+		this.company = company;
 	}
 
 	public String getCompid() {

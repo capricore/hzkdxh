@@ -36,4 +36,6 @@ public interface UserService {
     public List<User> getUserListByLevel(int level);
     
     public List<User> getUserListByCompid(String compid);
+    
+    public List<User> getListByLevelAndCategory(int level, int category);
 }
