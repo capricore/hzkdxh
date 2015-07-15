@@ -65,6 +65,24 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	    <filter-name>SecurityServlet</filter-name>  
 	    <url-pattern>/organizationblacklist/getList.do</url-pattern>  
 	</filter-mapping>
+
+
+	<!-- 日志配置文件路径 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:/log4j/log4j.xml</param-value>
+	</context-param>
+	
+	<!--spring log4j监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!--设置wenAppRootKey -->
+	<context-param>
+	  <param-name>webAppRootKey</param-name>
+	  <param-value>hzkdxh</param-value>
+	</context-param>
 	
 
 	<welcome-file-list>

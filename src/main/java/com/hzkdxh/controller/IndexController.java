@@ -99,7 +99,7 @@ public class IndexController extends BaseController {
 			}
 
 			List<News> hytjList = new ArrayList<News>();
-			hytjList = newsService.getNewsListByNewsType(7);// 获取行业统计
+			hytjList = newsService.getNewsListByNewsType(3);// 获取行业统计
 			if (hytjList.size() > 8) {
 				hytjList = hytjList.subList(0, 8);
 			}
@@ -252,7 +252,7 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("list").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			return null;
 		}
@@ -296,7 +296,6 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("downloadList").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			logger.error("获取下载中心信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
@@ -620,7 +619,6 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("message").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			logger.error("获取短信发送信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
@@ -662,7 +660,6 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("messageList").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			logger.error("获取短信查看信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
@@ -692,7 +689,6 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("blackList").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			logger.error("获取诚信建设信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
@@ -737,7 +733,6 @@ public class IndexController extends BaseController {
 			map.put("zyggList", zyggList);
 			return new ModelAndView("downloadList").addAllObjects(map);
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 			outputJsonResponse(response, false, e.getMessage());
 			logger.error("获取下载专区信息出错！" + ",errMsg=" + e.getMessage());
 			return null;
