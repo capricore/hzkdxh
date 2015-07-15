@@ -59,7 +59,7 @@ public class IndexController extends BaseController {
 	private String[][] SubType = { {}, { "", "协会简介", "协会章程", "协会制度", "协会成员" },
 			{ "", "法律法规", "部门规章", "规范性文件", "地方性法规", "其它行业要求" },
 			{ "", "统计报告", "申诉通告" }, { "" }, { "" }, { "" }, { "" }, { "" } };
-	private String[] Company = { "","杭州市邮政管理局", "杭州市快递行业协会","邮政", "顺丰", "申通", "圆通", "中通", "韵达", "天天",
+	private String[] Company = { "","管局", "协会","邮政", "顺丰", "申通", "圆通", "中通", "韵达", "天天",
 			"汇通", "国通", "德邦", "外资", "单一", "其他"  };
 	private int pagesize = 15; // 每次查询返回的次数
 
@@ -334,12 +334,25 @@ public class IndexController extends BaseController {
 						hasAddList.put(Company[user2.getCompany()], message);
 					}
 				}
+				HashMap<String, MessageList> subAddList = new HashMap<String, MessageList>();
+				for (User user2 : adminmessageList) {//将管理员所属的公司加到短信列表中
+					Company company = companyService.getByCompanyId(user2.getCompid());
+					if (!subAddList.containsKey(company.getCompid())) {
+						MessageList message = new MessageList();
+						message.setName(company.getCompname());
+						message.setId(user2.getCompid());
+						message.setPid(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						messageList.add(message);
+						subAddList.put(company.getCompid(),message);
+					}
+				}
 				for (User user2 : adminmessageList) {//将管理员的电话加到短信列表中
 					MessageList message = new MessageList();
 					message.setName(user2.getLinkman());
 					message.setId(user2.getUserid());
 					message.setPhone(user2.getPhone());
-					message.setPid(String.valueOf(user2.getCompany()));
+					message.setPid(user2.getCompid());
 					messageList.add(message);
 				}
 				List<User> submessageList = userService.getUserListByLevel(1);// 获得所有会员单位列表
@@ -409,15 +422,27 @@ public class IndexController extends BaseController {
 						hasAddList.put(Company[user2.getCompany()], message);
 					}
 				}
+				HashMap<String, MessageList> subAddList = new HashMap<String, MessageList>();
+				for (User user2 : adminmessageList) {//将管理员所属的公司加到短信列表中
+					Company company = companyService.getByCompanyId(user2.getCompid());
+					if (!subAddList.containsKey(company.getCompid())) {
+						MessageList message = new MessageList();
+						message.setName(company.getCompname());
+						message.setId(user2.getCompid());
+						message.setPid(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						messageList.add(message);
+						subAddList.put(company.getCompid(),message);
+					}
+				}
 				for (User user2 : adminmessageList) {//将管理员的电话加到短信列表中
 					MessageList message = new MessageList();
 					message.setName(user2.getLinkman());
 					message.setId(user2.getUserid());
 					message.setPhone(user2.getPhone());
-					message.setPid(String.valueOf(user2.getCompany()));
+					message.setPid(user2.getCompid());
 					messageList.add(message);
-				}
-				
+				}				
 				List<User> submessageList = userService.getUserListByLevel(2);// 获得所有理事单位列表
 				for (User user2 : submessageList) {//将理事单位所属的公司大类加到短信列表中
 					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
@@ -489,15 +514,27 @@ public class IndexController extends BaseController {
 						hasAddList.put(Company[user2.getCompany()], message);
 					}
 				}
+				HashMap<String, MessageList> subAddList = new HashMap<String, MessageList>();
+				for (User user2 : adminmessageList) {//将管理员所属的公司加到短信列表中
+					Company company = companyService.getByCompanyId(user2.getCompid());
+					if (!subAddList.containsKey(company.getCompid())) {
+						MessageList message = new MessageList();
+						message.setName(company.getCompname());
+						message.setId(user2.getCompid());
+						message.setPid(String.valueOf(user2.getCompany()));
+						message.setPhone("null");
+						messageList.add(message);
+						subAddList.put(company.getCompid(),message);
+					}
+				}
 				for (User user2 : adminmessageList) {//将管理员的电话加到短信列表中
 					MessageList message = new MessageList();
 					message.setName(user2.getLinkman());
 					message.setId(user2.getUserid());
 					message.setPhone(user2.getPhone());
-					message.setPid(String.valueOf(user2.getCompany()));
+					message.setPid(user2.getCompid());
 					messageList.add(message);
-				}
-				
+				}				
 				List<User> submessageList = userService.getUserListByLevel(2);// 获得所有理事单位列表
 				for (User user2 : submessageList) {//将理事单位所属的公司大类加到短信列表中
 					if (!hasAddList.containsKey(Company[user2.getCompany()])) {
