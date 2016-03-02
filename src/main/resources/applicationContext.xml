@@ -9,9 +9,9 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	<context:annotation-config />
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://210.32.133.25:3306/express" />
-		<property name="username" value="express" />
-		<property name="password" value="express301" />
+		<property name="url" value="jdbc:mysql://localhost:3306/express" />
+		<property name="username" value="root" />
+		<property name="password" value="1234" />
 	</bean>
 
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
@@ -84,6 +84,11 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 			<ref bean="dataSource" />
 		</property>
 	</bean>
-	
+
+	<bean id="advertisementDao" class="com.hzkdxh.daoImp.AdvertisementDaoImp">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
 	
 </beans>

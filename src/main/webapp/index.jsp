@@ -35,7 +35,141 @@
 		display: block;
 	}
 	</style>
-        
+	
+	 <style type="text/css">
+	 div.floats {/*浮动容器通用样式*/
+	  position:absolute;
+	  left:-1000px;
+	  /*上面两句是必需的，下面看实际情况去定义了*/
+	  padding:3px;
+	  color:white;
+	  width:150px;
+	  height:410px;
+	  
+	 }
+	div#test3,div#test4{top:200px;}/*左右定位的两个容器初始高度*/
+ 	</style>
+    
+    <script type="text/javascript">
+	 var D=new Function('obj','return document.getElementById(obj);')
+	 function htmlbody(){
+	  return (
+	   document.documentElement.clientHeight<=document.body.clientHeight
+	   &&document.documentElement.clientHeight!=0
+	  )
+	  ?document.documentElement:document.body;
+	 }
+	 //浏览器滚动条位置
+	function scrollLeft(){return (!window.pageYOffset)?htmlbody().scrollLeft:window.pageXOffset;}
+	 function scrollTop(){return (!window.innerHeight)?htmlbody().scrollTop:window.pageYOffset;}
+	 
+	//实际应距左距离
+	function getleft(strobjs,strLeftType,strleft){
+	  var temp_getleft = 0;
+	  if (strLeftType=="left"){
+	   temp_getleft = scrollLeft()*1 + strleft*1;
+	  }else if (strLeftType=="mid"){
+	   (strleft*1<0)
+	   ?temp_getleft = scrollLeft()*1 + strleft*1
+	   + htmlbody().clientWidth*1/2 - strobjs.offsetWidth*1
+	   :temp_getleft = (scrollLeft()*1+strleft*1 + htmlbody().clientWidth*1/2);
+	  }else if (strLeftType=="right"){
+	    temp_getleft 
+	    = scrollLeft()*1 + htmlbody().clientWidth*1 
+	    - strleft*1 - strobjs.offsetWidth*1;
+	  }
+	  return temp_getleft;
+	 }
+	 
+	function moveTips(strobj,theTop,theLeft,theLeftType) {
+	  var old,nowobj = D(strobj);
+	  var nowleft = nowobj.style.left.replace("px","")*1;//返回在改变窗口大小或移动横滚动条前的距左部距离（数值）
+	 var temp_left = getleft(nowobj,theLeftType,theLeft);//实际应距左距离
+	 var re_theTop = theTop;
+	  if (temp_left!=nowleft){//横向递增
+	  (Math.abs(temp_left-nowleft)>3&&Math.abs(temp_left-nowleft)<600)
+	   ?((temp_left>nowleft)?nowleft += Math.abs(temp_left-nowleft)/5
+	   :nowleft -= Math.abs(temp_left-nowleft)/5)
+	   :nowleft = temp_left;
+	   nowobj.style.left = nowleft + "px";
+	  }
+	  if (!openweb){old = re_theTop;var openweb;}/*这是默认高度*/;
+	   var pos,tt=50;
+	   pos = scrollTop()*1-nowobj.offsetTop*1+re_theTop*1;
+	   pos = nowobj.offsetTop+pos/10;//纵向开始递增
+	  if (pos < re_theTop) pos = re_theTop;
+	   if (pos != old) {nowobj.style.top = pos+"px";tt=5;}
+	   old = pos;
+	   setTimeout("moveTips('"+strobj+"','"+theTop+"','"+theLeft+"','"+theLeftType+"')",tt);
+	 }
+	</script>
+	<script type="text/javascript">         
+		//表单验证 
+		function query(){ 
+		var query = document.form1.querystring; //在这里我认为： name 代表的name 为 txtUser 的文本框 
+		if(query.value.length==0){ 
+			alert("请输入搜索内容"); 
+			query.focus(); 
+			return false; 
+		}else{
+			return true;
+		}
+		}
+		
+		function contact(){
+		var id = document.form3.id;
+		var ms = document.form3.message;
+		if(id.value.length==0){
+			alert("请输入联系方式");
+			id.focus();
+			return false;
+		}
+		if(ms.value.length==0){
+			alert("请输入留言");
+			ms.focus();
+			return false;
+		}
+		}
+	</script>
+	<script language="javascript" type="text/javascript">
+			$(document).ready(function () {
+	
+	           // 焦点图片淡隐淡现
+	           $("#slider3").Xslider({
+	               affect: 'fade',
+	               ctag: 'div',
+	               space: 3000, //时间间隔
+	           });
+	
+	       });
+			
+			function MM_jumpMenu(selObj)
+			{ //v3.0
+			 if(selObj.options[selObj.selectedIndex].value != "" )
+			 {
+			window.open(selObj.options[selObj.selectedIndex].value,'','height=400,width=600,top=200,left=200,toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes,location=yes,status=yes');
+			 }
+			}
+	</script>
+<script type="text/javascript">
+ $(document).ready(function(){
+     var duilian = $("div.duilian");
+     var duilian_close = $("a.duilian_close");
+     
+     var screen_w = screen.width;
+     if(screen_w>1024){duilian.show();}
+     $(window).scroll(function(){
+         var scrollTop = $(window).scrollTop();
+         duilian.stop().animate({top:scrollTop+260});
+     });
+     duilian_close.click(function(){
+         $(this).parent().hide();
+         return false;
+     });
+     
+     
+ });
+ </script>    
 	<script type="text/javascript">         
 		//表单验证 
 		function query(){ 
@@ -86,6 +220,25 @@
 	</script>	
 </head>
 <body id="Homepage" class="" onload="checkLogin();">
+
+ <div id="test3" class="floats"><a href="${add0.link}" target="_blank"><img src="/epUpload/${add0.pic}" /></a><a href="${add1.link}" target="_blank"><img src="/epUpload/${add1.pic}" style="padding-top:5px" /></a><a onclick="close3();">关闭</a></div>
+ <div id="test4" class="floats"><a href="${add2.link}" target="_blank"><img src="/epUpload/${add2.pic}" /></a><a href="${add3.link}" target="_blank"><img src="/epUpload/${add3.pic}" style="padding-top:5px"/></a><a onclick="close4();" style="float:right">关闭</a></div>
+ 
+	<script type="text/javascript">
+	  moveTips('test3','200','10','left',"1");
+	  moveTips('test4','200','10','right',"1");
+	 </script>
+	
+	<script language="javascript">
+	<!--
+	function close3(){	 
+	test3.style.display='none'               	 
+	}
+	function close4(){	 
+	test4.style.display='none'               	 
+	}
+	//-->
+	</script>
 	
 	<!-- Header Start -->
 	<%@ include file="page/top.jsp"%>

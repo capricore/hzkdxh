@@ -3,6 +3,7 @@ package com.hzkdxh.service;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.hzkdxh.dao.AdvertisementDao;
 import com.hzkdxh.dao.CompanyDao;
 import com.hzkdxh.dao.DownloadzoneDao;
 import com.hzkdxh.dao.MercBlacklistDao;
@@ -41,6 +42,8 @@ public class BaseService {
 	private MercBlacklistDao mercBlacklistDao = (MercBlacklistDao)context.getBean("mercBlacklistDao");
 	
 	private OrganizationBlacklistDao organizationBlacklistDao = (OrganizationBlacklistDao)context.getBean("organizationBlacklistDao");
+	
+	private AdvertisementDao advertisementDao = (AdvertisementDao)context.getBean("advertisementDao");
 	
 	public MercBlacklistDao getMercBlacklistDao() {
 		return mercBlacklistDao;
@@ -84,6 +87,10 @@ public class BaseService {
 
 	public MessageDao getMessageDao() {
 		return messageDao;
+	}
+	
+	public AdvertisementDao getAdvertisementDao(){
+		return advertisementDao;
 	}
 	
 }

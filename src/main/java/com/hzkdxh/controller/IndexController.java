@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hzkdxh.bean.Advertisement;
 import com.hzkdxh.bean.Company;
 import com.hzkdxh.bean.Downloadzone;
 import com.hzkdxh.bean.Message;
@@ -24,6 +25,7 @@ import com.hzkdxh.bean.News;
 import com.hzkdxh.bean.RollingPicture;
 import com.hzkdxh.bean.StaticPicture;
 import com.hzkdxh.bean.User;
+import com.hzkdxh.service.AdvertisementService;
 import com.hzkdxh.service.CompanyService;
 import com.hzkdxh.service.DownloadzoneService;
 import com.hzkdxh.service.MessageService;
@@ -50,6 +52,8 @@ public class IndexController extends BaseController {
 	private DownloadzoneService downloadzoneService;
 	@Autowired
 	private MessageService messageService;
+	@Autowired
+	private AdvertisementService addService;
 
 	private static final Logger logger = Logger
 			.getLogger(IndexController.class);
@@ -124,6 +128,10 @@ public class IndexController extends BaseController {
 
 			List<StaticPicture> spList = new ArrayList<StaticPicture>();
 			spList = spService.getPicturetList(); // 获取静态轮播图片
+			
+			List<Advertisement> addList = new ArrayList<Advertisement>();
+			addList = addService.getAdvertisementList();//获取广告图片
+			
 
 			Map map = new HashMap();
 			map.put("rpList", rpList);
@@ -135,6 +143,11 @@ public class IndexController extends BaseController {
 			map.put("hyfcList", hyfcList);
 			map.put("zcfgList", zcfgList);
 			map.put("spList", spList);
+			//添加广告
+			for(int i=0;i<addList.size();i++){
+				map.put("add"+i,addList.get(i));
+			}
+			
 			return new ModelAndView("index").addAllObjects(map);
 		} catch (RuntimeException e) {
 			System.out.println(e.getMessage());
